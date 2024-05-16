@@ -2,7 +2,7 @@ const List = ({ data, removeItem }) => {
   //   console.log(props.data);
   return (
     <>
-      <section className="bg-neutral-800 rounded-md shadow-md shadow-black my-10 lg:max-w-sm">
+      <section className="bg-neutral-800 rounded-md shadow-md shadow-black my-10 max-w-sm">
         <ul className="flex flex-col gap-4 ">
           {/* Faccio il map dei data in arrivo */}
           {data.map((persona) => {
