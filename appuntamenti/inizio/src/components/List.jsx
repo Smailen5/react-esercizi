@@ -2,7 +2,7 @@ const List = ({ data, removeItem }) => {
   //   console.log(props.data);
   return (
     <>
-      <section className="bg-neutral-800 rounded-md shadow-md shadow-black my-10 max-w-sm">
+      <section className="bg-neutral-800 rounded-md shadow-md shadow-black my-10 ">
         <ul className="flex flex-col gap-4 ">
           {/* Faccio il map dei data in arrivo */}
           {data.map((persona) => {
@@ -29,12 +29,12 @@ const Person = ({ nome, stato, img, removeItem, id }) => {
   return (
     <>
       <img src={img} alt={"link: " + img} className="rounded-full w-12 h-12" />
-      <div>
+      <div className="w-full">
         <div className="flex justify-between pb-1">
           <h2 className="text-sm font-bold">{nome}</h2>
           <button
             onClick={() => removeItem(id)}
-            className="bg-red-900 w-4 h-4 flex justify-center items-center rounded-sm text-black font-semibold"
+            className="bg-red-900 w-4 h-4 flex justify-center items-center rounded-sm text-black font-semibold hover:bg-white hover:text-red-500"
           >
             x
           </button>

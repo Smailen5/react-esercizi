@@ -23,16 +23,16 @@ function App() {
         <h2 className="font-bold capitalize text-4xl">Prossimi incontri</h2>
         {/* removeItem e persona vengono passate come props cosi possono accedervi */}
         <List data={persona} removeItem={removeItem} />
-        <div className="flex w-full justify-between max-w-sm">
+        <div className="flex w-full justify-between md:max-w-lg">
           <button
             onClick={reload}
-            className="bg-blue-500 px-5 py-1 rounded-xl uppercase text-xxs font-bold"
+            className="bg-blue-500 px-5 py-1 rounded-xl uppercase text-xxs font-bold hover:bg-blue-400 hover:text-white"
           >
             ricarica
           </button>
           <button
             onClick={deleteAll}
-            className="rounded-xl border-2 px-5 py-1 border-red-500 uppercase text-xxs font-bold text-red-500"
+            className="rounded-xl border-2 px-5 py-1 border-red-500 uppercase text-xxs font-bold text-red-500 hover:text-white hover:bg-red-500"
           >
             elimina tutto
           </button>
