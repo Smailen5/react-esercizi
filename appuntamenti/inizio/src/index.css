@@ -2,35 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-
-  /* Colors */
-  --dark-blue: #03045eff;
-  --secondary-blue: #0077b6ff;
-  --primary-blue: rgb(56, 146, 194);
-  --light-blue: #90e0efff;
-  --bg-blue: #caf0f8ff;
-  --delete-color: #df372b;
-  --divider-color: rgba(0, 0, 0, 0.1);
-  /* Global */
-  --letter-spacing: 0.08rem;
-  --transition: all 0.3s linear;
-  --btn-transition: all 0.125s ease;
-  --radius: 0.25rem;
-  --btn-radius: 16px;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
-}
-
 body {
-  background-color: var(--dark-blue);
+  background-color: #03045eff;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
