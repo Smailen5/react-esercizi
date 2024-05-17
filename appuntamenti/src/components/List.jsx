@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import { RiDeleteBack2Fill } from "react-icons/ri";
+
 const List = ({ data, removeItem }) => {
   //   console.log(props.data);
   return (
@@ -8,10 +11,7 @@ const List = ({ data, removeItem }) => {
           {data.map((persona) => {
             return (
               // imposto un key univoco usando id del oggetto data che ricevo
-              <li
-                key={persona.id}
-                className="flex items-center gap-4 p-4"
-              >
+              <li key={persona.id} className="flex items-center gap-4 p-4">
                 {/* Passo come props la funzione removeItem, passo anche tutti i dati a Person */}
                 <Person {...persona} removeItem={removeItem} />
               </li>
@@ -34,9 +34,9 @@ const Person = ({ nome, stato, img, removeItem, id }) => {
           <h2 className="text-sm font-bold">{nome}</h2>
           <button
             onClick={() => removeItem(id)}
-            className="bg-red-900 w-4 h-4 flex justify-center items-center rounded-sm text-black font-semibold hover:bg-white hover:text-red-500"
+            className="text-red-500 rounded-lg p-1 hover:text-white hover:bg-red-500"
           >
-            x
+            <RiDeleteBack2Fill />
           </button>
         </div>
         <p className="text-xs italic">{stato}</p>
