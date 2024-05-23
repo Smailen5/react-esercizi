@@ -1,57 +1,51 @@
-# react-tutorial-base
+# React esercizi
 
-## Istruzioni Generali per utilizzare in maniera corretta i singoli progetti
+- [In locale](#in-locale)
+- [Sviluppo](#sviluppo)
+  - [Built with](#built-with)
+- [Soluzioni](#soluzioni)
+  - [Appuntamenti](#appuntamenti)
+  - [Dark mode](#dark-mode)
 
-- Scaricare il file Zip oppure Clonare (in questo caso rimuovere la cartella .git -rm rf .git [mac] rmdir .git [windows])
-- Spostarsi all'interno del progetto in cui vogliamo lavorare `cd nomeprogetto/inizio`
-- oppure `cd nomeprogetto/risultato` per vederne il risultato finale
-- lanciare comando dal terminale `npm install`
+- [Author](#author)
 
-### Progetti Rispetto all'avanzamento del corso
+# In locale
 
-Per visionare anteprima dei progetti: https://hpv4learning.it/corso-react-hook-teoria-progetti/?scrollTo=projects
-In ogni progetto troverete una cartella **inizio** ed una **risultato**
+- una volta scaricato la cartella principale ricorda di usare `cd inserisci-nome-progetto` che vuoi visualizzare.
+- `npm install`
+- `npm run dev`
+- apri il tuo browser al [link](http://localhost:5173/) per visualizzare il progetto in locale.
 
-#### Inizio
 
-Contiene il progetto con gli elementi necessari per seguire il tutorial:
+# Sviluppo
 
-- Tutte le dependencies utilizzate (quando necessario)
-- Styling: Tutto il CSS sarà già precompilato in un file index.css
-- Link: ogni url utilizzato sarà già presente
-- Componenti: I componenti saranno già importati e (ovviamente vuoti)
+Per questi progetti ho utilizzato:
 
-#### Risultato
+- Bootstrap
+- Tailwind css
+- React+vite
 
-Contiene il progetto completo:
 
-- Contiene il progetto finale e completo
+# Soluzioni
 
-#### Dopo aver concluso la sezione riguardo useState Hook
+## Appuntamenti
 
-1. Appuntamenti: https://appuntamenti-app.netlify.app/
+[Anteprima](./Screenshot/appuntamenti.jpeg)
 
-#### Dopo aver concluso useEffect e Render Condizionale
+[App appuntamenti](https://app-appuntamenti.netlify.app/)
 
-2. dark-mode: https://dark-mode-tutorial.netlify.app/
-3. vacanze : https://vacanze.netlify.app/
-4. slider: https://slider-tutorial.netlify.app/
-5. Gelateria: https://gelateria-tutorial.netlify.app/
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/appuntamenti)
 
-#### Dopo aver concluso la sezione riguardo a Form e useRef
+## Dark mode
 
-6. Color-Grading: https://color-grading-tutorial.netlify.app/
-7. Navbar: https://navbar-tutorial.netlify.app/
+[Anteprima](./Screenshot/dark%20mode.jpeg)
 
-#### Dopo aver concluso la sezione riguardo ad useReducer, propDrilling e useContext
+[Dark mode](https://app-dark-mode.netlify.app/)
 
-8. sidebar: https://sidebar-tutorial.netlify.app/
-9. cart: https://cart-tutorial.netlify.app/
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
 
-#### Dopo aver concluso la visione di tutte le puntate di teoria Base
 
-10. cocktail: https://wiki-drink.netlify.app/
+# Autore
 
-#### Redux: Dopo aver completato almeno il progetto 8 e 9
+link social e ringraziamenti
 
-11. pick.me: https://redux-pick-me.netlify.app/
