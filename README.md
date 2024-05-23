@@ -2,14 +2,13 @@
 
 - [In locale](#in-locale)
 - [Sviluppo](#sviluppo)
-  - [Built with](#built-with)
 - [Soluzioni](#soluzioni)
   - [Appuntamenti](#appuntamenti)
   - [Dark mode](#dark-mode)
 
 - [Author](#author)
 
-# In locale
+## In locale
 
 - una volta scaricato la cartella principale ricorda di usare `cd inserisci-nome-progetto` che vuoi visualizzare.
 - `npm install`
@@ -17,7 +16,7 @@
 - apri il tuo browser al [link](http://localhost:5173/) per visualizzare il progetto in locale.
 
 
-# Sviluppo
+## Sviluppo
 
 Per questi progetti ho utilizzato:
 
@@ -26,9 +25,9 @@ Per questi progetti ho utilizzato:
 - React+vite
 
 
-# Soluzioni
+## Soluzioni
 
-## Appuntamenti
+### Appuntamenti
 
 ![Anteprima](./Screenshot/appuntamenti.jpeg)
 
@@ -36,7 +35,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/appuntamenti)
 
-## Dark mode
+### Dark mode
 
 ![Anteprima](./Screenshot/dark%20mode.jpeg)
 
@@ -45,7 +44,9 @@ Per questi progetti ho utilizzato:
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
 
 
-# Autore
+## Autore
 
-link social e ringraziamenti
+[Git Hub](https://github.com/Smailen5)
+
+[Linkedin](https://www.linkedin.com/in/smailen-vargas/)
 
