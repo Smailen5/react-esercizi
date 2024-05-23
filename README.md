@@ -30,7 +30,7 @@ Per questi progetti ho utilizzato:
 
 ## Appuntamenti
 
-[Anteprima](./Screenshot/appuntamenti.jpeg)
+![Anteprima](./Screenshot/appuntamenti.jpeg)
 
 [App appuntamenti](https://app-appuntamenti.netlify.app/)
 
@@ -38,7 +38,7 @@ Per questi progetti ho utilizzato:
 
 ## Dark mode
 
-[Anteprima](./Screenshot/dark%20mode.jpeg)
+![Anteprima](./Screenshot/dark%20mode.jpeg)
 
 [Dark mode](https://app-dark-mode.netlify.app/)
 
