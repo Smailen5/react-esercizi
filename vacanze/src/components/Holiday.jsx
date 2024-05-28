@@ -72,6 +72,8 @@ function Holiday() {
 
 export default Holiday;
 
+// non va bene, mi serve una singola card non tutte e quante
+
 // vacanze.data.map((el) => {
 //   const { id, titolo, durata, descrizione, prezzo, img } = el;
 //   return (

@@ -43,6 +43,13 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
 
+### Vacanze
+
+![Anteprima]()
+
+[Vacanze]()
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
 
 ## Autore
 

@@ -5,7 +5,7 @@ function App() {
   return (
     <section className="min-h-screen bg-neutral-900 flex flex-col items-center font-sans">
       <Title />
-      <article className="text-white flex justify-center">
+      <article className="text-white flex justify-center max-w-3xl">
         <Holiday />
       </article>
     </section>
