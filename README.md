@@ -30,7 +30,7 @@ Per questi progetti ho utilizzato:
 
 ### Appuntamenti
 
-![Anteprima](./Screenshot/appuntamenti.jpeg)
+![Anteprima desktop](./Screenshot/appuntamenti.jpeg)
 
 [App appuntamenti](https://app-appuntamenti.netlify.app/)
 
@@ -39,7 +39,7 @@ Per questi progetti ho utilizzato:
 
 ### Dark mode
 
-![Anteprima](./Screenshot/dark%20mode.jpeg)
+![Anteprima desktop](./Screenshot/dark%20mode.jpeg)
 
 [Dark mode](https://app-dark-mode.netlify.app/)
 
@@ -48,10 +48,10 @@ Per questi progetti ho utilizzato:
 
 ### Vacanze
 
-![Anteprima mobile](./Screenshot/vacanze-mobile.jpeg)
+<!-- ![Anteprima mobile](./Screenshot/vacanze-mobile.jpeg) -->
 ![Anteprima desktop](./Screenshot/vacanze-desktop.jpeg)
 
-[Vacanze]()
+[Vacanze](https://app-vacanze.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
 

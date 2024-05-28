@@ -36,7 +36,8 @@ si e un po lungo ma funziona perfettamente, non so se mi conviene ritrasformare 
 
 ### Link
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1cec596e-65e1-4ed0-aae8-5168b38459a8/deploy-status)](https://app.netlify.com/sites/app-vacanze/deploys)
 
-[Link della mia soluzione]()
+[Link della mia soluzione](https://app-vacanze.netlify.app/)
 
-[Link al progetto originale]()
+[Link al progetto originale](https://vacanze.netlify.app/)
