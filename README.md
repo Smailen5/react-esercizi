@@ -5,6 +5,7 @@
 - [Soluzioni](#soluzioni)
   - [Appuntamenti](#appuntamenti)
   - [Dark mode](#dark-mode)
+  - [Vacanze](#vacanze)
 
 - [Author](#author)
 
@@ -35,6 +36,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/appuntamenti)
 
+
 ### Dark mode
 
 ![Anteprima](./Screenshot/dark%20mode.jpeg)
@@ -43,13 +45,16 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
 
+
 ### Vacanze
 
-![Anteprima]()
+![Anteprima mobile](./Screenshot/vacanze-mobile.jpeg)
+![Anteprima desktop](./Screenshot/vacanze-desktop.jpeg)
 
 [Vacanze]()
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
+
 
 ## Autore
 

@@ -37,7 +37,6 @@ si e un po lungo ma funziona perfettamente, non so se mi conviene ritrasformare 
 ### Link
 
 
-
 [Link della mia soluzione]()
 
 [Link al progetto originale]()
