@@ -1,7 +1,20 @@
+/* eslint-disable react/prop-types */
 // import { useState } from "react";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 function SingleHoliday({ vacanza, incrementa, decrementa }) {
+  // console.log(vacanza.prezzo);
+
+  // console.log(typeof vacanza.prezzo);
+
+  // trasformo il prezzo in una stringa per poter aggiungere la virgola
+  let number = vacanza.prezzo;
+  let numberString = number.toString();
+  let position = numberString.length - 2;
+  let resultString =
+    numberString.slice(0, position) + "," + numberString.slice(position);
+  // console.log(resultString);
+
   // console.log(vacanza);
 
   // const [count, setCount] = useState(vacanza.id);
@@ -32,9 +45,7 @@ function SingleHoliday({ vacanza, incrementa, decrementa }) {
           <p className="text-sm pb-2">{vacanza.descrizione}</p>
           <div className="flex justify-between text-sm pb-2">
             <span className="">{vacanza.durata}</span>
-            <span className="text-sky-400 font-semibold">
-              {vacanza.prezzo} €
-            </span>
+            <span className="text-sky-400 font-semibold">{resultString} €</span>
           </div>
           <div className="flex justify-between">
             <button

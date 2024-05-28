@@ -28,12 +28,12 @@ function Holiday() {
     getData();
   }, []);
 
-  // console.log(selected);
+  // console.log(vacanze.data[selected].prezzo);
 
   // funzioni che gestiscono il cambiamento della card
   const incrementa = () => {
     setSelected(function (oldValue) {
-      if (oldValue === 4) {
+      if (oldValue === vacanze.data.length - 1) {
         return oldValue;
       }
       return oldValue + 1;
