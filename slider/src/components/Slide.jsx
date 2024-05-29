@@ -13,7 +13,7 @@ const Slide = ({ autore, recensione, voto, classe }) => {
   );
 };
 
-// definisco le props cosi eslint smette di rompere le palle
+// definisco le props cosi eslint smette di rompere le p***e
 Slide.propTypes = {
   voto: PropTypes.number.isRequired,
   recensione: PropTypes.string.isRequired,
