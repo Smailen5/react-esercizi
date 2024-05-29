@@ -6,7 +6,22 @@ const Slider = () => {
   const [recensioni, setRecensioni] = useState(data);
   const [active, setActive] = useState(0);
 
-  // funzioni cambio slide
+  // funzioni cambio slide dinamicamente in base alla quantita di recensioni
+  const nextSlide = () => {
+    if (active < recensioni.length - 1) {
+      setActive(active + 1);
+    } else {
+      setActive(0);
+    }
+  };
+
+  const prevSlide = () => {
+    if (active > 0) {
+      setActive(active - 1);
+    } else {
+      setActive(recensioni.length - 1);
+    }
+  };
 
   return (
     <>
@@ -31,8 +46,12 @@ const Slider = () => {
         })}
 
         <div className="btn-group slider-btn-group">
-          <button className="btn btn-slider prev-slider">Prev</button>
-          <button className="btn btn-slider next-slider">Next</button>
+          <button onClick={prevSlide} className="btn btn-slider prev-slider">
+            Prev
+          </button>
+          <button onClick={nextSlide} className="btn btn-slider next-slider">
+            Next
+          </button>
         </div>
       </div>
     </>
