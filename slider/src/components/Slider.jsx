@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slide from "./Slide";
 import data from "../data";
 
@@ -23,6 +23,15 @@ const Slider = () => {
       setActive(recensioni.length - 1);
     }
   };
+
+  // automatizza il cambiamento delle slide
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active]);
 
   return (
     <>
