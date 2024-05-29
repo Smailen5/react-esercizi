@@ -58,7 +58,7 @@ Per questi progetti ho utilizzato:
 
 ### Slider
 
-![Anteprima mobile](./Screenshot/slider-mobile.jpeg)
+<!-- ![Anteprima mobile](./Screenshot/slider-mobile.jpeg) -->
 
 ![Anteprima mobile](./Screenshot/slider-desktop.jpeg)
 
