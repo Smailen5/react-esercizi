@@ -1,16 +1,23 @@
-const Slide = () => {
+import PropTypes from "prop-types";
+
+const Slide = ({ autore, recensione, voto, classe }) => {
   return (
-    <article className="slide">
+    <article className={`slide ${classe}`}>
       <div className="review">
-        <h4>Persona</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
-          temporibus?
-        </p>
-        <div className="star-container">voto</div>
+        <h4>{autore}</h4>
+        <p>{recensione}</p>
+        <div className="star-container">{voto}</div>
       </div>
     </article>
   );
+};
+
+// definisco le props cosi eslint smette di rompere le palle
+Slide.propTypes = {
+  voto: PropTypes.number.isRequired,
+  recensione: PropTypes.string.isRequired,
+  autore: PropTypes.string.isRequired,
+  classe: PropTypes.string,
 };
 
 export default Slide;
