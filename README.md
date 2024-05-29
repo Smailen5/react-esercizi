@@ -6,7 +6,7 @@
   - [Appuntamenti](#appuntamenti)
   - [Dark mode](#dark-mode)
   - [Vacanze](#vacanze)
-
+  - [Slider](#slider)
 - [Author](#author)
 
 ## In locale
@@ -54,6 +54,17 @@ Per questi progetti ho utilizzato:
 [Vacanze](https://app-vacanze.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
+
+
+### Slider
+
+![Anteprima mobile](./Screenshot/slider-mobile.jpeg)
+
+![Anteprima mobile](./Screenshot/slider-desktop.jpeg)
+
+[Slider](https://app-slider.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/slider)
 
 
 ## Autore
