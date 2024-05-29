@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import Slide from "./Slide";
 import data from "../data";
 
