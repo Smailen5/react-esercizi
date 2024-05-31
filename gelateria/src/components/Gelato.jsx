@@ -2,13 +2,13 @@
 const Gelato = ({ gelati }) => {
   return (
     // attenzione cambia qui per le media query tablet e pc -- usa posizionamento a griglia?
-    <section className="flex gap-4 flex-col items-center">
+    <section className="flex gap-4 flex-col items-center ">
       {gelati.map((gelato) => {
         const { id, nome, img, descrizione, prezzo, categoria } = gelato;
         return (
           <article
             key={id}
-            className="group flex items-center gap-4 p-3 bg-sky-100 text-black w-11/12 shadow-lg rounded hover:bg-sky-400/[0.4] hover:scale-105 transition ease-linear" // attenzione a questo gap, sta cambiando le dimensioni della scheda
+            className="group w-full flex items-center gap-4 p-3 bg-sky-100 text-black shadow-lg rounded hover:bg-sky-400/[0.4] hover:scale-105 transition ease-linear md:w-full" // attenzione a questo gap, sta cambiando le dimensioni della scheda EDIT: sembra funzionare tutto correttamente ora che la scheda e completa
           >
             <div className=" min-w-32 h-24 p-1 bg-white rounded-md shadow-md group-hover:animate-bounce">
               <img
