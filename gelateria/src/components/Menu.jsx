@@ -12,7 +12,9 @@ const Menu = () => {
   return (
     <>
       <div className="container">MENU</div>
-      <Gelato gelati={gelati} />
+      
+        <Gelato gelati={gelati} />
+      
     </>
   );
 };
