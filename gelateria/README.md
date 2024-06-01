@@ -1,3 +1,20 @@
+# Esercizio Gelateria
+
+### Sviluppo
+
+- Tailwind
+- React+Vite
+- axios
 
 
-Link al progetto completo: https://gelateria-tutorial.netlify.app/
+### Difficolta
+
+
+
+
+### Link
+
+[Link della mia soluzione]()
+
+[Link al progetto originale](https://gelateria-tutorial.netlify.app/) 
+
