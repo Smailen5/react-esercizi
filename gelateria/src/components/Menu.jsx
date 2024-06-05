@@ -7,17 +7,19 @@ import axios from "axios";
 const url = "https://react--course-api.herokuapp.com/api/v1/data/gelateria";
 
 const Menu = () => {
-  // Salvo i dati qui dentro per poterli recuperare senza fare chiamate continue alla API
+  // Tutti i prodotti
   const [prodotti, setProdotti] = useState([]);
-  // anche se all e all'indice 0 se non viene settato a 1 ci sono problemi
-  // EDIT: corretto
+
+  // Bottone selezionato
   const [selected, setSelected] = useState(0);
-  // Array dove ci sono i prodotti filtrabili
+
+  // Prodotti filtrati dallo state prodotti
   const [filtroProdotti, setFiltroProdotti] = useState(prodotti);
+
   // Stato per il caricamento
   const [isLoading, setIsLoading] = useState(true);
 
-  // Array per le categorie dei bottoni
+  // Categorie dei prodotti per i bottoni
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
   categoria.unshift("all");
 
@@ -41,7 +43,8 @@ const Menu = () => {
 
       // questo timer esiste solo per mostrare la schermata di caricamento dei gelati
       const timer = setTimeout(() => {
-        setFiltroProdotti(response.data.data), setIsLoading(false);
+        // setFiltroProdotti(response.data.data), 
+        // setIsLoading(false);
       }, 2000);
       return () => clearTimeout(timer);
     } catch (error) {
@@ -49,13 +52,10 @@ const Menu = () => {
     }
   };
 
-  // Carico i dati solo una volta al render del componente
+  // Caricamento dati al primo render del componente
   useEffect(() => {
     getData();
   }, []);
-
-  // console.log(prodotti);
-  // console.log(categoria);
 
   return (
     <>
@@ -64,7 +64,6 @@ const Menu = () => {
           Le nostre scelte
         </h3>
         <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
-          {/* Map su categoria che deriva da prodotti, in questo modo i bottoni non cambiano */}
           {categoria.map((categoria, index) => {
             return (
               <button
@@ -84,12 +83,10 @@ const Menu = () => {
         </nav>
         <hr className="my-4 border-neutral-400" />
         <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8 ">
-          {/* filtroProdotti anziche prodotti, in questo modo prendo i dati del filtro 
-          senza toccare l'array prodotti */}
           {isLoading ? (
-            <div className=" bg-sky-100 rounded w-full p-10 animate-pulse">
+            <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
               <p className="text-center">Gelati in arrivo...</p>
-            </div>
+            </section>
           ) : (
             filtroProdotti.map((el) => <Gelato key={el.id} {...el} />)
           )}
