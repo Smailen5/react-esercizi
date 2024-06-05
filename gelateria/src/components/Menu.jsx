@@ -7,7 +7,28 @@ import data from "../fakeData";
 // const url = "https://react--course-api.herokuapp.com/api/v1/data/gelateria";
 
 const Menu = () => {
-  const [gelati, setGelati] = useState(data);
+  const [prodotti, setProdotti] = useState(data);
+
+  // Array per le categorie
+  const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
+
+  // Filtro per categoria
+  const filtroCategoria = (categoria) => {
+    let newCategoria = prodotti.filter((el) => el.categoria == categoria);
+    setProdotti(newCategoria);
+  };
+  // Categoria selezionata
+  const selected = (e) => {
+    console.log(e.focus);
+  };
+
+  // Ripopola array con i dati
+  const reload = () => {
+    setProdotti(data);
+  };
+
+  console.log(prodotti);
+  // console.log(categoria);
 
   return (
     <>
@@ -15,19 +36,25 @@ const Menu = () => {
         <h3 className="text-center font-semibold uppercase my-4 tracking-wide">
           Le nostre scelte
         </h3>
-        <div className="flex justify-between uppercase text-xs grow">
-          <button className=" grow text-center uppercase ">
-            {/* group --- il gruppo che ascolta l'evento per la barra sotto --- attenzione uppercase sull'elemento padre non influisce su questo */}
-            all
-            <div className=" w-11/12 h-0.5 bg-sky-500 rounded my-1"></div>
-            {/* group-active:bg-sky-500 --- per attivare la barra sotto */}
+        <nav className="flex justify-between uppercase text-xs grow">
+          <button className="uppercase" onClick={reload}>
+            All
           </button>
-          <div className=" active:text-red-500 grow text-center">cono</div>
-          <div className=" active:text-red-500 grow text-center">coppetta</div>
-          <div className=" active:text-red-500 grow text-center">stick</div>
-        </div>
+          {categoria.map((categoria, index) => {
+            return (
+              <button key={index} className="uppercase " onClick={selected}>
+                {categoria}
+              </button>
+            );
+          })}
+        </nav>
         <hr className="my-4 border-neutral-400" />
-        <Gelato gelati={gelati} />
+        <section className="flex gap-4 flex-col items-center ">
+          {prodotti.map((el) => (
+            <Gelato key={el.id} {...el} />
+          ))}
+        </section>
+        {/* <Gelato gelati={prodotti} /> */}
       </section>
     </>
   );
