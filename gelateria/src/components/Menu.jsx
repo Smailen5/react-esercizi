@@ -43,8 +43,8 @@ const Menu = () => {
 
       // questo timer esiste solo per mostrare la schermata di caricamento dei gelati
       const timer = setTimeout(() => {
-        // setFiltroProdotti(response.data.data), 
-        // setIsLoading(false);
+        setFiltroProdotti(response.data.data), 
+        setIsLoading(false);
       }, 2000);
       return () => clearTimeout(timer);
     } catch (error) {
@@ -82,15 +82,15 @@ const Menu = () => {
           })}
         </nav>
         <hr className="my-4 border-neutral-400" />
-        <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8 ">
           {isLoading ? (
             <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
-              <p className="text-center">Gelati in arrivo...</p>
+              <p className="text-center text-xl">Gelati in arrivo...</p>
             </section>
           ) : (
-            filtroProdotti.map((el) => <Gelato key={el.id} {...el} />)
+            <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
+            {filtroProdotti.map((el) => <Gelato key={el.id} {...el} />)}
+            </section>
           )}
-        </section>
       </section>
     </>
   );
