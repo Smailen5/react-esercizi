@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Gelato from "./Gelato";
 import axios from "axios";
@@ -73,7 +72,7 @@ const Menu = () => {
         </h3>
 
         <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
-          {categoria.map((categoria, index) => {
+          {categoria.map((index, categoria) => {
             return (
               <button
                 key={index}

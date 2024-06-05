@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 const Gelato = ({ id, nome, img, descrizione, prezzo, categoria }) => (
   <article
     key={id}
@@ -28,5 +29,15 @@ const Gelato = ({ id, nome, img, descrizione, prezzo, categoria }) => (
     </section>
   </article>
 );
+
+// Props Validation
+Gelato.propTypes = {
+  id: PropTypes.number.isRequired,
+  nome: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  descrizione: PropTypes.string.isRequired,
+  prezzo: PropTypes.number.isRequired,
+  categoria: PropTypes.string.isRequired,
+};
 
 export default Gelato;
