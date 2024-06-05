@@ -13,6 +13,7 @@ const Menu = () => {
   // EDIT: corretto
   const [selected, setSelected] = useState(0);
   const [filtroProdotti, setFiltroProdotti] = useState(prodotti);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Array per le categorie
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
@@ -35,7 +36,12 @@ const Menu = () => {
     try {
       const response = await axios.get(url);
       setProdotti(response.data.data);
-      setFiltroProdotti(response.data.data);
+
+      // questo timer esiste solo per mostrare la schermata di caricamento dei gelati
+      const timer = setTimeout(() => {
+        setFiltroProdotti(response.data.data), setIsLoading(false);
+      }, 2000);
+      return () => clearTimeout(timer);
     } catch (error) {
       console.log("Errore nel caricamento dei dati: ", error);
     }
@@ -53,7 +59,7 @@ const Menu = () => {
   //   setSelected(0);
   // };
 
-  console.log(prodotti);
+  // console.log(prodotti);
   // console.log(categoria);
 
   return (
@@ -85,9 +91,13 @@ const Menu = () => {
         <section className="flex gap-4 flex-col items-center ">
           {/* filtroProdotti anziche prodotti, in questo modo prendo i dati del filtro 
           senza toccare l'array prodotti */}
-          {filtroProdotti.map((el) => (
-            <Gelato key={el.id} {...el} />
-          ))}
+          {isLoading ? (
+            <div className=" bg-sky-100 rounded w-full p-10 animate-pulse">
+              <p className="text-center">Gelati in arrivo...</p>
+            </div>
+          ) : (
+            filtroProdotti.map((el) => <Gelato key={el.id} {...el} />)
+          )}
         </section>
       </section>
     </>
