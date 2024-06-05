@@ -48,7 +48,9 @@ const Menu = () => {
 
       // questo timer esiste solo per mostrare la schermata di caricamento dei gelati
       const timer = setTimeout(() => {
-        setFiltroProdotti(response.data.data), setIsLoading(false);
+        setFiltroProdotti(response.data.data),
+          setIsLoading(false),
+          setIsError(false);
       }, 2000);
       return () => clearTimeout(timer);
     } catch (error) {
@@ -69,6 +71,7 @@ const Menu = () => {
         <h3 className="text-center font-semibold uppercase my-4 tracking-wide lg:text-2xl">
           Le nostre scelte
         </h3>
+
         <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
           {categoria.map((categoria, index) => {
             return (
@@ -87,18 +90,8 @@ const Menu = () => {
             );
           })}
         </nav>
+
         <hr className="my-4 border-neutral-400" />
-        {/* {!isLoading && !isError ? (
-          <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
-            {filtroProdotti.map((el) => (
-              <Gelato key={el.id} {...el} />
-            ))}
-          </section>
-        ) : (
-          !isLoading && isError ? <section><p>Errore nel caricamento</p></section>
-        ) : (<section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
-        <p className="text-center text-xl">Gelati in arrivo...</p>
-      </section>) */}
 
         {!isLoading && !isError ? (
           <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
@@ -107,12 +100,14 @@ const Menu = () => {
             ))}
           </section>
         ) : !isLoading && isError ? (
-          <section className=" bg-red-400 rounded w-full p-10 animate-pulse mx-auto">
-            <p className="text-center text-xl font-bold">Errore nel caricamento, controlla la console o ricarica la pagina</p>
+          <section className=" bg-red-500 rounded w-full p-10 animate-pulse mx-auto">
+            <p className="text-center text-xl font-bold">
+              Errore nel caricamento, controlla la console o ricarica la pagina
+            </p>
           </section>
         ) : (
           <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
-            <p className="text-center text-xl">Gelati in arrivo...</p>
+            <p className="text-center text-xl">Gelati in arrivo 🍧...</p>
           </section>
         )}
       </section>
