@@ -3,6 +3,7 @@
 - [In locale](#in-locale)
 - [Sviluppo](#sviluppo)
 - [Soluzioni](#soluzioni)
+  - [Gelateria](#gelateria)
   - [Appuntamenti](#appuntamenti)
   - [Dark mode](#dark-mode)
   - [Vacanze](#vacanze)
@@ -27,6 +28,15 @@ Per questi progetti ho utilizzato:
 
 
 ## Soluzioni
+
+### Gelateria
+
+![Anteprima desktop](./Screenshot/gelateria.jpeg)
+
+[App gelateria](https://gelateria-app.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/gelateria)
+
 
 ### Appuntamenti
 
