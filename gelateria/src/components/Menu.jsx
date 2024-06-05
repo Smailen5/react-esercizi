@@ -8,6 +8,7 @@ import data from "../fakeData";
 
 const Menu = () => {
   const [prodotti, setProdotti] = useState(data);
+  const [selected, setSelected] = useState(0);
 
   // Array per le categorie
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
@@ -17,18 +18,15 @@ const Menu = () => {
     let newCategoria = prodotti.filter((el) => el.categoria == categoria);
     setProdotti(newCategoria);
   };
-  // Categoria selezionata
-  const selected = (e) => {
-    console.log(e.focus);
-  };
 
   // Ripopola array con i dati
   const reload = () => {
     setProdotti(data);
+    setSelected(0);
   };
 
-  console.log(prodotti);
-  // console.log(categoria);
+  console.log(selected);
+  // console.log(index);
 
   return (
     <>
@@ -37,12 +35,26 @@ const Menu = () => {
           Le nostre scelte
         </h3>
         <nav className="flex justify-between uppercase text-xs grow">
-          <button className="uppercase" onClick={reload}>
+          <button
+            className={`uppercase ${
+              selected === 0 ? "border-b-2 border-blue-400" : ""
+            }`}
+            onClick={reload}
+          >
             All
           </button>
           {categoria.map((categoria, index) => {
             return (
-              <button key={index} className="uppercase " onClick={selected}>
+              <button
+                key={index + 1}
+                // index + 1 per evitare conflitti con all
+                className={`uppercase ${
+                  index + 1 === selected && " border-b-2 border-blue-400"
+                }`}
+                onClick={() => {
+                  setSelected(index + 1);
+                }}
+              >
                 {categoria}
               </button>
             );
@@ -54,7 +66,6 @@ const Menu = () => {
             <Gelato key={el.id} {...el} />
           ))}
         </section>
-        {/* <Gelato gelati={prodotti} /> */}
       </section>
     </>
   );
