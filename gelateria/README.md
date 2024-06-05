@@ -17,7 +17,9 @@
 
 ### Link
 
-[Link della mia soluzione]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0cfd1aab-cb8c-49ba-a75a-f44da3a7a46d/deploy-status)](https://app.netlify.com/sites/gelateria-app/deploys)
+
+[Link della mia soluzione](https://gelateria-app.netlify.app/)
 
 [Link al progetto originale](https://gelateria-tutorial.netlify.app/) 
 
