@@ -12,10 +12,12 @@ const Menu = () => {
   // anche se all e all'indice 0 se non viene settato a 1 ci sono problemi
   // EDIT: corretto
   const [selected, setSelected] = useState(0);
+  // Array dove ci sono i prodotti filtrabili
   const [filtroProdotti, setFiltroProdotti] = useState(prodotti);
+  // Stato per il caricamento
   const [isLoading, setIsLoading] = useState(true);
 
-  // Array per le categorie
+  // Array per le categorie dei bottoni
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
   categoria.unshift("all");
 
@@ -52,23 +54,16 @@ const Menu = () => {
     getData();
   }, []);
 
-  // Ripopola array con i dati
-  // EDIT: non serve piu, viene gestito da filtroCategoria
-  // const reload = () => {
-  //   setProdotti(data);
-  //   setSelected(0);
-  // };
-
   // console.log(prodotti);
   // console.log(categoria);
 
   return (
     <>
       <section className="w-11/12">
-        <h3 className="text-center font-semibold uppercase my-4 tracking-wide">
+        <h3 className="text-center font-semibold uppercase my-4 tracking-wide lg:text-2xl">
           Le nostre scelte
         </h3>
-        <nav className="flex justify-between gap-x-6 uppercase text-xs grow">
+        <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
           {/* Map su categoria che deriva da prodotti, in questo modo i bottoni non cambiano */}
           {categoria.map((categoria, index) => {
             return (
@@ -88,7 +83,7 @@ const Menu = () => {
           })}
         </nav>
         <hr className="my-4 border-neutral-400" />
-        <section className="flex gap-4 flex-col items-center ">
+        <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8 ">
           {/* filtroProdotti anziche prodotti, in questo modo prendo i dati del filtro 
           senza toccare l'array prodotti */}
           {isLoading ? (
