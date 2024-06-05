@@ -17,6 +17,8 @@
 - `npm run dev`
 - apri il tuo browser al [link](http://localhost:5173/) per visualizzare il progetto in locale.
 
+In alternativa clicca sul nome del app che vuoi visualizzare.
+
 
 ## Sviluppo
 
@@ -59,6 +61,7 @@ Per questi progetti ho utilizzato:
 ### Vacanze
 
 <!-- ![Anteprima mobile](./Screenshot/vacanze-mobile.jpeg) -->
+
 ![Anteprima desktop](./Screenshot/vacanze-desktop.jpeg)
 
 [Vacanze](https://app-vacanze.netlify.app/)
