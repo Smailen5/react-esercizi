@@ -19,6 +19,9 @@ const Menu = () => {
   // Stato per il caricamento
   const [isLoading, setIsLoading] = useState(true);
 
+  // Stato di errore
+  const [isError, setIsError] = useState(false);
+
   // Categorie dei prodotti per i bottoni
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
   categoria.unshift("all");
@@ -37,18 +40,21 @@ const Menu = () => {
 
   // Chiamata alla API
   const getData = async () => {
+    setIsLoading(true);
+    setIsError(false);
     try {
       const response = await axios.get(url);
       setProdotti(response.data.data);
 
       // questo timer esiste solo per mostrare la schermata di caricamento dei gelati
       const timer = setTimeout(() => {
-        setFiltroProdotti(response.data.data), 
-        setIsLoading(false);
+        setFiltroProdotti(response.data.data), setIsLoading(false);
       }, 2000);
       return () => clearTimeout(timer);
     } catch (error) {
       console.log("Errore nel caricamento dei dati: ", error);
+      setIsLoading(false);
+      setIsError(true);
     }
   };
 
@@ -82,15 +88,33 @@ const Menu = () => {
           })}
         </nav>
         <hr className="my-4 border-neutral-400" />
-          {isLoading ? (
-            <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
-              <p className="text-center text-xl">Gelati in arrivo...</p>
-            </section>
-          ) : (
-            <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
-            {filtroProdotti.map((el) => <Gelato key={el.id} {...el} />)}
-            </section>
-          )}
+        {/* {!isLoading && !isError ? (
+          <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
+            {filtroProdotti.map((el) => (
+              <Gelato key={el.id} {...el} />
+            ))}
+          </section>
+        ) : (
+          !isLoading && isError ? <section><p>Errore nel caricamento</p></section>
+        ) : (<section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
+        <p className="text-center text-xl">Gelati in arrivo...</p>
+      </section>) */}
+
+        {!isLoading && !isError ? (
+          <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
+            {filtroProdotti.map((el) => (
+              <Gelato key={el.id} {...el} />
+            ))}
+          </section>
+        ) : !isLoading && isError ? (
+          <section className=" bg-red-400 rounded w-full p-10 animate-pulse mx-auto">
+            <p className="text-center text-xl font-bold">Errore nel caricamento, controlla la console o ricarica la pagina</p>
+          </section>
+        ) : (
+          <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
+            <p className="text-center text-xl">Gelati in arrivo...</p>
+          </section>
+        )}
       </section>
     </>
   );
