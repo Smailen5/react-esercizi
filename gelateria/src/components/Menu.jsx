@@ -1,32 +1,60 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Gelato from "./Gelato";
-// import axios from "axios";
-import data from "../fakeData";
+import axios from "axios";
+// import data from "../fakeData";
 
-// const url = "https://react--course-api.herokuapp.com/api/v1/data/gelateria";
+const url = "https://react--course-api.herokuapp.com/api/v1/data/gelateria";
 
 const Menu = () => {
-  const [prodotti, setProdotti] = useState(data);
+  // Salvo i dati qui dentro per poterli recuperare senza fare chiamate continue alla API
+  const [prodotti, setProdotti] = useState([]);
+  // anche se all e all'indice 0 se non viene settato a 1 ci sono problemi
+  // EDIT: corretto
   const [selected, setSelected] = useState(0);
+  const [filtroProdotti, setFiltroProdotti] = useState(prodotti);
 
   // Array per le categorie
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
+  categoria.unshift("all");
 
   // Filtro per categoria
-  const filtroCategoria = (categoria) => {
-    let newCategoria = prodotti.filter((el) => el.categoria == categoria);
-    setProdotti(newCategoria);
+  const filtroCategoria = (index, categoria) => {
+    setSelected(index);
+    if (categoria === "all") {
+      setFiltroProdotti(prodotti);
+    } else {
+      setFiltroProdotti(
+        prodotti.filter((el) => (el.categoria === categoria ? el : ""))
+      );
+    }
   };
+
+  // Chiamata alla API
+  const getData = async () => {
+    try {
+      const response = await axios.get(url);
+      setProdotti(response.data.data);
+      setFiltroProdotti(response.data.data);
+    } catch (error) {
+      console.log("Errore nel caricamento dei dati: ", error);
+    }
+  };
+
+  // Carico i dati solo una volta al render del componente
+  useEffect(() => {
+    getData();
+  }, []);
 
   // Ripopola array con i dati
-  const reload = () => {
-    setProdotti(data);
-    setSelected(0);
-  };
+  // EDIT: non serve piu, viene gestito da filtroCategoria
+  // const reload = () => {
+  //   setProdotti(data);
+  //   setSelected(0);
+  // };
 
-  console.log(selected);
-  // console.log(index);
+  console.log(prodotti);
+  // console.log(categoria);
 
   return (
     <>
@@ -34,25 +62,18 @@ const Menu = () => {
         <h3 className="text-center font-semibold uppercase my-4 tracking-wide">
           Le nostre scelte
         </h3>
-        <nav className="flex justify-between uppercase text-xs grow">
-          <button
-            className={`uppercase ${
-              selected === 0 ? "border-b-2 border-blue-400" : ""
-            }`}
-            onClick={reload}
-          >
-            All
-          </button>
+        <nav className="flex justify-between gap-x-6 uppercase text-xs grow">
+          {/* Map su categoria che deriva da prodotti, in questo modo i bottoni non cambiano */}
           {categoria.map((categoria, index) => {
             return (
               <button
-                key={index + 1}
-                // index + 1 per evitare conflitti con all
-                className={`uppercase ${
-                  index + 1 === selected && " border-b-2 border-blue-400"
+                key={index}
+                className={`uppercase w-full pb-1 ${
+                  index === selected && " border-b-2 border-blue-400 font-bold"
                 }`}
                 onClick={() => {
-                  setSelected(index + 1);
+                  setSelected(index);
+                  filtroCategoria(index, categoria);
                 }}
               >
                 {categoria}
@@ -62,7 +83,9 @@ const Menu = () => {
         </nav>
         <hr className="my-4 border-neutral-400" />
         <section className="flex gap-4 flex-col items-center ">
-          {prodotti.map((el) => (
+          {/* filtroProdotti anziche prodotti, in questo modo prendo i dati del filtro 
+          senza toccare l'array prodotti */}
+          {filtroProdotti.map((el) => (
             <Gelato key={el.id} {...el} />
           ))}
         </section>

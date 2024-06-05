@@ -14,6 +14,8 @@
 
 ### Link
 
+`npm install axios`
+
 [Link della mia soluzione]()
 
 [Link al progetto originale](https://gelateria-tutorial.netlify.app/) 
