@@ -24,6 +24,7 @@ const Menu = () => {
   // Categorie dei prodotti per i bottoni
   const categoria = Array.from(new Set(prodotti.map((el) => el.categoria)));
   categoria.unshift("all");
+  // console.log(categoria)
 
   // Filtro per categoria
   const filtroCategoria = (index, categoria) => {
@@ -72,7 +73,7 @@ const Menu = () => {
         </h3>
 
         <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
-          {categoria.map((index, categoria) => {
+          {categoria.map((categoria, index) => {
             return (
               <button
                 key={index}
