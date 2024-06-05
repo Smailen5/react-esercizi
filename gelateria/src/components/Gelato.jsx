@@ -8,9 +8,9 @@ const Gelato = (el) => {
   return (
     <article
       key={id}
-      className="w-full flex items-center gap-4 p-3 bg-sky-100 text-black shadow-lg rounded hover:bg-sky-400/[0.4] hover:scale-105 transition ease-linear md:w-full"
+      className="group w-full flex items-center gap-4 p-3 bg-sky-100 text-black shadow-lg rounded hover:bg-sky-400/[0.4] hover:scale-105 transition ease-linear md:w-full"
     >
-      <div className="min-w-32 h-24 p-1 bg-white rounded-md shadow-md group-hover:animate-bounce">
+      <div className="min-w-32 h-24 p-1 bg-white rounded-md shadow-md group-hover:scale-110 delay-500 transition-transform md:group-hover:animate-bounce">
         <img
           src={img}
           alt={nome}
