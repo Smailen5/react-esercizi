@@ -3,8 +3,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className=" ">
-      <p>sono in App</p>
+    <div className="w-full h-screen">
       <Navbar />
     </div>
   );

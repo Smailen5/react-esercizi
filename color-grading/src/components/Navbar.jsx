@@ -7,16 +7,19 @@ function Navbar() {
     quantity: "",
   });
 
+  // gestisce l'invio del form
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("dati non inviati");
   };
 
+  // aggiorna lo stato e salva i dati in selected
   const handleChange = (e) => {
     const { name, value } = e.target; 
     setSelected({ ...selected, [name]: value }); 
   };
 
+  // solo per vedere se lo stato viene aggiornato correttamente
   useEffect(()=>{
     console.log(selected)
   }, [selected])
@@ -24,7 +27,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="w-full h-auto bg-sky-50 p-6 ps-[10%]">
+      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%]">
         <form onSubmit={handleSubmit} action="#" className="flex gap-6">
           <label htmlFor="color" className=" hidden">
             Colore
