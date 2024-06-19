@@ -1,30 +1,43 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-// import Values from "values.js";
+import Values from "values.js";
 import SingleColor from "./SingleColor";
-// import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 const ColorGrading = () => {
-  const [selected, setSelected] = useState({
-    color: '',
+  const [coloreSelezionato, setColoreSelezionato] = useState({
+    color: "",
     quantity: "",
   });
+
+  const [coloreGenerato, setColoreGenerato] = useState([]);
 
   // gestisce l'invio del form
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (coloreSelezionato.color && coloreSelezionato.quantity) {
+      const { color, quantity } = coloreSelezionato;
+      setColoreGenerato(
+        // attenzione, se seleziono 10 quantita mi ritorna 11 elementi
+        new Values(color).all(Math.round((100 / parseInt(quantity, 10)) * 2))
+      );
+      // console.log(color, quantity);
+      // ritorna un colore rgb, attenzione che bisogna trasformarlo in hex
+      console.log(coloreGenerato);
+    }
     console.log("dati non inviati");
   };
 
-  // aggiorna lo stato e salva i dati in selected
+  // aggiorna lo stato e salva i dati in coloreSelezionato
   const handleChange = (e) => {
-    const { name, value } = e.target; 
-    setSelected({ ...selected, [name]: value }); 
+    const { name, value } = e.target;
+    setColoreSelezionato({ ...coloreSelezionato, [name]: value });
   };
 
   // solo per vedere se lo stato viene aggiornato correttamente
-  useEffect(()=>{
-    console.log(selected)
-  }, [selected])
+  useEffect(() => {
+    console.log(coloreSelezionato)
+  }, [coloreSelezionato]);
 
   return (
     <>
@@ -66,7 +79,10 @@ const ColorGrading = () => {
       </nav>
 
       <section className=" grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <SingleColor />
+        {coloreGenerato.map((color) => (
+          <SingleColor rgb={color.rgb} key={uuidv4()} />
+        ))}
+        {/* <SingleColor key={uuidv4()} /> */}
       </section>
     </>
   );
