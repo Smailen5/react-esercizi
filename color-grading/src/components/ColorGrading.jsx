@@ -13,7 +13,7 @@ const ColorGrading = () => {
     quantity: "",
   });
   const [isError, setIsError] = useState(false);
-  const [messageError, setMessageError] = useState('');
+  const [messageError, setMessageError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   // gestisce l'invio del form, controlla che tutti i campi di coloreSelezionato siano riempiti,
@@ -25,13 +25,19 @@ const ColorGrading = () => {
     if (coloreSelezionato.color && coloreSelezionato.quantity) {
       const { color, quantity } = coloreSelezionato;
       setIsLoading(true);
-      setIsError(false)
+      setIsError(false);
       try {
-        const colors = new Values(color).all(Math.round((100/ parseInt(quantity, 10))*2))
+        const colors = new Values(color).all(
+          Math.round((100 / parseInt(quantity, 10)) * 2)
+        ); // il problema delle 11 sfumature anziche 10 e colpa della libreria, si puo usare il metodo slice per avere la giusta quantita di sfumature
+        const controllaColori = colors.slice(0, parseInt(quantity, 10)); // serve per correggere la quantita di sfumature visualizzate
+        // console.log(controllaColori);
         // setTimeout solo per avere un tempo di caricamento visibile ad occhio
         setTimeout(() => {
-          setColoreGenerato(colors)
-          setIsLoading(false)
+          if (controllaColori.length == quantity) { // controllo se la lunghezza dell'array e quella selezionata dall'utente
+            setColoreGenerato(controllaColori);
+          }
+          setIsLoading(false);
         }, 2000);
       } catch (error) {
         setIsError(true);
@@ -105,7 +111,11 @@ const ColorGrading = () => {
           // messaggio di errore
           <div className=" w-full h-screen absolute flex justify-center items-center">
             <p className=" font-semibold bg-red-400 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
-              {messageError} <span><br />In alternativa ricarica la pagina</span>
+              {messageError}{" "}
+              <span>
+                <br />
+                In alternativa ricarica la pagina
+              </span>
             </p>
           </div>
         ) : coloreGenerato.length > 0 ? (
