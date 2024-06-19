@@ -5,38 +5,52 @@ import SingleColor from "./SingleColor";
 import { v4 as uuidv4 } from "uuid";
 
 const ColorGrading = () => {
+  // contenitore di tutti i colori generati
+  const [coloreGenerato, setColoreGenerato] = useState([]);
+  // colore selezionato dal utente
   const [coloreSelezionato, setColoreSelezionato] = useState({
     color: "",
     quantity: "",
   });
+  const [isError, setIsError] = useState(false);
+  const [messageError, setMessageError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [coloreGenerato, setColoreGenerato] = useState([]);
-
-  // gestisce l'invio del form
+  // gestisce l'invio del form, controlla che tutti i campi di coloreSelezionato siano riempiti,
+  // genera un array in setColoreGenerato
   const handleSubmit = (e) => {
     e.preventDefault();
+    // setIsError(true);
+    // setIsLoading(false);
     if (coloreSelezionato.color && coloreSelezionato.quantity) {
       const { color, quantity } = coloreSelezionato;
-      setColoreGenerato(
-        // attenzione, se seleziono 10 quantita mi ritorna 11 elementi
-        new Values(color).all(Math.round((100 / parseInt(quantity, 10)) * 2))
-      );
-      // console.log(color, quantity);
-      // ritorna un colore rgb, attenzione che bisogna trasformarlo in hex
-      console.log(coloreGenerato);
+      setIsLoading(true);
+      setIsError(false)
+      try {
+        const colors = new Values(color).all(Math.round((100/ parseInt(quantity, 10))*2))
+        // setTimeout solo per avere un tempo di caricamento visibile ad occhio
+        setTimeout(() => {
+          setColoreGenerato(colors)
+          setIsLoading(false)
+        }, 2000);
+      } catch (error) {
+        setIsError(true);
+        setMessageError(`oh-oh, ho trovato questo errore ${error.message}`);
+        setIsLoading(false);
+      }
     }
-    console.log("dati non inviati");
+    // console.log("dati non inviati");
   };
 
   // aggiorna lo stato e salva i dati in coloreSelezionato
-  const handleChange = (e) => {
+  const selezionaColore = (e) => {
     const { name, value } = e.target;
     setColoreSelezionato({ ...coloreSelezionato, [name]: value });
   };
 
   // solo per vedere se lo stato viene aggiornato correttamente
   useEffect(() => {
-    console.log(coloreSelezionato)
+    console.log(coloreSelezionato);
   }, [coloreSelezionato]);
 
   return (
@@ -47,7 +61,7 @@ const ColorGrading = () => {
             Colore
           </label>
           <input
-            onChange={handleChange}
+            onChange={selezionaColore}
             id="color"
             name="color"
             type="text"
@@ -59,12 +73,13 @@ const ColorGrading = () => {
             Quantita
           </label>
           <input
-            onChange={handleChange}
+            onChange={selezionaColore}
             id="quantity"
             name="quantity"
             type="number"
-            max={25}
+            max={60}
             min={5}
+            step={5}
             className=" bg-transparent border-b-2 border-gray-300 px-2 w-20"
             placeholder="10"
           />
@@ -79,13 +94,47 @@ const ColorGrading = () => {
       </nav>
 
       <section className=" grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {coloreGenerato.map((color) => (
-          <SingleColor rgb={color.rgb} key={uuidv4()} />
-        ))}
-        {/* <SingleColor key={uuidv4()} /> */}
+        {isLoading ? (
+          // messaggio di caricamento
+          <div className=" w-full h-screen absolute flex justify-center items-center">
+            <p className=" font-semibold bg-green-200 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
+              Sto caricando
+            </p>
+          </div>
+        ) : isError ? (
+          // messaggio di errore
+          <div className=" w-full h-screen absolute flex justify-center items-center">
+            <p className=" font-semibold bg-red-400 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
+              {messageError} <span><br />In alternativa ricarica la pagina</span>
+            </p>
+          </div>
+        ) : coloreGenerato.length > 0 ? (
+          // vengono generati i colori
+          coloreGenerato.map((color) => (
+            <SingleColor rgb={color.rgb} key={uuidv4()} />
+          ))
+        ) : (
+          // messaggio iniziale
+          <div className=" w-full h-screen absolute flex justify-center items-center">
+            <p className=" font-semibold bg-sky-300 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
+              Inserisci un colore e una quantita per generare una sfumatura.
+              <br />
+              minimo 5 massimo 60
+            </p>
+          </div>
+        )}
       </section>
     </>
   );
 };
 
 export default ColorGrading;
+
+// coloreGenerato contiene un array di oggetti cosi composto
+const _Values = {
+  alpha: 1,
+  rgb: [(255, 255, 255)], // mi serve solo rgb
+  type: "tint",
+  weight: 100,
+  hex: "ffffff", // potrei usare direttamente hex e aggiungere un '#' davanti
+};

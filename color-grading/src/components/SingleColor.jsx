@@ -14,7 +14,7 @@ const SingleColor = ({ rgb }) => {
         .then(() => console.log("colore copiato"));
       setMessage(true);
     } else {
-      console.error('rgb invalido')
+      console.error("rgb invalido");
     }
   };
   // console.log(rgb)
@@ -37,7 +37,6 @@ const SingleColor = ({ rgb }) => {
         className=" rounded p-8 py-14 text-center font-semibold"
         style={{ background: rgbToHex(...rgb) }}
       >
-        Single Color
         <p>{rgbToHex(...rgb)}</p>
         {message && <p>Colore copiato</p>}
       </div>
