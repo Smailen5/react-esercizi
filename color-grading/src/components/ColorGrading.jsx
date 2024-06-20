@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import Values from "values.js";
 import SingleColor from "./SingleColor";
 import { v4 as uuidv4 } from "uuid";
@@ -8,78 +8,100 @@ const ColorGrading = () => {
   // contenitore di tutti i colori generati
   const [coloreGenerato, setColoreGenerato] = useState([]);
   // colore selezionato dal utente
-  const [coloreSelezionato, setColoreSelezionato] = useState({
-    color: "",
-    quantity: "",
-  });
+  // const [coloreSelezionato, setColoreSelezionato] = useState({
+  //   color: "",
+  //   quantity: "",
+  // });
   const [isError, setIsError] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // React hook form, convalida form e espressione regolare
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   // gestisce l'invio del form, controlla che tutti i campi di coloreSelezionato siano riempiti,
-  // genera un array in setColoreGenerato
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // setIsError(true);
-    // setIsLoading(false);
-    if (coloreSelezionato.color && coloreSelezionato.quantity) {
-      const { color, quantity } = coloreSelezionato;
-      setIsLoading(true);
-      setIsError(false);
-      try {
-        const colors = new Values(color).all(
-          Math.round((100 / parseInt(quantity, 10)) * 2)
-        ); // il problema delle 11 sfumature anziche 10 e colpa della libreria, si puo usare il metodo slice per avere la giusta quantita di sfumature
-        const controllaColori = colors.slice(0, parseInt(quantity, 10)); // serve per correggere la quantita di sfumature visualizzate
-        // console.log(controllaColori);
-        // setTimeout solo per avere un tempo di caricamento visibile ad occhio
-        setTimeout(() => {
-          if (controllaColori.length == quantity) { // controllo se la lunghezza dell'array e quella selezionata dall'utente
-            setColoreGenerato(controllaColori);
-          }
+
+  const onSubmit = (data) => {
+    const { color, quantity } = data;
+    // e.preventDefault(); solo se non usi react hook form
+    // if (coloreSelezionato.color && coloreSelezionato.quantity) {
+    // const { color, quantity } = coloreSelezionato;
+    setIsLoading(true);
+    setIsError(false);
+    try {
+      // genera un array che poi va salvato in setColoreGenerato
+      const colors = new Values(color).all(
+        Math.round((100 / parseInt(quantity, 10)) * 2)
+      ); // il problema delle 11 sfumature anziche 10 e colpa della libreria, si puo usare il metodo slice per avere la giusta quantita di sfumature
+      const controllaColori = colors.slice(0, parseInt(quantity, 10)); // serve per correggere la quantita di sfumature visualizzate
+      // setTimeout solo per avere un tempo di caricamento visibile ad occhio
+      setTimeout(() => {
+        // controllo se la lunghezza dell'array e quella selezionata dall'utente
+        if (controllaColori.length == quantity) {
+          setColoreGenerato(controllaColori);
           setIsLoading(false);
-        }, 2000);
-      } catch (error) {
-        setIsError(true);
-        setMessageError(`oh-oh, ho trovato questo errore ${error.message}`);
-        setIsLoading(false);
-      }
+        }
+      }, 2000);
+    } catch (error) {
+      setIsError(true);
+      setMessageError(`oh-oh, ho trovato questo errore ${error.message}`);
+      setIsLoading(false);
     }
-    // console.log("dati non inviati");
+    // } attenzione questa parentesi va con if
   };
 
   // aggiorna lo stato e salva i dati in coloreSelezionato
-  const selezionaColore = (e) => {
-    const { name, value } = e.target;
-    setColoreSelezionato({ ...coloreSelezionato, [name]: value });
-  };
+  // const selezionaColore = (e) => {
+  //   const { name, value } = e.target;
+  //   setColoreSelezionato({ ...coloreSelezionato, [name]: value });
+  // };
 
   // solo per vedere se lo stato viene aggiornato correttamente
-  useEffect(() => {
-    console.log(coloreSelezionato);
-  }, [coloreSelezionato]);
+  // useEffect(() => {
+  //   console.log(coloreSelezionato);
+  // }, [coloreSelezionato]);
 
   return (
     <>
+      {/* ci starebbe una bella convalida del form, minimo 3 lettere/numeri incluso '#', valori disponibili da a-f e da 0-9
+    Espressione regolare per colori esadecimali: /^#([0-9A-F]{3}){1,2}$/i */}
       <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%]">
-        <form onSubmit={handleSubmit} action="#" className="flex gap-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          action="#"
+          className="flex gap-6"
+        >
           <label htmlFor="color" className=" hidden">
             Colore
           </label>
           <input
-            onChange={selezionaColore}
+            // onChange={selezionaColore}
             id="color"
             name="color"
             type="text"
             className=" bg-transparent border-b-2 border-gray-300 px-2"
             placeholder="#1194ec"
+            {...register("color", {
+              pattern: {
+                value: /^#([0-9A-F]{3}){1,2}$/i,
+                message: "messaggio di errore",
+              },
+              required: "Il campo colore e necessario",
+            })}
           />
-
+          {/* messaggio di errore input colore */}
+          {errors.color && (
+            <p className="text-red-500">{errors.color.message}</p>
+          )}
           <label htmlFor="quantity" className=" hidden">
             Quantita
           </label>
           <input
-            onChange={selezionaColore}
+            // onChange={selezionaColore}
             id="quantity"
             name="quantity"
             type="number"
@@ -88,7 +110,16 @@ const ColorGrading = () => {
             step={5}
             className=" bg-transparent border-b-2 border-gray-300 px-2 w-20"
             placeholder="10"
+            {...register("quantity", {
+              required: "il campo quantita e obbligatorio",
+              min: { value: 5, message: "il valore minimo e 5" },
+              max: { value: 60, message: "il valore massimo e 60" },
+            })}
           />
+          {/* messaggio di errore input quantita */}
+          {errors.quantity && (
+            <p className="text-red-500">{errors.quantity.message}</p>
+          )}
 
           <button
             type="submit"
@@ -141,6 +172,7 @@ const ColorGrading = () => {
 export default ColorGrading;
 
 // coloreGenerato contiene un array di oggetti cosi composto
+// eslint-disable-next-line no-unused-vars
 const _Values = {
   alpha: 1,
   rgb: [(255, 255, 255)], // mi serve solo rgb

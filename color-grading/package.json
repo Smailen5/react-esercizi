@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.0",
     "uuid": "^10.0.0",
     "value": "^0.3.3",
     "values.js": "^2.1.1"
