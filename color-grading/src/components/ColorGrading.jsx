@@ -65,72 +65,110 @@ const ColorGrading = () => {
   //   console.log(coloreSelezionato);
   // }, [coloreSelezionato]);
 
+  // tema dark o light
+  const [theme, setTheme] = useState(true);
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <>
       {/* ci starebbe una bella convalida del form, minimo 3 lettere/numeri incluso '#', valori disponibili da a-f e da 0-9
     Espressione regolare per colori esadecimali: /^#([0-9A-F]{3}){1,2}$/i */}
-      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%]">
+      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%] flex justify-between dark:bg-neutral-500">
         <form
           onSubmit={handleSubmit(onSubmit)}
           action="#"
-          className="flex gap-6"
+          className="flex gap-8"
         >
-          <label htmlFor="color" className=" hidden">
-            Colore
-          </label>
-          <input
-            // onChange={selezionaColore}
-            id="color"
-            name="color"
-            type="text"
-            className=" bg-transparent border-b-2 border-gray-300 px-2"
-            placeholder="#1194ec"
-            {...register("color", {
-              pattern: {
-                value: /^#([0-9A-F]{3}){1,2}$/i,
-                message: "messaggio di errore",
-              },
-              required: "Il campo colore e necessario",
-            })}
-          />
-          {/* messaggio di errore input colore */}
-          {errors.color && (
-            <p className="text-red-500">{errors.color.message}</p>
-          )}
-          <label htmlFor="quantity" className=" hidden">
-            Quantita
-          </label>
-          <input
-            // onChange={selezionaColore}
-            id="quantity"
-            name="quantity"
-            type="number"
-            max={60}
-            min={5}
-            step={5}
-            className=" bg-transparent border-b-2 border-gray-300 px-2 w-20"
-            placeholder="10"
-            {...register("quantity", {
-              required: "il campo quantita e obbligatorio",
-              min: { value: 5, message: "il valore minimo e 5" },
-              max: { value: 60, message: "il valore massimo e 60" },
-            })}
-          />
-          {/* messaggio di errore input quantita */}
-          {errors.quantity && (
-            <p className="text-red-500">{errors.quantity.message}</p>
-          )}
+          <div>
+            <label htmlFor="color" className=" hidden">
+              Colore
+            </label>
+            <input
+              // onChange={selezionaColore}
+              id="color"
+              name="color"
+              type="text"
+              className=" bg-transparent focus:bg-transparent active:bg-transparent border-b-2 border-gray-300 px-2"
+              style={{
+                // forzo il background a trasparente
+                backgroundColor: "transparent",
+              }}
+              placeholder="#1194ec"
+              {...register("color", {
+                pattern: {
+                  value: /^#([0-9A-F]{3}){1,2}$/i,
+                  message: "colore non corretto",
+                },
+                required: "colore necessario",
+              })}
+            />
+            {/* messaggio di errore input colore */}
+            {errors.color && (
+              <p className="text-red-500">{errors.color.message}</p>
+            )}
+          </div>
 
+          <div>
+            <label htmlFor="quantity" className=" hidden">
+              Quantita
+            </label>
+            <input
+              // onChange={selezionaColore}
+              id="quantity"
+              name="quantity"
+              type="number"
+              step={5}
+              className=" bg-transparent border-b-2 border-gray-300 px-2 w-20"
+              placeholder="10"
+              {...register("quantity", {
+                required: "quantita obbligatoria",
+                min: { value: 5, message: "valore minimo 5" },
+                max: { value: 60, message: "valore massimo 60" },
+              })}
+            />
+            {/* messaggio di errore input quantita */}
+            {errors.quantity && (
+              <p className="text-red-500">{errors.quantity.message}</p>
+            )}
+          </div>
+
+          {/* bottone submit form */}
           <button
             type="submit"
-            className=" text-sm uppercase bg-sky-200 px-4 rounded-full shadow-sm shadow-indigo-500/40 hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105"
+            className=" text-sm uppercase bg-sky-200 px-4 rounded-xl shadow-sm shadow-indigo-500/40 hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400 dark:text-white"
           >
             Create
           </button>
         </form>
+        {/* bottone dark mode dinamico */}
+        <button
+          onClick={() => setTheme(!theme)}
+          className="bg-sky-200 shadow-sm hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 shadow-indigo-500/40 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
+          style={{
+            // stile comune per entrambi i tasti
+            fontSize: "0.75rem",
+            lineHeight: "1rem",
+            borderRadius: "0.75rem",
+            paddingTop: "0.25rem",
+            paddingRight: "1rem",
+            paddingBottom: "0.25rem",
+            paddingLeft: "1rem",
+            textTransform: "uppercase",
+          }}
+        >
+          <p className="text-black dark:text-white p-2">
+            {theme ? "dark" : "light"} mode
+          </p>
+        </button>
       </nav>
 
-      <section className=" grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <section className=" grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 ">
         {isLoading ? (
           // messaggio di caricamento
           <div className=" w-full h-screen absolute flex justify-center items-center">

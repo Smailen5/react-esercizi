@@ -3,7 +3,7 @@ import ColorGrading from "./components/ColorGrading";
 
 function App() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen dark:bg-neutral-600">
       {/* <Navbar /> */}
       <ColorGrading />
     </div>

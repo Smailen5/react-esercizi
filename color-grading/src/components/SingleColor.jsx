@@ -18,7 +18,7 @@ const SingleColor = ({ rgb }) => {
     }
   };
   // console.log(rgb)
-  console.log(rgbToHex(...rgb));
+  // console.log(rgbToHex(...rgb));
 
   // gestisce la visualizzazione del messaggio
   useEffect(() => {
