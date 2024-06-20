@@ -94,7 +94,7 @@ const ColorGrading = () => {
               id="color"
               name="color"
               type="text"
-              className=" bg-transparent focus:bg-transparent active:bg-transparent border-b-2 border-gray-300 px-2"
+              className=" bg-transparent focus:bg-transparent active:bg-transparent border-b-2 border-gray-300 px-2 dark:text-white"
               style={{
                 // forzo il background a trasparente
                 backgroundColor: "transparent",
@@ -124,7 +124,7 @@ const ColorGrading = () => {
               name="quantity"
               type="number"
               step={5}
-              className=" bg-transparent border-b-2 border-gray-300 px-2 w-20"
+              className=" bg-transparent border-b-2 border-gray-300 px-2 w-20 dark:text-white"
               placeholder="10"
               {...register("quantity", {
                 required: "quantita obbligatoria",
@@ -168,7 +168,7 @@ const ColorGrading = () => {
         </button>
       </nav>
 
-      <section className=" grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 ">
+      <section className=" grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 dark:bg-neutral-600">
         {isLoading ? (
           // messaggio di caricamento
           <div className=" w-full h-screen absolute flex justify-center items-center">
