@@ -79,12 +79,12 @@ const ColorGrading = () => {
     <>
       {/* ci starebbe una bella convalida del form, minimo 3 lettere/numeri incluso '#', valori disponibili da a-f e da 0-9
     Espressione regolare per colori esadecimali: /^#([0-9A-F]{3}){1,2}$/i */}
-      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%] flex justify-between dark:bg-neutral-500">
-        <div className="flex justify-between gap-4">
+      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%]  dark:bg-neutral-500">
+        <div className="flex justify-between gap-4 md:w-full">
           <form
             onSubmit={handleSubmit(onSubmit)}
             action="#"
-            className="grid grid-cols-2 gap-8"
+            className="grid grid-cols-2 gap-8 md:grid-cols-3"
           >
             <div>
               <label htmlFor="color" className=" hidden">
@@ -150,7 +150,7 @@ const ColorGrading = () => {
           {/* bottone dark mode dinamico */}
           <button
             onClick={() => setTheme(!theme)}
-            className=" h-14 bg-sky-200 shadow-sm hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 shadow-indigo-500/40 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
+            className=" h-12 md:h-auto bg-sky-200 shadow-sm hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 shadow-indigo-500/40 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
             style={{
               // stile comune per entrambi i tasti
               fontSize: "0.75rem",
