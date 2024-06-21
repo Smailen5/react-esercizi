@@ -8,6 +8,7 @@
   - [Dark mode](#dark-mode)
   - [Vacanze](#vacanze)
   - [Slider](#slider)
+  - [Generatore di sfumature](#generatore-di-sfumature)
 - [Author](#author)
 
 ## In locale
@@ -19,7 +20,6 @@
 
 In alternativa clicca sul nome del app che vuoi visualizzare.
 
-
 ## Sviluppo
 
 Per questi progetti ho utilizzato:
@@ -27,7 +27,6 @@ Per questi progetti ho utilizzato:
 - Bootstrap
 - Tailwind css
 - React+vite
-
 
 ## Soluzioni
 
@@ -39,7 +38,6 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/gelateria)
 
-
 ### Appuntamenti
 
 ![Anteprima desktop](./Screenshot/appuntamenti.jpeg)
@@ -48,7 +46,6 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/appuntamenti)
 
-
 ### Dark mode
 
 ![Anteprima desktop](./Screenshot/dark%20mode.jpeg)
@@ -56,7 +53,6 @@ Per questi progetti ho utilizzato:
 [Dark mode](https://app-dark-mode.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
-
 
 ### Vacanze
 
@@ -68,21 +64,26 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
 
-
 ### Slider
 
 <!-- ![Anteprima mobile](./Screenshot/slider-mobile.jpeg) -->
 
-![Anteprima mobile](./Screenshot/slider-desktop.jpeg)
+![Anteprima desktop](./Screenshot/slider-desktop.jpeg)
 
 [Slider](https://app-slider.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/slider)
 
+# Generatore di sfumature
+
+![Anteprima desktop](./Screenshot//color-gradient-desktop.jpeg)
+
+[Generatore di sfumature](https://shade-color.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/color-grading)
 
 ## Autore
 
 [Git Hub](https://github.com/Smailen5)
 
 [Linkedin](https://www.linkedin.com/in/smailen-vargas/)
-
