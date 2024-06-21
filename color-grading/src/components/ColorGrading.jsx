@@ -170,19 +170,19 @@ const ColorGrading = () => {
         </div>
       </nav>
 
-      <section className=" grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 dark:bg-neutral-600">
+      <section className=" relative grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 dark:bg-neutral-600">
         {isLoading ? (
           // messaggio di caricamento
           <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-green-200 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
+            <p className=" font-semibold bg-green-200 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
               Sto caricando
             </p>
           </div>
         ) : isError ? (
           // messaggio di errore
           <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-red-400 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
-              {messageError}{" "}
+            <p className=" font-semibold bg-red-400 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
+              {messageError}
               <span>
                 <br />
                 In alternativa ricarica la pagina
@@ -197,7 +197,7 @@ const ColorGrading = () => {
         ) : (
           // messaggio iniziale
           <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-sky-300 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-16">
+            <p className=" font-semibold bg-sky-300 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
               Inserisci un colore e una quantita per generare una sfumatura.
               <br />
               minimo 5 massimo 60
