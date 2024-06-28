@@ -29,7 +29,7 @@ const Navbar = () => {
             {links.map((link) => (
               <li
                 key={link.id}
-                className="w-24 text-center transition-all hover:scale-110 hover:bg-sky-50 hover:text-sky-300"
+                className="w-24 rounded-xl text-center transition-all hover:scale-110 hover:bg-sky-50 hover:text-sky-300"
               >
                 <a
                   href={link.url}
