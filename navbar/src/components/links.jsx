@@ -43,12 +43,12 @@ const socialLinks = [
 
 const SocialBar = () => {
   return (
-    <ul className="social">
+    <ul className="flex gap-8 text-sky-500">
       {socialLinks.map((el) => {
         const { id, url, icon } = el;
         return (
-          <li key={id}>
-            <a href={url} alt="social">
+          <li key={id} className="hover:scale-125 transition-all">
+            <a href={url} alt={`social ${url}`}>
               {icon}
             </a>
           </li>

@@ -1,10 +1,8 @@
 // import { useState, useEffect, useRef } from "react";
 import { useState } from "react";
-import logo from "../assets/logo.svg";
-// import { SocialBar } from "./links";
 import { FaBars } from "react-icons/fa";
+import logo from "../assets/logo.svg";
 import { SocialBar, links } from "./links";
-// import { links, SocialBar } from "./links";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -19,29 +17,35 @@ const Navbar = () => {
         <div className="flex items-center justify-between md:justify-around">
           <div className="flex items-center gap-2">
             <img src={logo} alt="logo" className="h-8 w-8" />
-            <p>DevBar</p>
+            <p className="md:text-xl md:font-semibold">DevBar</p>
           </div>
+          {/* Bottone hamburger */}
           <FaBars
             className={`text-xl md:hidden md:${isNavbarVisible ? "rotate-90 transition-all" : "rotate-0 transition-all"} sm:hover:rotate-90 sm:hover:text-sky-300`}
             onClick={handleClick}
           />
-          <div className="hidden md:flex gap-6">
+          {/* Link per desktop */}
+          <ul className="hidden gap-4 md:flex">
             {links.map((link) => (
-              <a
+              <li
                 key={link.id}
-                href={link.url}
-                alt={link.text}
-                className="font-semibold capitalize"
+                className="w-24 text-center transition-all hover:scale-110 hover:bg-sky-50 hover:text-sky-300"
               >
-                {link.text}
-              </a>
+                <a
+                  href={link.url}
+                  alt={link.text}
+                  className="font-semibold capitalize"
+                >
+                  {link.text}
+                </a>
+              </li>
             ))}
-          </div>
-          <div className="hidden md:block">
-            {SocialBar()}
-          </div>
+          </ul>
+
+          <div className="hidden md:block">{SocialBar()}</div>
         </div>
 
+        {/* Menu a scomparsa */}
         {isNavbarVisible ? (
           <ul
             className={`mt-4 animate-slide${isNavbarVisible ? "Down" : "Up"}`}
