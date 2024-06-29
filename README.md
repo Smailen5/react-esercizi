@@ -39,6 +39,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/gelateria)
 
+---
 
 ### Appuntamenti
 
@@ -48,6 +49,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/appuntamenti)
 
+---
 
 ### Dark mode
 
@@ -57,6 +59,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/dark-mode)
 
+---
 
 ### Vacanze
 
@@ -68,6 +71,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/vacanze)
 
+---
 
 ### Slider
 
@@ -79,6 +83,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/slider)
 
+---
 
 # Generatore di sfumature
 
@@ -88,6 +93,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/color-grading)
 
+---
 
 ### Navbar
 
@@ -97,6 +103,7 @@ Per questi progetti ho utilizzato:
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/navbar)
 
+---
 
 ## Autore
 
