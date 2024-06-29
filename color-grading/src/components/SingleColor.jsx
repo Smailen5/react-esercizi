@@ -33,7 +33,7 @@ const SingleColor = ({ rgb }) => {
     <>
       <div
         onClick={handleClick}
-        className=" rounded p-8 py-14 text-center font-semibold dark:border hover:scale-105 dark:text-white"
+        className="rounded p-8 py-14 text-center font-semibold hover:scale-105 dark:border dark:text-white"
         style={{ background: rgbToHex(...rgb) }}
       >
         <p className=" ">{rgbToHex(...rgb)}</p>

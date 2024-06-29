@@ -35,7 +35,7 @@ const ColorGrading = () => {
     try {
       // genera un array che poi va salvato in setColoreGenerato
       const colors = new Values(color).all(
-        Math.round((100 / parseInt(quantity, 10)) * 2)
+        Math.round((100 / parseInt(quantity, 10)) * 2),
       ); // il problema delle 11 sfumature anziche 10 e colpa della libreria, si puo usare il metodo slice per avere la giusta quantita di sfumature
       const controllaColori = colors.slice(0, parseInt(quantity, 10)); // serve per correggere la quantita di sfumature visualizzate
       // setTimeout solo per avere un tempo di caricamento visibile ad occhio
@@ -79,7 +79,7 @@ const ColorGrading = () => {
     <>
       {/* ci starebbe una bella convalida del form, minimo 3 lettere/numeri incluso '#', valori disponibili da a-f e da 0-9
     Espressione regolare per colori esadecimali: /^#([0-9A-F]{3}){1,2}$/i */}
-      <nav className=" w-full h-auto bg-sky-50 p-6 ps-[10%]  dark:bg-neutral-500">
+      <nav className="h-auto w-full bg-sky-50 p-6 ps-[10%] dark:bg-neutral-500">
         <div className="flex justify-between gap-4 md:w-full">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -87,7 +87,7 @@ const ColorGrading = () => {
             className="grid grid-cols-2 gap-8 md:grid-cols-3"
           >
             <div>
-              <label htmlFor="color" className=" hidden">
+              <label htmlFor="color" className="hidden">
                 Colore
               </label>
               <input
@@ -95,7 +95,7 @@ const ColorGrading = () => {
                 id="color"
                 name="color"
                 type="text"
-                className=" w-full bg-transparent focus:bg-transparent active:bg-transparent border-b-2 border-gray-300 px-2 dark:text-white"
+                className="w-full border-b-2 border-gray-300 bg-transparent px-2 focus:bg-transparent active:bg-transparent dark:text-white"
                 style={{
                   // forzo il background a trasparente
                   backgroundColor: "transparent",
@@ -116,7 +116,7 @@ const ColorGrading = () => {
             </div>
 
             <div>
-              <label htmlFor="quantity" className=" hidden">
+              <label htmlFor="quantity" className="hidden">
                 Quantita
               </label>
               <input
@@ -125,7 +125,7 @@ const ColorGrading = () => {
                 name="quantity"
                 type="number"
                 step={5}
-                className=" bg-transparent border-b-2 border-gray-300 px-2 w-20 dark:text-white"
+                className="w-20 border-b-2 border-gray-300 bg-transparent px-2 dark:text-white"
                 placeholder="10"
                 {...register("quantity", {
                   required: "quantita obbligatoria",
@@ -142,7 +142,7 @@ const ColorGrading = () => {
             {/* bottone submit form */}
             <button
               type="submit"
-              className=" text-sm uppercase bg-sky-200 px-4 py-2 rounded-xl shadow-sm shadow-indigo-500/40 hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400 dark:text-white"
+              className="rounded-xl bg-sky-200 px-4 py-2 text-sm uppercase shadow-sm shadow-indigo-500/40 hover:scale-105 hover:shadow-md hover:shadow-indigo-500/40 dark:bg-neutral-800 dark:text-white dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
             >
               Create
             </button>
@@ -150,7 +150,7 @@ const ColorGrading = () => {
           {/* bottone dark mode dinamico */}
           <button
             onClick={() => setTheme(!theme)}
-            className=" h-12 md:h-auto bg-sky-200 shadow-sm hover:shadow-md hover:shadow-indigo-500/40 hover:scale-105 shadow-indigo-500/40 dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
+            className="h-12 bg-sky-200 shadow-sm shadow-indigo-500/40 hover:scale-105 hover:shadow-md hover:shadow-indigo-500/40 md:h-auto dark:bg-neutral-800 dark:shadow-neutral-400 dark:hover:shadow-neutral-400"
             style={{
               // stile comune per entrambi i tasti
               fontSize: "0.75rem",
@@ -163,25 +163,25 @@ const ColorGrading = () => {
               textTransform: "uppercase",
             }}
           >
-            <p className="text-black dark:text-white p-2">
+            <p className="p-2 text-black dark:text-white">
               {theme ? "dark" : "light"} mode
             </p>
           </button>
         </div>
       </nav>
 
-      <section className=" relative grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 dark:bg-neutral-600">
+      <section className="relative grid grid-cols-2 gap-3 p-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 dark:bg-neutral-600">
         {isLoading ? (
           // messaggio di caricamento
-          <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-green-200 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
+          <div className="absolute flex h-screen w-full items-center justify-center">
+            <p className="mx-[10%] animate-pulse rounded bg-green-200 p-4 font-semibold md:p-8 lg:p-12 lg:font-bold xl:p-8">
               Sto caricando
             </p>
           </div>
         ) : isError ? (
           // messaggio di errore
-          <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-red-400 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
+          <div className="absolute flex h-screen w-full items-center justify-center">
+            <p className="mx-[10%] animate-pulse rounded bg-red-400 p-4 font-semibold md:p-8 lg:p-12 lg:font-bold xl:p-8">
               {messageError}
               <span>
                 <br />
@@ -196,8 +196,8 @@ const ColorGrading = () => {
           ))
         ) : (
           // messaggio iniziale
-          <div className=" w-full h-screen absolute flex justify-center items-center">
-            <p className=" font-semibold bg-sky-300 p-4 rounded animate-pulse md:p-8 lg:p-12 lg:font-bold xl:p-8 mx-[10%] ">
+          <div className="absolute flex h-screen w-full items-center justify-center">
+            <p className="mx-[10%] animate-pulse rounded bg-sky-300 p-4 font-semibold md:p-8 lg:p-12 lg:font-bold xl:p-8">
               Inserisci un colore e una quantita per generare una sfumatura.
               <br />
               minimo 5 massimo 60
