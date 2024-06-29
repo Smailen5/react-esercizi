@@ -3,9 +3,9 @@ import Holiday from "./components/Holiday";
 //Ho utilizzato Cartella Component per dare una chiara locazione ai miei componenti
 function App() {
   return (
-    <section className="min-h-screen bg-neutral-900 flex flex-col items-center font-sans">
+    <section className="flex min-h-screen flex-col items-center bg-neutral-900 font-sans">
       <Title />
-      <article className="text-white flex justify-center max-w-3xl">
+      <article className="flex max-w-3xl justify-center text-white">
         <Holiday />
       </article>
     </section>

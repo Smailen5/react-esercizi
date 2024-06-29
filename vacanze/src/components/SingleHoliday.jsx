@@ -37,26 +37,26 @@ function SingleHoliday({ vacanza, incrementa, decrementa }) {
     <div className="flex justify-between">
       <section
         key={vacanza.id}
-        className="bg-neutral-700 rounded-md overflow-hidden"
+        className="overflow-hidden rounded-md bg-neutral-700"
       >
         <img src={vacanza.img} alt="immagine della vacanza" />
         <article className="p-4">
-          <h2 className="text-lg font-semibold pb-2">{vacanza.titolo}</h2>
-          <p className="text-sm pb-2">{vacanza.descrizione}</p>
-          <div className="flex justify-between text-sm pb-2">
+          <h2 className="pb-2 text-lg font-semibold">{vacanza.titolo}</h2>
+          <p className="pb-2 text-sm">{vacanza.descrizione}</p>
+          <div className="flex justify-between pb-2 text-sm">
             <span className="">{vacanza.durata}</span>
-            <span className="text-sky-400 font-semibold">{resultString} €</span>
+            <span className="font-semibold text-sky-400">{resultString} €</span>
           </div>
           <div className="flex justify-between">
             <button
               onClick={decrementa}
-              className="bg-sky-500 rounded-xl p-1 px-4"
+              className="rounded-xl bg-sky-500 p-1 px-4"
             >
               <GrFormPreviousLink style={{ color: "rgb(64,64,64)" }} />
             </button>
             <button
               onClick={incrementa}
-              className="bg-sky-500 rounded-xl p-1 px-4"
+              className="rounded-xl bg-sky-500 p-1 px-4"
             >
               <GrFormNextLink style={{ color: "rgb(64,64,64)" }} />
             </button>
