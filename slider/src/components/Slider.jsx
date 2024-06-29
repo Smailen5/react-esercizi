@@ -35,7 +35,7 @@ const Slider = () => {
 
   return (
     <>
-      <div className="container slider">
+      <div className="slider container">
         {recensioni.map((recensione, index) => {
           // logica per gestire la visualizzazione delle recensioni
           let positionClass = "";
