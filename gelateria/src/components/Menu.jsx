@@ -33,7 +33,7 @@ const Menu = () => {
       setFiltroProdotti(prodotti);
     } else {
       setFiltroProdotti(
-        prodotti.filter((el) => (el.categoria === categoria ? el : ""))
+        prodotti.filter((el) => (el.categoria === categoria ? el : "")),
       );
     }
   };
@@ -68,17 +68,17 @@ const Menu = () => {
   return (
     <>
       <section className="w-11/12">
-        <h3 className="text-center font-semibold uppercase my-4 tracking-wide lg:text-2xl">
+        <h3 className="my-4 text-center font-semibold uppercase tracking-wide lg:text-2xl">
           Le nostre scelte
         </h3>
 
-        <nav className="flex justify-between gap-x-6 uppercase text-xs grow lg:text-sm">
+        <nav className="flex grow justify-between gap-x-6 text-xs uppercase lg:text-sm">
           {categoria.map((categoria, index) => {
             return (
               <button
                 key={index}
-                className={`uppercase w-full pb-1 ${
-                  index === selected && " border-b-2 border-blue-400 font-bold"
+                className={`w-full pb-1 uppercase ${
+                  index === selected && "border-b-2 border-blue-400 font-bold"
                 }`}
                 onClick={() => {
                   setSelected(index);
@@ -94,19 +94,19 @@ const Menu = () => {
         <hr className="my-4 border-neutral-400" />
 
         {!isLoading && !isError ? (
-          <section className="flex gap-4 flex-col items-center md:grid md:grid-cols-2 2xl:gap-8">
+          <section className="flex flex-col items-center gap-4 md:grid md:grid-cols-2 2xl:gap-8">
             {filtroProdotti.map((el) => (
               <Gelato key={el.id} {...el} />
             ))}
           </section>
         ) : !isLoading && isError ? (
-          <section className=" bg-red-500 rounded w-full p-10 animate-pulse mx-auto">
+          <section className="mx-auto w-full animate-pulse rounded bg-red-500 p-10">
             <p className="text-center text-xl font-bold">
               Errore nel caricamento, controlla la console o ricarica la pagina
             </p>
           </section>
         ) : (
-          <section className=" bg-sky-100 rounded w-full p-10 animate-pulse mx-auto">
+          <section className="mx-auto w-full animate-pulse rounded bg-sky-100 p-10">
             <p className="text-center text-xl">Gelati in arrivo 🍧...</p>
           </section>
         )}
