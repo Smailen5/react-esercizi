@@ -1,15 +1,29 @@
-// import { useState, useEffect, useRef } from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import logo from "../assets/logo.svg";
 import { SocialBar, links } from "./links";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const linkContainerRef = useRef(null);
+  const linkListRef = useRef(null);
+  const [show, setShow] = useState("");
 
   function handleClick() {
     setIsNavbarVisible(!isNavbarVisible);
   }
+
+  // Funzione che gestisce la visibilità del linkList e la sua dimensione dinamicamente
+  useEffect(() => {
+    if (isNavbarVisible) {
+      const linkHeight = linkListRef.current.clientHeight;
+      linkContainerRef.current.style.height = `${linkHeight}px`;
+      setShow("opacity-100");
+    } else {
+      linkContainerRef.current.style.height = "0px";
+      setShow("opacity-0");
+    }
+  }, [isNavbarVisible]);
 
   return (
     <>
@@ -46,26 +60,32 @@ const Navbar = () => {
         </div>
 
         {/* Menu a scomparsa */}
-        {isNavbarVisible ? (
-          <ul
-            className={`mt-4 animate-slide${isNavbarVisible ? "Down" : "Up"}`}
-          >
-            {links.map((link) => (
-              <li
-                key={link.id}
-                className="sm:hover:scale-102 sm:transition-all sm:hover:bg-sky-50 sm:hover:font-semibold sm:hover:text-sky-300"
-              >
-                <a
-                  href={link.url}
-                  alt={link.text}
-                  className="text-sm capitalize"
+        <div
+          className={`transition-all duration-200 md:hidden`}
+          ref={linkContainerRef}
+        >
+          {isNavbarVisible ? (
+            <ul
+              className={`${show} mt-4 transition-opacity duration-500`}
+              ref={linkListRef}
+            >
+              {links.map((link) => (
+                <li
+                  key={link.id}
+                  className="transition-all hover:scale-102 hover:bg-sky-50 hover:font-semibold hover:text-sky-300"
                 >
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : null}
+                  <a
+                    href={link.url}
+                    alt={link.text}
+                    className="text-sm capitalize"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
       </nav>
     </>
   );

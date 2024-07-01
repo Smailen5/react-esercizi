@@ -47,7 +47,7 @@ const SocialBar = () => {
       {socialLinks.map((el) => {
         const { id, url, icon } = el;
         return (
-          <li key={id} className="hover:scale-125 transition-all">
+          <li key={id} className="transition-all hover:scale-125">
             <a href={url} alt={`social ${url}`}>
               {icon}
             </a>
