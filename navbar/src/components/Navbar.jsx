@@ -61,12 +61,12 @@ const Navbar = () => {
 
         {/* Menu a scomparsa */}
         <div
-          className={`transition-all duration-200 md:hidden`}
+          className={`transition-all duration-300 md:hidden`}
           ref={linkContainerRef}
         >
           {isNavbarVisible ? (
             <ul
-              className={`${show} mt-4 transition-opacity duration-500`}
+              className={`${show} mt-4 transition-opacity duration-700`}
               ref={linkListRef}
             >
               {links.map((link) => (
