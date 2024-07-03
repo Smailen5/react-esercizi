@@ -2,16 +2,18 @@ import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import styled from "styled-components";
 import { links, SocialBar } from "./links";
+import { useGlobalContext } from "./context";
 
 const Sidebar = () => {
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <Wrapper>
+    <Wrapper className={isSidebarOpen ? "show-sidebar" : ""}>
       <div className="sidebar-content">
         <header>
           <div className="nav-brand">
             <h4>Smailen</h4>
           </div>
-          <button className="btn btn-delete">
+          <button onClick={closeSidebar} className="btn btn-delete">
             <AiFillCloseCircle className="nav-icon" />
           </button>
         </header>
@@ -40,10 +42,10 @@ const Wrapper = styled.aside`
   left: 0;
   bottom: 0;
   background-color: white;
-  // visibility: hidden;
-  // opacity: 0;
+  visibility: hidden;
+  opacity: 0;
   transition: var(--transition);
-  // transform: translateX(-100%);
+  transform: translateX(-100%);
   z-index: 2;
   .sidebar-content {
     width: 90%;
