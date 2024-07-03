@@ -34,7 +34,7 @@ si e un po lungo ma funziona perfettamente, non so se mi conviene ritrasformare 
 
 - eslint e stato una spina nel fianco, visto che per il momento uso JavaScript e non TypeScript non credo debba dichiarare la validazione dei props, sicuramente in futuro e una pratica che e meglio fare
 
-### Link
+### Links
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1cec596e-65e1-4ed0-aae8-5168b38459a8/deploy-status)](https://app.netlify.com/sites/app-vacanze/deploys)
 

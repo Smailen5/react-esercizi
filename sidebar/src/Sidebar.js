@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="sidebar-content">
         <header>
           <div className="nav-brand">
-            <h4>Smailen</h4>
+            <h4>sidebar ✨</h4>
           </div>
           <button onClick={closeSidebar} className="btn btn-delete">
             <AiFillCloseCircle className="nav-icon" />

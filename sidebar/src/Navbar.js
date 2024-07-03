@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="nav">
       <header className="nav-header">
         <div className="nav-brand">
-          <h4>Smailen</h4>
+          <h4>navbar 🚀</h4>
         </div>
         <button onClick={openSidebar} className="btn nav-toggler">
           <FaBars className="nav-icon" />
