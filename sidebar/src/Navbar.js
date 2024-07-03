@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 import { links, SocialBar } from "./links";
 const Navbar = () => {
   const { openSidebar } = useGlobalContext()
-  console.log(openSidebar)
+  // console.log(openSidebar)
   return (
     <nav className="nav">
       <header className="nav-header">
