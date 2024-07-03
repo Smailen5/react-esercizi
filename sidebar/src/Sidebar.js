@@ -7,7 +7,7 @@ import { useGlobalContext } from "./context";
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <Wrapper className={isSidebarOpen ? "show-sidebar" : ""}>
+    <Wrapper className={isSidebarOpen ? "show-sidebar" : " "}>
       <div className="sidebar-content">
         <header>
           <div className="nav-brand">
