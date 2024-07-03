@@ -272,7 +272,7 @@ p {
 }
 
 .show-modal {
-  transform: translate(0%, 0%) !important;
+  transform: translate(-50%, 0%) !important;
   opacity: 1 !important;
   visibility: visible !important;
 }

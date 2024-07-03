@@ -6,8 +6,8 @@ const Modal = () => {
   const { isModalOpen, closeModal } = useGlobalContext();
   // console.log(isModalOpen)
   return (
-    <Wrapper className={isModalOpen ? "show-modal" : "modal"}>
-      <section className={`modal ${isModalOpen? 'show-modal-overlay': ''}`}>
+    <Wrapper className={isModalOpen ? "show-modal-overlay" : "modal"}>
+      <section className={`modal ${isModalOpen? 'show-modal': ''}`}>
         <div className="modal-content">
           <h5>Contenuto del modal</h5>
         </div>
