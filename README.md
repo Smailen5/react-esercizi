@@ -10,6 +10,7 @@
   - [Slider](#slider)
   - [Generatore di sfumature](#generatore-di-sfumature)
   - [Navbar](#navbar)
+  - [Sidebar](#sidebar)
 - [Author](#author)
 
 ## In locale
@@ -102,6 +103,16 @@ Per questi progetti ho utilizzato:
 [Navbar](https://dev-bar.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/navbar)
+
+---
+
+### Sidebar
+
+![Anteprima desktop](./Screenshot//sidebar.jpeg)
+
+[Sidebar](https://stirring-caramel-6077da.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/sidebar)
 
 ---
 
