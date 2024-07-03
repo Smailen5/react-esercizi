@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import styled from "styled-components";
-import { AiFillCloseCircle } from "react-icons/ai";
+// import { AiFillCloseCircle } from "react-icons/ai";
 const Modal = () => {
   return <aside>Modal</aside>;
 };

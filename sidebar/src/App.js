@@ -1,9 +1,13 @@
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Modal from "./Modal";
+// import Sidebar from "./Sidebar";
+// import Modal from "./Modal";
 
 function App() {
-  return <div>SideBar</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;

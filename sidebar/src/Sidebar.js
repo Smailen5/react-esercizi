@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import styled from "styled-components";
