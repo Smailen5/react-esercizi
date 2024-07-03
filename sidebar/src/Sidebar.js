@@ -1,10 +1,36 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import styled from "styled-components";
 import { links, SocialBar } from "./links";
+
 const Sidebar = () => {
-  return <aside>Sidebar</aside>;
+  return (
+    <Wrapper>
+      <div className="sidebar-content">
+        <header>
+          <div className="nav-brand">
+            <h4>Smailen</h4>
+          </div>
+          <button className="btn btn-delete">
+            <AiFillCloseCircle className="nav-icon" />
+          </button>
+        </header>
+        <ul className="sidebar-links">
+          {links.map((link) => {
+            const { id, url, text } = link;
+            return (
+              <li key={id} className="link">
+                <a href={url} alt={text}>
+                  {text}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <SocialBar />
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.aside`
@@ -14,10 +40,10 @@ const Wrapper = styled.aside`
   left: 0;
   bottom: 0;
   background-color: white;
-  visibility: hidden;
-  opacity: 0;
+  // visibility: hidden;
+  // opacity: 0;
   transition: var(--transition);
-  transform: translateX(-100%);
+  // transform: translateX(-100%);
   z-index: 2;
   .sidebar-content {
     width: 90%;
