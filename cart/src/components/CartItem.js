@@ -4,8 +4,8 @@ import { MdDelete } from "react-icons/md";
 import { AppProvider, useGlobalContext } from "../context/context";
 
 const CartItem = ({ id, image, price, name, countInStock }) => {
-  const prova = useGlobalContext();
-  console.log(prova);
+  const { totalPrice } = useGlobalContext();
+  console.log(totalPrice);
 
   return (
     <article className="cart-item">
