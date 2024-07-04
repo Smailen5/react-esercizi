@@ -5,12 +5,12 @@ import { useGlobalContext } from "../context/context";
 // console.log(product)
 
 const Cart = () => {
-  const { cartProducts: products } = useGlobalContext();
+  const { cartProducts: products, deleteCart } = useGlobalContext();
 
   // il fetch funziona
-  if (products.length > 0) {
-    console.log(products);
-  }
+  // if (products.length > 0) {
+  //   console.log(products);
+  // }
 
   return (
     <section className="section-center" style={{ marginTop: "2rem" }}>
@@ -19,7 +19,7 @@ const Cart = () => {
         <h6 className="prd-name">Nome</h6>
         <h6>Qty</h6>
         <h6>Prezzo</h6>
-        <button className="btn icon-btn" aria-label="elimina tutto il carrello">
+        <button className="btn icon-btn" aria-label="elimina tutto il carrello" onClick={deleteCart}>
           <MdRemoveShoppingCart className="icon minus-icon" />
         </button>
       </div>
