@@ -1,21 +1,25 @@
 import React from "react";
+import { useGlobalContext } from "../context/context";
 
 const TotalBox = () => {
-  return <section className="total-section section-center">
-    <div className="card">
-      <header className="card-header">
-        <h4>Carrello</h4>
-      </header>
-      <hr/>
-      <div className="card-content">
-        <h4>00</h4>
+  const { totalPrice } = useGlobalContext();
+  return (
+    <section className="total-section section-center">
+      <div className="card">
+        <header className="card-header">
+          <h4>Carrello</h4>
+        </header>
+        <hr />
+        <div className="card-content">
+          <h4>{totalPrice} €</h4>
+        </div>
+        <hr />
+        <footer className="card-footer">
+          <button className="btn btn-selector">premi</button>
+        </footer>
       </div>
-      <hr/>
-      <footer className="card-footer">
-        <button className="btn btn-selector">premi</button>
-      </footer>
-    </div>
-  </section>;
+    </section>
+  );
 };
 
 export default TotalBox;

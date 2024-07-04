@@ -2,9 +2,17 @@ import React from "react";
 import product from "../products";
 import CartItem from "./CartItem";
 import { MdRemoveShoppingCart } from "react-icons/md";
+import { useGlobalContext } from "../context/context";
 // console.log(product)
 
 const Cart = () => {
+  const { cartProducts: products } = useGlobalContext();
+
+  // il fetch funziona
+  if(products.length > 0){
+    console.log(products)
+  } 
+
   return (
     <section className="section-center" style={{ marginTop: "2rem" }}>
       <div className="cart-info">
