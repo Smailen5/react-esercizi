@@ -10,6 +10,7 @@ function App() {
       <Navbar />
       <Cart />
       <TotalBox />
+      <Loading />
     </div>
   );
 }
