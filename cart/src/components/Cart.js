@@ -2,6 +2,7 @@ import React from "react";
 import product from "../products";
 import CartItem from "./CartItem";
 import { MdRemoveShoppingCart } from "react-icons/md";
+// console.log(product)
 
 const Cart = () => {
   return (
@@ -18,7 +19,7 @@ const Cart = () => {
       <hr />
       <section className="cart-section">
         {product.map((product) => (
-          <CartItem key={product.id} {...product} />
+          <CartItem key={product._id} {...product} />
         ))}
       </section>
     </section>

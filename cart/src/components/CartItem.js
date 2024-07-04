@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BiMinus, BiPlus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { BiPlus, BiMinus } from "react-icons/bi";
+import { AppProvider, useGlobalContext } from "../context/context";
 
 const CartItem = ({ id, image, price, name, countInStock }) => {
+  const prova = useGlobalContext();
+  console.log(prova);
+
   return (
     <article className="cart-item">
       {/* immagine */}
