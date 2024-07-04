@@ -19,7 +19,11 @@ const Cart = () => {
         <h6 className="prd-name">Nome</h6>
         <h6>Qty</h6>
         <h6>Prezzo</h6>
-        <button className="btn icon-btn" aria-label="elimina tutto il carrello" onClick={deleteCart}>
+        <button
+          className="btn icon-btn"
+          aria-label="elimina tutto il carrello"
+          onClick={deleteCart}
+        >
           <MdRemoveShoppingCart className="icon minus-icon" />
         </button>
       </div>

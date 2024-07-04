@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
-import TotalBox from "./components/TotalBox";
 import Loading from "./components/Loading";
+import Navbar from "./components/Navbar";
+import TotalBox from "./components/TotalBox";
 import { useGlobalContext } from "./context/context";
 
 function App() {

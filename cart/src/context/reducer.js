@@ -4,6 +4,8 @@ import {
   FETCH_PRODUCTS_ERROR,
   DELETE_PRODUCT,
   DELETE_CART,
+  ADD_QTY,
+  REMOVE_QTY,
 } from "./actions";
 
 const reducer = (state, { type, payload }) => {
@@ -15,7 +17,9 @@ const reducer = (state, { type, payload }) => {
         ...state,
         isLoading: false,
         isError: false,
-        cartProducts: payload,
+        cartProducts: payload.map((product) => {
+          return { ...product, qty: 3 };
+        }),
       };
     case FETCH_PRODUCTS_ERROR:
       return { ...state, isError: true, isLoading: false };
@@ -28,6 +32,26 @@ const reducer = (state, { type, payload }) => {
       };
     case DELETE_CART:
       return { ...state, cartProducts: [] };
+    case ADD_QTY:
+      return {
+        ...state,
+        cartProducts: state.cartProducts.map((el) => {
+          if (payload === el._id) {
+            return { ...el, qty: el.qty + 1 };
+          }
+          return { ...el };
+        }),
+      };
+    case REMOVE_QTY:
+      return {
+        ...state,
+        cartProducts: state.cartProducts.map((el) => {
+          if (payload === el._id) {
+            return { ...el, qty: el.qty - 1 };
+          }
+          return { ...el };
+        }),
+      };
 
     default:
       break;
