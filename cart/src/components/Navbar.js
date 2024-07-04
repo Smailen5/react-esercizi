@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="nav">
       <header className="nav-header">
         <div className="nav-brand">
-          <h4>Cart</h4>
+          <h4>Shopposo</h4>
         </div>
         <div className="nav-cart">
           <HiShoppingCart className="icon nav-icon" />
