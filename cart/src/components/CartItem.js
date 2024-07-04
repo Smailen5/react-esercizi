@@ -14,18 +14,18 @@ const CartItem = ({ id, image, price, name, countInStock }) => {
 
       {/* selettore quantità */}
       <div className="qty-selector">
-        <button className="btn icon-btn">
+        <button className="btn icon-btn" aria-label="aumenta prodotto">
           <BiPlus className="icon" />
         </button>
         <p>1</p>
-        <button className="btn icon-btn">
+        <button className="btn icon-btn" aria-label="diminuisci prodotto">
           <BiMinus className="icon minus-icon" />
         </button>
       </div>
 
       {/* prezzo */}
       <p>{price}€</p>
-      <button className="btn icon-btn">
+      <button className="btn icon-btn" aria-label="elimina prodotto">
         <MdDelete className="icon minus-icon" />
       </button>
     </article>
