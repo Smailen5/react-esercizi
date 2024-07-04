@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { AppProvider, useGlobalContext } from "../context/context";
+import { useGlobalContext } from "../context/context";
 
 const CartItem = ({ id, image, price, name, countInStock }) => {
-  const { totalPrice } = useGlobalContext();
-  console.log(totalPrice);
+  const { isLoading, provaReducer } = useGlobalContext();
+  // console.log(isLoading);
 
   return (
     <article className="cart-item">
@@ -28,7 +28,7 @@ const CartItem = ({ id, image, price, name, countInStock }) => {
 
       {/* prezzo */}
       <p>{price}€</p>
-      <button className="btn icon-btn">
+      <button onClick={provaReducer} className="btn icon-btn">
         <MdDelete className="icon minus-icon" />
       </button>
     </article>
