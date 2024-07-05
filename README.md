@@ -11,6 +11,7 @@
   - [Generatore di sfumature](#generatore-di-sfumature)
   - [Navbar](#navbar)
   - [Sidebar](#sidebar)
+  - [Carrello](#carrello)
 - [Author](#author)
 
 ## In locale
