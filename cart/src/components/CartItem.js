@@ -2,11 +2,12 @@ import React from "react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
+import formatNumber from "../utils/formatNumber";
 
 const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
   const { deleteProduct, addQty, removeQty } = useGlobalContext();
+  const formatPrice = formatNumber(price);
 
-  
   const aggiungiQty = () => {
     // Controlla se la quantità corrente è inferiore alla quantità disponibile
     if (qty < countInStock) {
@@ -52,7 +53,7 @@ const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
       </div>
 
       {/* prezzo, bottone elimina prodotto */}
-      <p>{price}€</p>
+      <p>{formatPrice}</p>
       <button
         className="btn icon-btn"
         aria-label="elimina prodotto"

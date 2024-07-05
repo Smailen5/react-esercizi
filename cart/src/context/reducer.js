@@ -1,11 +1,12 @@
 import {
+  ADD_QTY,
+  DELETE_CART,
+  DELETE_PRODUCT,
+  FETCH_PRODUCTS_ERROR,
   FETCH_PRODUCTS_STARTED,
   FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_ERROR,
-  DELETE_PRODUCT,
-  DELETE_CART,
-  ADD_QTY,
   REMOVE_QTY,
+  TOTAL_COST,
 } from "./actions";
 
 const reducer = (state, { type, payload }) => {
@@ -52,7 +53,15 @@ const reducer = (state, { type, payload }) => {
           return { ...el };
         }),
       };
-
+    case TOTAL_COST:
+      return {
+        ...state,
+        // reduce accetta una callback function e un secondo parametro
+        // la callback function puo accettare 4 parametri (accumulator, currentValue, index, array)
+        totalPrice: state.cartProducts.reduce((total, item) => {
+          return total + item.qty * item.price;
+        }, 0),
+      };
     default:
       break;
   }
@@ -60,3 +69,8 @@ const reducer = (state, { type, payload }) => {
 };
 
 export default reducer;
+
+// accumulator = valore corrente
+// currentValue = valore del valore corrente
+// index = indice del valore corrente
+// array = array in esame

@@ -1,8 +1,11 @@
 import React from "react";
 import { useGlobalContext } from "../context/context";
+import formatNumber from "../utils/formatNumber";
 
 const TotalBox = () => {
   const { totalPrice } = useGlobalContext();
+  const total = formatNumber(totalPrice);
+  
   return (
     <section className="total-section section-center">
       <div className="card">
@@ -11,7 +14,7 @@ const TotalBox = () => {
         </header>
         <hr />
         <div className="card-content">
-          <h4>{totalPrice} €</h4>
+          <h4>{total}</h4>
         </div>
         <hr />
         <footer className="card-footer">

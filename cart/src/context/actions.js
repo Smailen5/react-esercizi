@@ -5,3 +5,4 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const DELETE_CART = "DELETE_CART";
 export const ADD_QTY = "ADD_QTY";
 export const REMOVE_QTY = "REMOVE_QTY";
+export const TOTAL_COST = "TOTAL_COST";
