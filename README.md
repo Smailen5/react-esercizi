@@ -116,6 +116,14 @@ Per questi progetti ho utilizzato:
 
 ---
 
+### Carrello
+
+![Anteprima desktop](./Screenshot//carrello.jpeg)
+
+[Carrello](https://6687da577b536c479a070fbf--celebrated-llama-97d13f.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/cart)
+
 ## Autore
 
 [Git Hub](https://github.com/Smailen5)
