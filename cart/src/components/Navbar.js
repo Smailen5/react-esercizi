@@ -1,7 +1,9 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
+import { useGlobalContext } from "../context/context";
 
 const Navbar = () => {
+  const { amountItemCart } = useGlobalContext()
   return (
     <nav className="nav">
       <header className="nav-header">
@@ -10,7 +12,7 @@ const Navbar = () => {
         </div>
         <div className="nav-cart">
           <HiShoppingCart className="icon nav-icon" />
-          <div className="cart-counter">5</div>
+          <div className="cart-counter">{amountItemCart}</div>
         </div>
       </header>
     </nav>

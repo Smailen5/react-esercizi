@@ -6,7 +6,6 @@ import formatNumber from "../utils/formatNumber";
 
 const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
   const { deleteProduct, addQty, removeQty } = useGlobalContext();
-  const formatPrice = formatNumber(price);
 
   const aggiungiQty = () => {
     // Controlla se la quantità corrente è inferiore alla quantità disponibile
@@ -53,7 +52,7 @@ const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
       </div>
 
       {/* prezzo, bottone elimina prodotto */}
-      <p>{formatPrice}</p>
+      <p>{formatNumber(price)}</p>
       <button
         className="btn icon-btn"
         aria-label="elimina prodotto"

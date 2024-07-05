@@ -5,6 +5,7 @@ import {
   FETCH_PRODUCTS_ERROR,
   FETCH_PRODUCTS_STARTED,
   FETCH_PRODUCTS_SUCCESS,
+  ITEM_QTY,
   REMOVE_QTY,
   TOTAL_COST,
 } from "./actions";
@@ -19,7 +20,7 @@ const reducer = (state, { type, payload }) => {
         isLoading: false,
         isError: false,
         cartProducts: payload.map((product) => {
-          return { ...product, qty: 3 };
+          return { ...product, qty: state.amountItem };
         }),
       };
     case FETCH_PRODUCTS_ERROR:
@@ -60,6 +61,15 @@ const reducer = (state, { type, payload }) => {
         // la callback function puo accettare 4 parametri (accumulator, currentValue, index, array)
         totalPrice: state.cartProducts.reduce((total, item) => {
           return total + item.qty * item.price;
+        }, 0),
+      };
+    case ITEM_QTY:
+      return {
+        ...state,
+        // reduce accetta una callback function e un secondo parametro
+        // la callback function puo accettare 4 parametri (accumulator, currentValue, index, array)
+        amountItemCart: state.cartProducts.reduce((total, item) => {
+          return total + item.qty;
         }, 0),
       };
     default:

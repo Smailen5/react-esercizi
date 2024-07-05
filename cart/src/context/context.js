@@ -8,6 +8,7 @@ import {
   FETCH_PRODUCTS_ERROR,
   FETCH_PRODUCTS_STARTED,
   FETCH_PRODUCTS_SUCCESS,
+  ITEM_QTY,
   REMOVE_QTY,
   TOTAL_COST,
 } from "./actions";
@@ -19,7 +20,8 @@ const initialState = {
   isError: false,
   cartProducts: [],
   totalPrice: 0,
-  amountItem: 0,
+  amountItem: 3,
+  amountItemCart: 0,
 };
 
 const AppContext = React.createContext();
@@ -46,9 +48,10 @@ export const AppProvider = ({ children }) => {
   const removeQty = (id) => {
     dispatch({ type: REMOVE_QTY, payload: id });
   };
-  // calcola il totale della spesa
+  // calcola il totale della spesa e aggiorna la quantità di oggetti nel carrello
   useEffect(() => {
     dispatch({ type: TOTAL_COST });
+    dispatch({ type: ITEM_QTY });
   }, [state.cartProducts]);
   // recupera i dati dalla API utilizzando axios e reducer
   useEffect(() => {
