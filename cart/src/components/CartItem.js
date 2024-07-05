@@ -6,22 +6,24 @@ import { useGlobalContext } from "../context/context";
 const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
   const { deleteProduct, addQty, removeQty } = useGlobalContext();
 
-  // controlla se il prodotto è in stock
-  const aggiungiQty = (_id) => {
-    if (qty + 1 > countInStock) {
-      return;
+  
+  const aggiungiQty = () => {
+    // Controlla se la quantità corrente è inferiore alla quantità disponibile
+    if (qty < countInStock) {
+      addQty(_id);
     }
-    return addQty(_id);
   };
 
-  // se il prodotto arriva a 0 lo elimina dal carrello
   const rimuoviQty = (_id) => {
-    if (qty - 1 > 0) {
-      return removeQty(_id);
+    // Se la quantità è maggiore di 1, rimuovi una quantità
+    if (qty > 1) {
+      removeQty(_id);
+    } else {
+      // Altrimenti, elimina il prodotto dal carrello
+      deleteProduct(_id);
     }
-    return deleteProduct(_id);
   };
-  
+
   return (
     <article id={_id} className="cart-item">
       {/* immagine e testo */}
