@@ -3,7 +3,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { useGlobalContext } from "../context/context";
 
 const Navbar = () => {
-  const { amountItemCart } = useGlobalContext()
+  const { amountItemCart } = useGlobalContext();
   return (
     <nav className="nav">
       <header className="nav-header">
@@ -12,7 +12,9 @@ const Navbar = () => {
         </div>
         <div className="nav-cart">
           <HiShoppingCart className="icon nav-icon" />
-          <div className="cart-counter">{amountItemCart}</div>
+          {amountItemCart > 0 ? (
+            <div className="cart-counter">{amountItemCart}</div>
+          ) : null}
         </div>
       </header>
     </nav>

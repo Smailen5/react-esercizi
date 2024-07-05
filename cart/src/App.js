@@ -24,7 +24,7 @@ function App() {
           <h4>Nessun prodotto nel carrello</h4>
         </div>
       )}
-      <TotalBox />
+      {cartProducts.length > 0 && <TotalBox />}
     </div>
   );
 }

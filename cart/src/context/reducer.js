@@ -66,8 +66,6 @@ const reducer = (state, { type, payload }) => {
     case ITEM_QTY:
       return {
         ...state,
-        // reduce accetta una callback function e un secondo parametro
-        // la callback function puo accettare 4 parametri (accumulator, currentValue, index, array)
         amountItemCart: state.cartProducts.reduce((total, item) => {
           return total + item.qty;
         }, 0),
