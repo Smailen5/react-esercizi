@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Cart from "./components/Cart";
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
