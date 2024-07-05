@@ -6,6 +6,22 @@ import { useGlobalContext } from "../context/context";
 const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
   const { deleteProduct, addQty, removeQty } = useGlobalContext();
 
+  // controlla se il prodotto è in stock
+  const aggiungiQty = (_id) => {
+    if (qty + 1 > countInStock) {
+      return;
+    }
+    return addQty(_id);
+  };
+
+  // se il prodotto arriva a 0 lo elimina dal carrello
+  const rimuoviQty = (_id) => {
+    if (qty - 1 > 0) {
+      return removeQty(_id);
+    }
+    return deleteProduct(_id);
+  };
+  
   return (
     <article id={_id} className="cart-item">
       {/* immagine e testo */}
@@ -16,11 +32,19 @@ const CartItem = ({ _id, image, price, name, qty, countInStock }) => {
 
       {/* selettore quantità + o - */}
       <div className="qty-selector">
-        <button className="btn icon-btn" aria-label="aumenta prodotto" onClick={()=> addQty(_id)}>
+        <button
+          className="btn icon-btn"
+          aria-label="aumenta prodotto"
+          onClick={() => aggiungiQty(_id)}
+        >
           <BiPlus className="icon" />
         </button>
         <p>{qty}</p>
-        <button className="btn icon-btn" aria-label="diminuisci prodotto" onClick={()=> removeQty(_id)}>
+        <button
+          className="btn icon-btn"
+          aria-label="diminuisci prodotto"
+          onClick={() => rimuoviQty(_id)}
+        >
           <BiMinus className="icon minus-icon" />
         </button>
       </div>
