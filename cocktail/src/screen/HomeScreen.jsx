@@ -9,7 +9,7 @@ const HomeScreen = () => {
   return (
     <>
       <Navbar />
-      <div>sono la homepage</div>
+      <div className="">sono la homepage</div>
     </>
   );
 };
