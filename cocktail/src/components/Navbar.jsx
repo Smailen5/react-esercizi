@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ListItem, SocialComponent } from "../utils/ListItem";
@@ -7,8 +7,8 @@ import { ListItem, SocialComponent } from "../utils/ListItem";
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [show, setShow] = useState("");
-  const linkContainerRef = React.createRef(null);
-  const linkListRef = React.createRef(null);
+  const linkContainerRef = useRef(null);
+  const linkListRef = useRef(null);
 
   function handleNavbar() {
     setIsNavbarVisible(!isNavbarVisible);
