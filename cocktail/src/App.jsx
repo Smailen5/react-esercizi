@@ -5,8 +5,11 @@
 // import ContactScreen from "./screen/ContactScreen";
 // import SingleCocktailScreen from "./screen/SingleCocktailScreen";
 // import ErrorScreen from "./screen/ErrorScreen";
+import {useGlobalContext} from "./context";
 
 function App() {
+  const prova = useGlobalContext()
+  console.log(prova);
   return <div className="text-red-500">App</div>;
 }
 
