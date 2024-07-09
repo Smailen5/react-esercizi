@@ -4,8 +4,14 @@
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/drink-animation.json";
 // import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 const HomeScreen = () => {
-  return <>Home Screen</>;
+  return (
+    <>
+      <Navbar />
+      <div>sono la homepage</div>
+    </>
+  );
 };
 
 export default HomeScreen;

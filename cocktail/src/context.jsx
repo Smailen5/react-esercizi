@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+  const [basename, setBasename] = useState("valore predefinito");
+
+  // Altri stati o variabili di stato necessari
+  // const [altroStato, setAltroStato] = useState(valoreIniziale);
+
   return (
-    <AppContext.Provider value="prova da context">
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ basename }}>{children}</AppContext.Provider>
   );
 };
 

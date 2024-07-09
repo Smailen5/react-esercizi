@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import { Navbar, Sidebar, Footer } from "./components";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import HomeScreen from "./screen/HomeScreen";
@@ -5,14 +6,14 @@
 // import ContactScreen from "./screen/ContactScreen";
 // import SingleCocktailScreen from "./screen/SingleCocktailScreen";
 // import ErrorScreen from "./screen/ErrorScreen";
+/* eslint-disable no-unused-vars */
+import React from "react";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
-import {useGlobalContext} from "./context";
+import { router } from "./routes/routes";
+// import { Footer, Navbar, Sidebar } from "./components";
 
 function App() {
-  const prova = useGlobalContext()
-  console.log(prova);
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
 export default App;
