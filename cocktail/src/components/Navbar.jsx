@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { ListItem, SocialComponent } from "../utils/ListItem";
+import { ListItem, SocialComponent } from "../utils/linksComponent";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -29,14 +28,19 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white p-4 shadow-md">
-      <header className="flex flex-row justify-between text-lg font-semibold text-violet-800">
+      <header className="flex flex-row justify-between text-lg font-semibold text-violet-800 md:grid md:grid-cols-3">
         <Link to="/">Cocktail Wiki</Link>
-
-        <button onClick={handleNavbar}>
-          <FaBars className="text-xl transition-all hover:rotate-90 md:hidden" />
+        {/* TODO:controlla bene il layout in modalita desktop, il link di home e troppo grande, ListItem e centrato ma 
+deve prendere piu spazio al centro, forse e meglio usare grid e darli uno span doppio rispetto agli altri
+SocialComponent e stato messo alla fine ma non so se va bene come idea */}
+        <button onClick={handleNavbar} className="md:hidden">
+          <FaBars className="text-xl transition-all hover:rotate-90" />
         </button>
+        <ListItem classItem={"flex justify-between"} />
+        <SocialComponent classSocial="flex items-center justify-end" />
       </header>
 
+      {/* Menu smartphone */}
       <div
         className={`transition-all duration-300 md:hidden`}
         ref={linkContainerRef}
