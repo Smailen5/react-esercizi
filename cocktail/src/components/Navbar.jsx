@@ -47,7 +47,6 @@ const Navbar = () => {
             ref={linkListRef}
           >
             <ListItem classItem={"flex flex-col gap-2"} />
-
             <SocialComponent classSocial="flex flex-row gap-2 my-4 pt-2 justify-center" />
           </section>
         ) : null}
