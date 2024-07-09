@@ -5,12 +5,14 @@
 // import ContactScreen from "./screen/ContactScreen";
 // import SingleCocktailScreen from "./screen/SingleCocktailScreen";
 // import ErrorScreen from "./screen/ErrorScreen";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 import {useGlobalContext} from "./context";
 
 function App() {
   const prova = useGlobalContext()
   console.log(prova);
-  return <div className="text-red-500">App</div>;
+  return <RouterProvider router={router} />
 }
 
 export default App;
