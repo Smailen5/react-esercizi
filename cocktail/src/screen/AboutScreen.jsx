@@ -12,16 +12,31 @@ const AboutScreen = () => {
       <Hero img={image}>
         <section>
           <div className="mb-4 h-px bg-pink-500" />
-          <h3 className="text-center italic text-white">
-            <q className="">
-              La vita è come un cocktail:
-              <br /> ogni sorso è un&apos;avventura da gustare <br /> con
-              moderazione e in buona compagnia.
+          <h3 className="text-center italic text-white text-xl">
+            <q>
+              Il cocktail perfetto è un&apos;armonia di sapori <br /> da gustare
+              con piacere e senza fretta.
             </q>
           </h3>
           <div className="mt-4 h-px bg-pink-500" />
         </section>
       </Hero>
+
+      <section className=" bg-gray-100 p-8 flex justify-center">
+        <div className="container">
+          <h3 className="pb-8 text-center font-semibold uppercase text-violet-700 text-xl">
+            il nostro progetto
+          </h3>
+          <div className="card-section flex flex-col gap-8">
+            {valueCards.map((card) => {
+              return (
+                <Card key={card.title} {...card} className="value-card">
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   );

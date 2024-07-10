@@ -1,9 +1,14 @@
-
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
-const Card = () => {
+const Card = ({ title, text, icon }) => {
   return (
-    <Wrapper>
-      <div className="card container">Card</div>
+    <Wrapper className="value-card">
+      <div className="card">
+        <h3 className="card-title">{title}</h3>
+        <div className="card-icon">{icon}</div>
+        <p className="card-subtitle card-text">{text}</p>
+      </div>
     </Wrapper>
   );
 };
@@ -14,7 +19,7 @@ const Wrapper = styled.article`
   background-color: white;
   border-radius: var(--radius);
   transition: var(--transition);
-  &.value-card:hover {
+  .value-card:hover {
     cursor: pointer;
     transform: scale(1.03);
     background-color: var(--trypan-blue-2);
