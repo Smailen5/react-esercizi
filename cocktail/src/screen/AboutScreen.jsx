@@ -39,19 +39,35 @@ const AboutScreen = () => {
       </section>
 
       {/* section team */}
-      <section className="relative flex h-screen justify-center bg-red-400">
-        <div className="relative h-[70vh] w-full">
+      <div className="flex flex-col items-center">
+        <div className="relative block h-[70vh] w-full">
           <div
             className="absolute inset-0 h-[70vh] bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${teamImg})` }}
           />
           {/* div per overlay immagine, modifica `h-20` per aumentarlo */}
           <div
-            className="absolute bottom-0 h-20 w-full bg-white"
+            className="absolute -bottom-1 h-20 w-full bg-white"
             style={{ clipPath: "polygon(0 80%, 100% 0, 100% 100%, 0% 100%)" }}
           />
         </div>
-      </section>
+      </div>
+
+      <div className="flex justify-center p-8">
+        <div className="container">
+          <h3 className="pb-8 text-center text-xl font-semibold uppercase text-violet-700">
+            il nostro team
+          </h3>
+          <div className="card-section flex flex-col gap-8">
+            {/* metti qui le icone del team */}
+            {teamCards.map((card) => {
+              return (
+                <Card key={card.title} {...card} className="value-card"></Card>
+              );
+            })}
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
