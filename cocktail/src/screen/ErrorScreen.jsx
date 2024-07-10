@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import { Footer, Navbar, Button } from "../components";
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "../assets/animation/animation-404.json";
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/not-found.json";
 // import { Link } from "react-router-dom";
@@ -11,6 +13,18 @@ const ErrorScreen = () => {
       <Navbar />
       <Wrapper className="h-dvh">
         <h3 className="font-semibold">Pagina non trovata</h3>
+        <div>
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: animationData,
+              rendererSettings: {
+                preserveAspectRatio: "xMidYMid slice",
+              },
+            }}
+          />
+        </div>
         <Button>
           <Link to="/">Torna in home</Link>
         </Button>

@@ -1,21 +1,24 @@
 import Navbar from "./Navbar";
 // import Sidebar from "./Sidebar";
+import Button from "./Button";
+import Card from "./Card";
+import Cocktail from "./Cocktail";
+import Cocktails from "./Cocktails";
+import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import Card from "./Card";
-import Cocktails from "./Cocktails";
-import Cocktail from "./Cocktail";
 import Loading from "./Loading";
-import ErrorMessage from "./ErrorMessage";
 
 export {
-  Navbar,
   // Sidebar,
-  Footer,
-  Hero,
+  Button,
   Card,
   Cocktail,
   Cocktails,
-  Loading,
   ErrorMessage,
+  Footer,
+  Hero,
+  Loading,
+  Navbar
 };
+
