@@ -1,5 +1,6 @@
 # React esercizi
 
+- [Badge](#badge)
 - [In locale](#in-locale)
 - [Sviluppo](#sviluppo)
 - [Soluzioni](#soluzioni)
@@ -13,6 +14,10 @@
   - [Sidebar](#sidebar)
   - [Carrello](#carrello)
 - [Author](#author)
+
+### Badge
+
+[![CodeFactor](https://www.codefactor.io/repository/github/smailen5/react-esercizi/badge)](https://www.codefactor.io/repository/github/smailen5/react-esercizi)
 
 ## In locale
 
