@@ -9,7 +9,7 @@
 - installato shadcn/ui -- disinstallo shadcn per fare tutto da solo, in un progetto futuro lo usero sicuramente
 - installato PropTypes
 - installato lottie per le animazioni
-- 
+- usato https://bennettfeely.com/clippy/ per il clip path delle immagini
 
 
 # link
