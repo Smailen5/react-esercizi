@@ -14,7 +14,7 @@ const Hero = ({ children, img, disableOverlay }) => {
       />
       {/* se disableOverlay è false, mostra l'overlay altrimenti non lo mostra */}
       {!disableOverlay && (
-        <div className="absolute inset-0 bg-slate-900 opacity-50" />
+        <div className="absolute inset-0 bg-black opacity-60" />
       )}
 
       <div className="container relative z-10 mx-auto flex h-full items-center justify-center">

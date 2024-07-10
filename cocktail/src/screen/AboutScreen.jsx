@@ -9,8 +9,19 @@ const AboutScreen = () => {
   return (
     <>
       <Navbar />
-      <Hero >prova di testo per vedere se la hero rimane sotto</Hero>
-      About Screen
+      <Hero img={image}>
+        <section>
+          <div className="mb-4 h-px bg-pink-500" />
+          <h3 className="text-center italic text-white">
+            <q className="">
+              La vita è come un cocktail:
+              <br /> ogni sorso è un&apos;avventura da gustare <br /> con
+              moderazione e in buona compagnia.
+            </q>
+          </h3>
+          <div className="mt-4 h-px bg-pink-500" />
+        </section>
+      </Hero>
       <Footer />
     </>
   );
