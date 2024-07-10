@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import { Hero, Navbar } from "../components";
+import { Footer, Hero, Navbar } from "../components";
 import backImage from "../assets/image/Contact-hero.png";
 const ContactScreen = () => {
   return (
     <>
       <Navbar />
       ContactScreen
+      <Footer />
     </>
   );
 };

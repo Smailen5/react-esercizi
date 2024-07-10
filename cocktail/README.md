@@ -9,3 +9,8 @@
 - installato shadcn/ui -- disinstallo shadcn per fare tutto da solo, in un progetto futuro lo usero sicuramente
 - installato PropTypes
 - 
+
+
+# link
+
+- link all'app sample https://wiki-drink.netlify.app/
