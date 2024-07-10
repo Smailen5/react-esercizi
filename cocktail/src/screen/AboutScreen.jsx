@@ -9,6 +9,7 @@ const AboutScreen = () => {
   return (
     <>
       <Navbar />
+      <Hero >prova di testo per vedere se la hero rimane sotto</Hero>
       About Screen
       <Footer />
     </>

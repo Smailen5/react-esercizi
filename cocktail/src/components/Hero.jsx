@@ -1,8 +1,33 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import backImage from "../assets/image/home-hero.jpg";
-const Hero = () => {
-  return <div>Hero</div>;
+import PropTypes from "prop-types";
+const Hero = ({ children, img, disableOverlay }) => {
+  return (
+    <div className="relative h-screen">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${img || backImage})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      />
+      {/* se disableOverlay è false, mostra l'overlay altrimenti non lo mostra */}
+      {!disableOverlay && (
+        <div className="absolute inset-0 bg-slate-900 opacity-50" />
+      )}
+
+      <div className="container relative z-10 mx-auto flex h-full items-center justify-center">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+Hero.propTypes = {
+  children: PropTypes.node,
+  img: PropTypes.string,
+  disableOverlay: PropTypes.bool,
 };
 
 export default Hero;
