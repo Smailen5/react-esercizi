@@ -49,8 +49,8 @@ const Navbar = () => {
             className={`${show} mt-4 transition-opacity duration-700`}
             ref={linkListRef}
           >
-            <ListItem classItem={"flex flex-col gap-2"} />
-            <SocialComponent classSocial="flex flex-row gap-2 my-4 pt-2 justify-center" />
+            <ListItem classItem={"flex flex-col gap-4 py-2"} />
+            <SocialComponent classSocial="flex flex-row gap-2 my-4 py-2 justify-center" />
           </section>
         ) : null}
       </div>
