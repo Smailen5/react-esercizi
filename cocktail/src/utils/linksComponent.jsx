@@ -12,17 +12,23 @@ const links = [
   {
     url: "/",
     text: "Home",
-    icon: <AiFillHome className="text-lg text-violet-800" />,
+    icon: (
+      <AiFillHome className="text-lg text-violet-800 group-hover:text-pink-500" />
+    ),
   },
   {
     url: "/about",
     text: "Chi Siamo",
-    icon: <RiTeamFill className="text-lg text-violet-800" />,
+    icon: (
+      <RiTeamFill className="text-lg text-violet-800 group-hover:text-pink-500" />
+    ),
   },
   {
     url: "/contact",
     text: "contattaci",
-    icon: <AiFillMessage className="text-lg text-violet-800" />,
+    icon: (
+      <AiFillMessage className="text-lg text-violet-800 group-hover:text-pink-500" />
+    ),
   },
 ];
 
@@ -35,9 +41,11 @@ const ListItem = ({ classItem }) => {
           const { text, url, icon } = link;
           return (
             <Link key={text} to={url}>
-              <li className="flex items-center gap-2 transition-all hover:scale-105">
+              <li className="group flex items-center gap-2 transition-all hover:scale-105">
                 {icon}
-                <h5 className="font-semibold uppercase">{text}</h5>
+                <h5 className="font-semibold uppercase group-hover:text-pink-500">
+                  {text}
+                </h5>
               </li>
             </Link>
           );
@@ -50,15 +58,15 @@ const ListItem = ({ classItem }) => {
 const socialLink = [
   {
     url: "https://www.facebook.com/",
-    icon: <FaFacebookSquare className="text-xl text-violet-800" />,
+    icon: <FaFacebookSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
   },
   {
     url: "https://twitter.com/home?lang=it",
-    icon: <FaTwitterSquare className="text-xl text-violet-800" />,
+    icon: <FaTwitterSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
   },
   {
     url: "https://www.youtube.com/",
-    icon: <FaYoutubeSquare className="text-xl text-violet-800" />,
+    icon: <FaYoutubeSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
   },
 ];
 
@@ -69,7 +77,7 @@ const SocialComponent = ({ classSocial }) => {
       {socialLink.map((link) => {
         const { url, icon } = link;
         return (
-          <li key={url} className="hover:scale-150 mx-4 transition-all">
+          <li key={url} className="mx-4 transition-all hover:scale-150 group">
             <a href={url} alt={url}>
               {icon}
             </a>

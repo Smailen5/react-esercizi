@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import backImage from "../assets/image/home-hero.jpg";
 const Hero = () => {

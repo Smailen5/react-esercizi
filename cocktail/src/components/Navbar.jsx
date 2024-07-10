@@ -29,9 +29,11 @@ const Navbar = () => {
   return (
     <nav className="bg-white p-4 shadow-md lg:px-[5%] xl:px-[15%]">
       <header className="flex flex-row justify-between text-lg font-semibold text-violet-800 md:grid md:grid-cols-4">
-        <Link to="/">Cocktail Wiki</Link>
+        <Link to="/" className="uppercase hover:text-pink-500">
+          Cocktail Wiki
+        </Link>
         <button onClick={handleNavbar} className="md:hidden">
-          <FaBars className="text-xl transition-all hover:rotate-90" />
+          <FaBars className="text-xl transition-all hover:rotate-90 hover:text-pink-500" />
         </button>
         <ListItem classItem={"md:flex justify-between hidden col-span-2"} />
         <SocialComponent classSocial="md:flex justify-end items-center hidden" />

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Loading, ErrorMessage } from "../components";
 import { useParams, Link } from "react-router-dom";
