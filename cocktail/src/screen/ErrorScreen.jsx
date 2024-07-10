@@ -1,15 +1,31 @@
 // import React from "react";
 import styled from "styled-components";
+import { Footer, Navbar, Button } from "../components";
+import { Link } from "react-router-dom";
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/not-found.json";
 // import { Link } from "react-router-dom";
 const ErrorScreen = () => {
-  return <Wrapper>Error Screen</Wrapper>;
+  return (
+    <>
+      <Navbar />
+      <Wrapper className="h-dvh">
+        <h3 className="font-semibold">Pagina non trovata</h3>
+        <Button>
+          <Link to="/">Torna in home</Link>
+        </Button>
+      </Wrapper>
+      <Footer />
+    </>
+  );
 };
 
 const Wrapper = styled.section`
   min-height: 86.2vh;
   display: grid;
+  display: --ms-grid;
+  display: --moz-grid;
+  display: --webkit-grid;
   place-items: center;
   h3 {
     text-transform: uppercase;
