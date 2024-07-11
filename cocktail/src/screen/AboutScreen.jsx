@@ -31,7 +31,7 @@ const AboutScreen = () => {
           <div className="card-section flex flex-col gap-8">
             {valueCards.map((card) => {
               return (
-                <Card key={card.title} {...card} className="value-card"></Card>
+                <Card key={card.title} {...card} className="value-card" />
               );
             })}
           </div>
@@ -41,6 +41,7 @@ const AboutScreen = () => {
       {/* section team */}
       <div className="flex flex-col items-center">
         <div className="relative block h-[70vh] w-full">
+          {/* immagine prima delle card team */}
           <div
             className="absolute inset-0 h-[70vh] bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${teamImg})` }}
@@ -53,6 +54,7 @@ const AboutScreen = () => {
         </div>
       </div>
 
+
       <div className="flex justify-center p-8">
         <div className="container">
           <h3 className="pb-8 text-center text-xl font-semibold uppercase text-violet-700">
@@ -62,7 +64,7 @@ const AboutScreen = () => {
             {/* metti qui le icone del team */}
             {teamCards.map((card) => {
               return (
-                <Card key={card.title} {...card} className="value-card"></Card>
+                <Card key={card.title} {...card} />
               );
             })}
           </div>

@@ -1,13 +1,25 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-const Card = ({ title, text, icon }) => {
+const Card = ({ title, text, icon, className, subtitle, img }) => {
   return (
-    <Wrapper className="value-card">
-      <div className="card">
-        <h3 className="card-title">{title}</h3>
-        <div className="card-icon">{icon}</div>
-        <p className="card-subtitle card-text">{text}</p>
+    <Wrapper className={className ? `${className}` : ""}>
+      <div className="card container">
+        <div className="card-title">
+          <h4>{title}</h4>
+        </div>
+        {subtitle ? (
+          <div className="card-subtitle">
+            <h6>{subtitle}</h6>
+          </div>
+        ) : (
+          <div className="card-icon">{icon}</div>
+        )}
+        {text ? (
+          <div className="card-text">{text}</div>
+        ) : (
+          <img src={img} alt={title} className="card-img" />
+        )}
       </div>
     </Wrapper>
   );
@@ -57,3 +69,11 @@ const Wrapper = styled.article`
 `;
 
 export default Card;
+
+{
+  /* <div className="card">
+  <h3 className="card-title">{title}</h3>
+  <div className="card-icon">{icon}</div>
+  <p className="card-subtitle card-text">{text}</p>
+</div>; */
+}
