@@ -82,7 +82,7 @@ const ContactScreen = () => {
                   id="tel"
                   name="tel"
                   type="tel"
-                  placeholder="123 45 67 890"
+                  placeholder="123 45 67 890 "
                 />
                 <hr />
               </div>
