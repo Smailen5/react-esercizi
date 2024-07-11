@@ -4,22 +4,33 @@
 const Card = ({ title, text, icon, className, subtitle, img }) => {
   return (
     // se className e definito prende il valore, altrimenti lascia vuoto
-    <article className={className ? className : ""}>
+    <article
+      className={`{className ? ${className} : ""} grid place-items-center`}
+    >
       <div className="grid w-4/5 place-items-center gap-4">
-        
-          <h4 className="group-hover:text-gray-200 font-bold">{title}</h4>
-        
+        <h4 className="font-bold tracking-wider group-hover:text-gray-200">
+          {title}
+        </h4>
+
         {subtitle ? (
-          <div className="">
+          <div className="text-sm font-semibold text-gray-500">
             <h6>{subtitle}</h6>
           </div>
         ) : (
           <div className="text-3xl text-pink-500">{icon}</div>
         )}
         {text ? (
-          <div className="text-center text-gray-400 group-hover:text-gray-200">{text}</div>
+          <div className="text-center text-gray-400 group-hover:text-gray-200">
+            {text}
+          </div>
         ) : (
-          <img src={img} alt={title} className="card-img" />
+          <div className="">
+            <div
+              className={`h-52 w-52 rounded-full bg-cover ${title !== "Tatyana Doglieva" && "bg-top"}`}
+              style={{ backgroundImage: `url(${img})` }}
+            ></div>
+            {/* <img src={img} alt={title} className="h-52 w-52 rounded-full" /> */}
+          </div>
         )}
       </div>
     </article>

@@ -63,10 +63,10 @@ const AboutScreen = () => {
           <h3 className="pb-8 text-center text-xl font-semibold uppercase text-violet-700">
             il nostro team
           </h3>
-          <div className="card-section flex flex-col gap-8">
+          <div className="flex flex-col gap-8 items-center justify-center">
             {/* metti qui le icone del team */}
             {teamCards.map((card) => {
-              return <Card key={card.title} {...card} />;
+              return <Card key={card.title} {...card} className="w-4/5" />;
             })}
           </div>
         </div>
