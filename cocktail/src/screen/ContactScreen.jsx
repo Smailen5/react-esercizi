@@ -23,49 +23,88 @@ const ContactScreen = () => {
           <div className="w-full rounded bg-white shadow-2xl drop-shadow-2xl">
             <form className="flex flex-col gap-4 p-8">
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold uppercase text-violet-800">
+                {/* nome */}
+                <label
+                  htmlFor="nome"
+                  className="text-sm font-semibold uppercase text-violet-800"
+                >
                   nome
                 </label>
-                <input type="text" placeholder="inserisci il tuo nome" />
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="inserisci il tuo nome"
+                />
                 <hr />
               </div>
-
+              {/* cognome */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold uppercase text-violet-800">
+                <label
+                  htmlFor="cognome"
+                  className="text-sm font-semibold uppercase text-violet-800"
+                >
                   cognome
                 </label>
-                <input type="text" placeholder="inserisci il tuo cognome" />
+                <input
+                  id="cognome"
+                  name="cognome"
+                  type="text"
+                  placeholder="inserisci il tuo cognome"
+                />
                 <hr />
               </div>
-
+              {/* email */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold uppercase text-violet-800">
+                <label
+                  htmlFor="email"
+                  className="text-sm font-semibold uppercase text-violet-800"
+                >
                   email
                 </label>
-                <input type="email" placeholder="cocktail@example.com" />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="cocktail@example.com"
+                />
                 <hr />
               </div>
-
+              {/* telefono */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold uppercase text-violet-800">
+                <label
+                  htmlFor="tel"
+                  className="text-sm font-semibold uppercase text-violet-800"
+                >
                   telefono
                 </label>
-                <input type="tel" placeholder="333-333-333" />
+                <input
+                  id="tel"
+                  name="tel"
+                  type="tel"
+                  placeholder="123 45 67 890"
+                />
                 <hr />
               </div>
-
+              {/* ricetta */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold uppercase text-violet-800">
+                <label
+                  htmlFor="ricetta"
+                  className="text-sm font-semibold uppercase text-violet-800"
+                >
                   la tua ricetta
                 </label>
-                <input type="text" placeholder="scrivi qui la tua ricetta" />
+                <textarea
+                  id="ricetta"
+                  name="ricetta"
+                  className="rounded-md border border-gray-300 p-2"
+                  placeholder="descrivi la tua ricetta"
+                />
                 <hr />
               </div>
-
-              <div className="flex w-full justify-center">
-                <Button buttonClass=" w-1/2 py-3">
-                  invia ricetta
-                </Button>
+              {/* submit */}
+              <div className="mt-4 flex w-full justify-center">
+                <Button buttonClass=" w-1/2 py-3">invia ricetta</Button>
               </div>
             </form>
           </div>
