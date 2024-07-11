@@ -26,6 +26,8 @@ const Card = ({ title, text, icon, className, subtitle, img }) => {
             // togliere ${title !== "Tatyana Doglieva" && "bg-top"} quando aggiungerai nuove immagini
             className={`h-52 w-52 rounded-full bg-cover ${title !== "Tatyana Doglieva" && "bg-top"}`}
             style={{ backgroundImage: `url(${img})` }}
+            role="img"
+            aria-label={title}
           ></div>
         )}
       </div>
