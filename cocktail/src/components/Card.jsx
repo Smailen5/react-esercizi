@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Card = ({ title, text, icon, className, subtitle, img }) => {
   return (
     // se className e definito prende il valore, altrimenti lascia vuoto
@@ -33,6 +34,15 @@ const Card = ({ title, text, icon, className, subtitle, img }) => {
       </div>
     </article>
   );
+};
+
+Card.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  icon: PropTypes.node,
+  className: PropTypes.string,
+  subtitle: PropTypes.string,
+  img: PropTypes.string,
 };
 
 export default Card;
