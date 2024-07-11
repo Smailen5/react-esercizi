@@ -14,7 +14,7 @@ const Card = ({ title, text, icon, className, subtitle, img }) => {
             <h6>{subtitle}</h6>
           </div>
         ) : (
-          <div className="">{icon}</div>
+          <div className="text-3xl text-pink-500">{icon}</div>
         )}
         {text ? (
           <div className="text-center text-gray-400 group-hover:text-gray-200">{text}</div>

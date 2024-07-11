@@ -4,19 +4,19 @@ import { ImDatabase } from "react-icons/im";
 export const valueCards = [
   {
     title: "Educare",
-    icon: <IoSchool className="text-3xl text-pink-500" />,
+    icon: <IoSchool />,
     text:
       " Pickled hashtag portland pork belly cred selvage viral retro prism lomo narwhal cray selfies vegan lyft.",
   },
   {
     title: "Insegnare",
-    icon: <IoPeopleCircleSharp className="text-3xl text-pink-500" />,
+    icon: <IoPeopleCircleSharp />,
     text:
       "iPhone banh mi you probably haven't heard of them fanny pack marfa four loko freegan. XOXO salvia twee whatever post-ironic blog",
   },
   {
     title: "Centralizzare",
-    icon: <ImDatabase className="text-3xl text-pink-500" />,
+    icon: <ImDatabase />,
     text:
       "Tilde post-ironic celiac franzen sustainable, vinyl polaroid direct trade tattooed vaporware kogi health goth cray echo park organic.",
   },
