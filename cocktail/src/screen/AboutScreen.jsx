@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import { Hero, Card, Navbar, Footer } from "../components";
 import { valueCards, teamCards } from "../utils/info";
 import image from "../assets/image/about-hero.jpg";
@@ -64,7 +62,6 @@ const AboutScreen = () => {
             il nostro team
           </h3>
           <div className="flex flex-col gap-8 items-center justify-center">
-            {/* metti qui le icone del team */}
             {teamCards.map((card) => {
               return <Card key={card.title} {...card} className="w-4/5" />;
             })}

@@ -22,14 +22,11 @@ const Card = ({ title, text, icon, className, subtitle, img }) => {
             {text}
           </div>
         ) : (
-          <div className="">
-            <div
-              // togliere ${title !== "Tatyana Doglieva" && "bg-top"} quando aggiungerai nuove immagini
-              className={`h-52 w-52 rounded-full bg-cover ${title !== "Tatyana Doglieva" && "bg-top"}`}
-              style={{ backgroundImage: `url(${img})` }}
-            ></div>
-            {/* <img src={img} alt={title} className="h-52 w-52 rounded-full" /> */}
-          </div>
+          <div
+            // togliere ${title !== "Tatyana Doglieva" && "bg-top"} quando aggiungerai nuove immagini
+            className={`h-52 w-52 rounded-full bg-cover ${title !== "Tatyana Doglieva" && "bg-top"}`}
+            style={{ backgroundImage: `url(${img})` }}
+          ></div>
         )}
       </div>
     </article>
