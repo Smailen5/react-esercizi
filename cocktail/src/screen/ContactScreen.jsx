@@ -21,7 +21,6 @@ const ContactScreen = () => {
           </div>
           {/* form per aggiunta cocktail */}
           <div className="w-full rounded bg-white shadow-2xl drop-shadow-2xl">
-            {/* usa FormSpree per inviare i dati del form e riceverli */}
             <form
               action="https://formspree.io/f/xeojoewq"
               method="POST"
