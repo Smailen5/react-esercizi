@@ -22,7 +22,11 @@ const ContactScreen = () => {
           {/* form per aggiunta cocktail */}
           <div className="w-full rounded bg-white shadow-2xl drop-shadow-2xl">
             {/* usa FormSpree per inviare i dati del form e riceverli */}
-            <form className="flex flex-col gap-4 p-8">
+            <form
+              action="https://formspree.io/f/xeojoewq"
+              method="POST"
+              className="flex flex-col gap-4 p-8"
+            >
               <div className="flex flex-col gap-2">
                 {/* nome */}
                 <label
@@ -68,6 +72,7 @@ const ContactScreen = () => {
                   name="email"
                   type="email"
                   placeholder="cocktail@example.com"
+                  required
                 />
                 <hr />
               </div>
@@ -105,7 +110,9 @@ const ContactScreen = () => {
               </div>
               {/* submit */}
               <div className="mt-4 flex w-full justify-center">
-                <Button buttonClass=" w-1/2 py-3">invia ricetta</Button>
+                <Button type="submit" buttonClass=" w-1/2 py-3">
+                  invia ricetta
+                </Button>
               </div>
             </form>
           </div>
