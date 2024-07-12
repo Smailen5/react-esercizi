@@ -10,6 +10,8 @@
 - installato PropTypes
 - installato lottie per le animazioni
 - usato https://bennettfeely.com/clippy/ per il clip path delle immagini
+- aggiunto FormSpree per ricevere i dati del form nella mail (ricorda o di nascondere l'end point o di limitarlo da FormSpree appena hai il dominio)
+- 
 
 
 # link
