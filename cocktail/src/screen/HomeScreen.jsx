@@ -19,7 +19,7 @@ const HomeScreen = () => {
             </div>
             <h5 className="text-center text-sm">
               Wiki Drink e un database internazionale che mette a tua
-              disposizione, in maniera Gratuita, le ricette dei piu importanti e
+              disposizione, in maniera <span className="text-pink-500 capitalize">gratuita</span>, le ricette dei piu importanti e
               diffusi cocktail al mondo
             </h5>
 
