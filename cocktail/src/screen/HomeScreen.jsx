@@ -3,7 +3,7 @@
 // import { FaSearch } from "react-icons/fa";
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/drink-animation.json";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Footer, Hero, Navbar } from "../components";
 // import Navbar from "../components/Navbar";
 const HomeScreen = () => {
@@ -23,7 +23,7 @@ const HomeScreen = () => {
               diffusi cocktail al mondo
             </h5>
 
-            <Button buttonClass="py-3 px-6">Scopri di piu</Button>
+            <Button buttonClass="py-3 px-6"><Link to="/about">Scopri di piu</Link></Button>
 
             {/* immagine animata qui */}
           </div>
