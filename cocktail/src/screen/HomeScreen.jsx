@@ -23,7 +23,7 @@ const HomeScreen = () => {
               diffusi cocktail al mondo
             </h5>
 
-            <Button>Scopri di piu</Button>
+            <Button buttonClass="py-3 px-6">Scopri di piu</Button>
 
             {/* immagine animata qui */}
           </div>
