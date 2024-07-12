@@ -11,13 +11,13 @@ const HomeScreen = () => {
     <>
       <Navbar />
       <Hero>
-        <div className="grid h-screen place-items-center gap-4 p-8 text-white">
+        <div className="grid h-screen place-items-center gap-4 p-8 text-white font-Opensans">
           <div className="grid place-items-center gap-8 py-8 text-white">
             <div className="grid gap-4 text-center font-bold uppercase tracking-wider">
-              <h2 className="text-5xl text-pink-500">Wiki drink</h2>
+              <h2 className="text-4xl text-pink-500">Wiki drink</h2>
               <h4>tutti i cocktail del mondo a portata di click</h4>
             </div>
-            <h5 className="text-center text-lg">
+            <h5 className="text-center text-sm">
               Wiki Drink e un database internazionale che mette a tua
               disposizione, in maniera Gratuita, le ricette dei piu importanti e
               diffusi cocktail al mondo
