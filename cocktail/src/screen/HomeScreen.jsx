@@ -46,23 +46,25 @@ const HomeScreen = () => {
         </div>
       </Hero>
 
-      {/* section filter e cocktails */}
       <section className="mt-4 grid place-items-center">
+      {/* section filter e cocktails */}
         <div className="flex w-11/12 items-center justify-between gap-8 p-8">
-          <div className="flex flex-row items-center gap-8">
-            <h4 className="text-xl font-semibold">Cerca il tuo drink</h4>
+          <form className="flex flex-row items-center gap-8">
+            <label className="text-xl font-semibold">Cerca il tuo drink</label>
             <input
               type="text"
               id="drink"
               placeholder="negroni"
               className="rounded-full border border-gray-300 p-1 px-4"
             />
-            <button className="text-pink-500">
+            <button type="submit" className="text-pink-500">
               <FaSearch />
             </button>
-          </div>
+          </form>
           <h6 className="text-gray-400">3 risultati</h6>
         </div>
+        {/* fine section filter e cocktails */}
+
       </section>
       <Footer />
     </>
