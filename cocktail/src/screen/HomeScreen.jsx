@@ -30,7 +30,6 @@ const HomeScreen = () => {
               <Link to="/about">Scopri di piu</Link>
             </Button>
 
-            {/* immagine animata qui */}
           </div>
           <div>
             <Lottie
