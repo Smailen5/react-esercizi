@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { useState, useContext, createContext } from "react";
+import { useState, useContext, createContext } from "react";
 import useFetch from "./useFetch";
 
 const AppContext = createContext();
