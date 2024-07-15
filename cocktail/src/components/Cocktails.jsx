@@ -8,8 +8,8 @@ const Cocktails = ({ data }) => {
   console.log(data);
   return (
     <Wrapper>
-      {data.map((item) => (
-        <Cocktail key={item.idDrink} {...item} />
+      {data.map((cocktail) => (
+        <Cocktail key={cocktail.idDrink} {...cocktail} />
       ))}
     </Wrapper>
   );
