@@ -1,6 +1,6 @@
-import { useState, useContext, createContext } from "react";
-import useFetch from "./useFetch";
 import PropTypes from "prop-types";
+import { createContext, useContext, useState } from "react";
+import useFetch from "./useFetch";
 
 const AppContext = createContext();
 
@@ -32,4 +32,4 @@ AppProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { AppContext, AppProvider, useGlobalContext };
+export { AppProvider, useGlobalContext };

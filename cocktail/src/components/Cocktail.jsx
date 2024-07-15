@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { HiClipboardList } from "react-icons/hi";
+import PropTypes from "prop-types";
 
-const Cocktail = () => {
+const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
   return <Wrapper>Cocktail</Wrapper>;
 };
 
@@ -83,4 +84,11 @@ const Wrapper = styled.article`
     }
   }
 `;
+
+Cocktail.propTypes = {
+  strDrinkThumb: PropTypes.string,
+  strDrink: PropTypes.string,
+  idDrink: PropTypes.string,
+};
+
 export default Cocktail;
