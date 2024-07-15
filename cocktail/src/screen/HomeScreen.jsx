@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 import { Button, Footer, Hero, Navbar } from "../components";
 import animationData from "../assets/animation/Animation-cocktail-3.json";
 import Lottie from "react-lottie";
+import { useState } from "react";
 // import Navbar from "../components/Navbar";
 const HomeScreen = () => {
+  const [input, setInput] = useState("negroni");
   return (
     <>
       <Navbar />
@@ -54,10 +56,11 @@ const HomeScreen = () => {
             <input
               type="text"
               id="drink"
-              placeholder="negroni"
+              placeholder={input}
               className="rounded-full border border-gray-300 p-1 px-4"
+              onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="text-pink-500">
+            <button type="submit" className="text-pink-500" >
               <FaSearch />
             </button>
           </form>
