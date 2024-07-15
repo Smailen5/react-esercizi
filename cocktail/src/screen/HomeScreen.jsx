@@ -12,9 +12,10 @@ import { useState } from "react";
 import { useGlobalContext } from "../context";
 // import Navbar from "../components/Navbar";
 const HomeScreen = () => {
-  const [input, setInput] = useState("negroni");
-  const { data, isLoading, isError, count, query, searchCocktail} = useGlobalContext()
-   return (
+  const { data, isLoading, isError, count, query, searchCocktail } =
+    useGlobalContext();
+  const [input, setInput] = useState(query);
+  return (
     <>
       <Navbar />
       <Hero>
@@ -51,7 +52,7 @@ const HomeScreen = () => {
       </Hero>
 
       <section className="mt-4 grid place-items-center">
-      {/* section filter e cocktails */}
+        {/* section filter e cocktails */}
         <div className="flex w-11/12 items-center justify-between gap-8 p-8">
           <form className="flex flex-row items-center gap-8">
             <label className="text-xl font-semibold">Cerca il tuo drink</label>
@@ -62,14 +63,13 @@ const HomeScreen = () => {
               className="rounded-full border border-gray-300 p-1 px-4"
               onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="text-pink-500" >
+            <button type="submit" className="text-pink-500">
               <FaSearch />
             </button>
           </form>
           <p className="text-gray-400">3 risultati</p>
         </div>
         {/* fine section filter e cocktails */}
-
       </section>
       <Footer />
     </>
