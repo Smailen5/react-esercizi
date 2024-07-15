@@ -1,10 +1,10 @@
-import { useState, useFetch } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const serchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?";
 const singleUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?";
 
-const useFetch = (type = false) => {
+const useFetch = (query, type = false) => {
   const url = type ? singleUrl : serchUrl;
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -19,22 +19,19 @@ const useFetch = (type = false) => {
         const response = await axios.get(`${url}${query}`);
         setData(response.data);
         setCount(response.data.drinks);
-        console.log(response.data);
+        console.log(response);
       } catch (error) {
         setIsError(true);
         setCount(0);
       }
     })(query);
-
-    return {
-      isLoading,
-      data,
-      count,
-      isError,
-    };
   }, [url, query]);
-
-  return <div></div>;
+  return {
+    isLoading,
+    data,
+    count,
+    isError,
+  };
 };
 
-export { useFetch };
+export default useFetch;
