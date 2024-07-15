@@ -61,7 +61,7 @@ const HomeScreen = () => {
               <FaSearch />
             </button>
           </form>
-          <h6 className="text-gray-400">3 risultati</h6>
+          <p className="text-gray-400">3 risultati</p>
         </div>
         {/* fine section filter e cocktails */}
 
