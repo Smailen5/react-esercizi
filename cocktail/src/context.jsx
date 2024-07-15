@@ -7,7 +7,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("negroni");
-  const { data, isLoading, isError, count } = useFetch(`s=${query}`, true);
+  const { data, isLoading, isError, count } = useFetch(`s=${query}`);
 
   const searchCocktail = (input) => {
     setQuery(input);
