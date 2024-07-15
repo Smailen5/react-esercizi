@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import {
   Button,
   Cocktail,
+  Cocktails,
   ErrorMessage,
   Footer,
   Hero,
@@ -89,7 +90,7 @@ const HomeScreen = () => {
         {!isLoading && isError ? (
           <ErrorMessage>Nessun cocktail trovato</ErrorMessage>
         ) : !isLoading && !isError ? (
-          <Cocktail data={data.drinks} />
+          <Cocktails data={data.drinks} />
         ) : (
           <Loading />
         )}
