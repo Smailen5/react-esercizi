@@ -15,6 +15,10 @@ const HomeScreen = () => {
   const { data, isLoading, isError, count, query, searchCocktail } =
     useGlobalContext();
   const [input, setInput] = useState(query);
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    searchCocktail(input)
+  }
   return (
     <>
       <Navbar />
@@ -54,12 +58,12 @@ const HomeScreen = () => {
       <section className="mt-4 grid place-items-center">
         {/* section filter e cocktails */}
         <div className="flex w-11/12 items-center justify-between gap-8 p-8">
-          <form className="flex flex-row items-center gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-row items-center gap-8">
             <label className="text-xl font-semibold">Cerca il tuo drink</label>
             <input
               type="text"
               id="drink"
-              placeholder={input}
+              placeholder={query}
               className="rounded-full border border-gray-300 p-1 px-4"
               onChange={(e) => setInput(e.target.value)}
             />
