@@ -29,7 +29,7 @@ const useGlobalContext = () => {
 };
 
 AppProvider.propTypes = {
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
 export { AppContext, AppProvider, useGlobalContext };
