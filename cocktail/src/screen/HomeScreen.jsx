@@ -9,10 +9,12 @@ import { Button, Footer, Hero, Navbar } from "../components";
 import animationData from "../assets/animation/Animation-cocktail-3.json";
 import Lottie from "react-lottie";
 import { useState } from "react";
+import { useGlobalContext } from "../context";
 // import Navbar from "../components/Navbar";
 const HomeScreen = () => {
   const [input, setInput] = useState("negroni");
-  return (
+  const { data, isLoading, isError, count, query, searchCocktail} = useGlobalContext()
+   return (
     <>
       <Navbar />
       <Hero>
