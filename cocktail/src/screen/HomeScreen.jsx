@@ -90,7 +90,7 @@ const HomeScreen = () => {
         {!isLoading && isError ? (
           <ErrorMessage>Nessun cocktail trovato</ErrorMessage>
         ) : !isLoading && !isError ? (
-          <Cocktails data={data.drinks} />
+          <Cocktails data={data} />
         ) : (
           <Loading />
         )}

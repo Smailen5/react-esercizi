@@ -5,7 +5,14 @@ import Cocktail from "./Cocktail";
 import styled from "styled-components";
 
 const Cocktails = ({ data }) => {
-  return <Wrapper>Cockail List</Wrapper>;
+  console.log(data);
+  return (
+    <Wrapper>
+      {data.map((item) => (
+        <Cocktail key={item.idDrink} {...item} />
+      ))}
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
