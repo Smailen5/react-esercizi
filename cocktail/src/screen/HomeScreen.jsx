@@ -18,6 +18,7 @@ const HomeScreen = () => {
   const handleSubmit = (e)=>{
     e.preventDefault()
     searchCocktail(input)
+    // console.log('input inviato');
   }
   return (
     <>
@@ -71,7 +72,7 @@ const HomeScreen = () => {
               <FaSearch />
             </button>
           </form>
-          <p className="text-gray-400">3 risultati</p>
+          <p className="text-gray-400">{count} risultati</p>
         </div>
         {/* fine section filter e cocktails */}
       </section>

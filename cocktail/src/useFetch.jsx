@@ -11,20 +11,34 @@ const useFetch = (query, type = false) => {
   const [count, setCount] = useState(0);
   const [isError, setIsError] = useState(false);
 
+  console.log("fetch chiamato");
+  console.log(data);
+  console.log(count);
+
   useEffect(() => {
-    (async (query) => {
+    const fetchData = async () => {
       setIsError(false);
-      setIsLoading(false);
+      setIsLoading(true);
       try {
         const response = await axios.get(`${url}${query}`);
-        setData(response.data);
-        setCount(response.data.drinks);
-        console.log(response);
+        if (response.data && response.data.drinks) {
+          setData(response.data.drinks);
+          setCount(response.data.drinks.length);
+          console.log("Dati ricevuti", response.data.drinks);
+        } else {
+          setData([]);
+          setCount(0);
+          console.log("non ci sono dati");
+        }
       } catch (error) {
         setIsError(true);
+        console.error("Errore durante il fetch:", error);
+        setData([]);
         setCount(0);
       }
-    })(query);
+      setIsLoading(false);
+    };
+    fetchData();
   }, [url, query]);
   return {
     isLoading,
