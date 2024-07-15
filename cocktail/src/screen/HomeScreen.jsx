@@ -5,7 +5,15 @@ import { FaSearch } from "react-icons/fa";
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/drink-animation.json";
 import { Link } from "react-router-dom";
-import { Button, Footer, Hero, Navbar } from "../components";
+import {
+  Button,
+  Cocktail,
+  ErrorMessage,
+  Footer,
+  Hero,
+  Loading,
+  Navbar,
+} from "../components";
 import animationData from "../assets/animation/Animation-cocktail-3.json";
 import Lottie from "react-lottie";
 import { useState } from "react";
@@ -15,11 +23,11 @@ const HomeScreen = () => {
   const { data, isLoading, isError, count, query, searchCocktail } =
     useGlobalContext();
   const [input, setInput] = useState(query);
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    searchCocktail(input)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchCocktail(input);
     // console.log('input inviato');
-  }
+  };
   return (
     <>
       <Navbar />
@@ -59,7 +67,10 @@ const HomeScreen = () => {
       <section className="mt-4 grid place-items-center">
         {/* section filter e cocktails */}
         <div className="flex w-11/12 items-center justify-between gap-8 p-8">
-          <form onSubmit={handleSubmit} className="flex flex-row items-center gap-8">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-row items-center gap-8"
+          >
             <label className="text-xl font-semibold">Cerca il tuo drink</label>
             <input
               type="text"
@@ -75,6 +86,13 @@ const HomeScreen = () => {
           <p className="text-gray-400">{count} risultati</p>
         </div>
         {/* fine section filter e cocktails */}
+        {!isLoading && isError ? (
+          <ErrorMessage>Nessun cocktail trovato</ErrorMessage>
+        ) : !isLoading && !isError ? (
+          <Cocktail data={data.drinks} />
+        ) : (
+          <Loading />
+        )}
       </section>
       <Footer />
     </>
