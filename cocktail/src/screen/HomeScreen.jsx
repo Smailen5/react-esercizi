@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 // import React, { useEffect, useState } from "react";
 // import { Hero, Cocktails, Loading, ErrorMessage } from "../components";
-// import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 // import Lottie from "react-lottie";
 // import animationData from "../assets/animation/drink-animation.json";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ const HomeScreen = () => {
     <>
       <Navbar />
       <Hero>
-        <div className="font-Opensans grid h-screen place-items-center gap-4 p-8 text-white">
+        <div className="grid h-screen place-items-center gap-4 p-8 font-Opensans text-white">
           <div className="grid place-items-center gap-8 py-8 text-white">
             <div className="grid gap-4 text-center font-bold uppercase tracking-wider">
               <h2 className="text-4xl text-pink-500">Wiki drink</h2>
@@ -29,9 +30,8 @@ const HomeScreen = () => {
             <Button buttonClass="py-3 px-6">
               <Link to="/about">Scopri di piu</Link>
             </Button>
-
           </div>
-          <div>
+          {/* <div>
             <Lottie
               options={{
                 loop: true,
@@ -42,9 +42,28 @@ const HomeScreen = () => {
                 },
               }}
             />
-          </div>
+          </div> */}
         </div>
       </Hero>
+
+      {/* section filter e cocktails */}
+      <section className="mt-4 grid place-items-center">
+        <div className="flex w-11/12 items-center justify-between gap-8 p-8">
+          <div className="flex flex-row items-center gap-8">
+            <h4 className="text-xl font-semibold">Cerca il tuo drink</h4>
+            <input
+              type="text"
+              id="drink"
+              placeholder="negroni"
+              className="rounded-full border border-gray-300 p-1 px-4"
+            />
+            <button className="text-pink-500">
+              <FaSearch />
+            </button>
+          </div>
+          <h6 className="text-gray-400">3 risultati</h6>
+        </div>
+      </section>
       <Footer />
     </>
   );
