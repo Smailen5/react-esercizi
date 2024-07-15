@@ -6,13 +6,18 @@ import useFetch from "./useFetch";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const { data } = useFetch("i=11003", true);
+  const [ query, setQuery ] = useState("negroni");
+  const { data, isLoading, isError, count } = useFetch(`s=${query}`, true);
+
+  const searchCocktail = (input)=>{
+    setQuery(input)
+  }
 
   // Altri stati o variabili di stato necessari
   // const [altroStato, setAltroStato] = useState(valoreIniziale);
 
   return (
-    <AppContext.Provider value="prova context">{children}</AppContext.Provider>
+    <AppContext.Provider value={{ searchCocktail, data, isLoading, isError, count, query }}>{children}</AppContext.Provider>
   );
 };
 
