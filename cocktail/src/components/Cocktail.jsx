@@ -18,8 +18,13 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
           backgroundSize: "cover",
         }}
       ></div>
-      <div className="info">
-        <div className="card-text-sm">{name}</div>
+
+      <div className="card-text-sm container">
+        <h5>{name}</h5>
+        <div className="see-more-btn">
+          <h5>ricetta</h5>
+          <HiClipboardList />
+        </div>
       </div>
     </Wrapper>
   );
@@ -42,8 +47,7 @@ const Wrapper = styled.article`
 
   .card-text-sm {
     display: flex;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
   }
 
   .card-text,
@@ -62,6 +66,7 @@ const Wrapper = styled.article`
     align-items: center;
     gap: 0.7rem;
     transition: var(--transition);
+    color: rgb(236, 72, 153); /* colore di tailwind pink-500 */
   }
 
   .see-more-btn:hover svg,
@@ -98,12 +103,6 @@ const Wrapper = styled.article`
     .card-text-sm {
       display: none;
     }
-  }
-  .info {
-    padding: 1rem;
-    text-align: center;
-    background-color: white;
-    border-radius: 0 0 var(--img-radius) var(--img-radius);
   }
 `;
 
