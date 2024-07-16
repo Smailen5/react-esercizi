@@ -17,9 +17,10 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-      >
+      ></div>
+      <div className="info">
+        <div className="card-text-sm">{name}</div>
       </div>
-        <div>{name}</div>
     </Wrapper>
   );
 };
@@ -97,6 +98,12 @@ const Wrapper = styled.article`
     .card-text-sm {
       display: none;
     }
+  }
+  .info {
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 0 0 var(--img-radius) var(--img-radius);
   }
 `;
 

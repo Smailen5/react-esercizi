@@ -10,4 +10,24 @@
   --trypan-blue-2: #0077cc;
   --extra-light-gray: #f2f2f2;
   --dark-gray: #333333;
+  --img-radius: 10px; /* o qualsiasi altro valore desiderato */
+  --light-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --byzantine: #702963; /* Colore personalizzato */
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+article {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--img-radius);
 }
