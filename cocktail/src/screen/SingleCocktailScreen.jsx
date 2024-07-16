@@ -1,11 +1,37 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { Loading, ErrorMessage } from "../components";
+import { Loading, ErrorMessage, Navbar, Footer } from "../components";
 import { useParams, Link } from "react-router-dom";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import styled from "styled-components";
+import useFetch from "../useFetch";
+
 const SingleCocktailScreen = () => {
-  return <Wrapper>Single Cocktail</Wrapper>;
+  const { id } = useParams();
+  const { isLoading, isError, data } = useFetch(`i=${id}`, true);
+  return (
+    <>
+      <Navbar />
+      <Wrapper>
+        {isLoading ? (
+          <Loading />
+        ) : isError ? (
+          <div className="cocktail-container container p-4">
+            <header>
+              <Link to="/">
+                <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
+                Back
+              </Link>
+            </header>
+            <ErrorMessage>Cocktail non trovato</ErrorMessage>
+          </div>
+        ) : (
+          <div {...data}>caricato correttamente</div>
+        )}
+      </Wrapper>
+      <Footer />
+    </>
+  );
 };
 
 const Wrapper = styled.section`
@@ -48,7 +74,7 @@ const Wrapper = styled.section`
         width: 100%;
         border-radius: var(--radius);
       }
-      .cocktail-datails {
+      .cocktail-details {
         display: grid;
         gap: 1rem;
         h2 {
@@ -100,7 +126,7 @@ const Wrapper = styled.section`
         grid-row: 1/1;
         width: 100%;
       }
-      .cocktail-datails {
+      .cocktail-details {
         grid-column: 6/-1;
         grid-row: 1/1;
         width: 100%;
