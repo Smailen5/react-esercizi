@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path: "/singlecocktail/:id",
+    path: "/cocktail/:id",
     element: <SingleCocktail />,
   },
   {

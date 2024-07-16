@@ -4,10 +4,18 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { HiClipboardList } from "react-icons/hi";
 import PropTypes from "prop-types";
+import { useGlobalContext } from "../context";
 
 const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
   // console.log(img, _id, name);
   const [show, setShow] = useState(true);
+  const { getScrollPosition } = useGlobalContext();
+  const navigate = useNavigate();
+
+  const goToCocktail = (_id) => {
+    getScrollPosition(window.scrollY);
+    navigate(`/cocktail/${_id}`);
+  };
 
   const showInfo = () => {
     setShow(true);
@@ -27,7 +35,11 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
         }}
       ></div>
 
-      <div className={show ? "card-text container show-info" : "card-text container"}>
+      <div
+        className={
+          show ? "card-text show-info container" : "card-text container"
+        }
+      >
         <h5>{name}</h5>
         <div className="see-more-btn">
           <h5>ricetta</h5>
@@ -37,7 +49,7 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
 
       <div className="card-text-sm container">
         <h5>{name}</h5>
-        <div className="see-more-btn">
+        <div className="see-more-btn" onClick={() => goToCocktail(_id)}>
           <h5>ricetta</h5>
           <HiClipboardList />
         </div>
