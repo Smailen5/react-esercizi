@@ -7,8 +7,16 @@ import PropTypes from "prop-types";
 
 const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
   // console.log(img, _id, name);
+  const [show, setShow] = useState(true);
+
+  const showInfo = () => {
+    setShow(true);
+  };
+  const hideInfo = () => {
+    setShow(false);
+  };
   return (
-    <Wrapper id={_id}>
+    <Wrapper id={_id} onMouseEnter={showInfo} onMouseLeave={hideInfo}>
       <div
         className="img"
         style={{
@@ -18,6 +26,14 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
           backgroundSize: "cover",
         }}
       ></div>
+
+      <div className={show ? "card-text-sm container show-info" : "card-text container"}>
+        <h5>{name}</h5>
+        <div className="see-more-btn">
+          <h5>ricetta</h5>
+          <HiClipboardList />
+        </div>
+      </div>
 
       <div className="card-text-sm container">
         <h5>{name}</h5>
