@@ -36,6 +36,7 @@ const AppProvider = ({ children }) => {
         query,
         getScrollPosition,
         deleteScrollPosition,
+        scrollPosition
       }}
     >
       {children}

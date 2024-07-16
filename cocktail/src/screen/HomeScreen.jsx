@@ -21,7 +21,7 @@ import { useState } from "react";
 import { useGlobalContext } from "../context";
 // import Navbar from "../components/Navbar";
 const HomeScreen = () => {
-  const { data, isLoading, isError, count, query, searchCocktail } =
+  const { data, isLoading, isError, count, query, searchCocktail, deleteScrollPosition, scrollPosition } =
     useGlobalContext();
   const [input, setInput] = useState(query);
   const handleSubmit = (e) => {
