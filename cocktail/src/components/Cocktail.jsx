@@ -6,7 +6,22 @@ import { HiClipboardList } from "react-icons/hi";
 import PropTypes from "prop-types";
 
 const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
-  return <Wrapper>Cocktail</Wrapper>;
+  // console.log(img, _id, name);
+  return (
+    <Wrapper id={_id}>
+      <div
+        className="img"
+        style={{
+          backgroundImage: `url(${img})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+      </div>
+        <div>{name}</div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.article`
