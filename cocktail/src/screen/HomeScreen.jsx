@@ -17,18 +17,35 @@ import {
 } from "../components";
 import animationData from "../assets/animation/Animation-cocktail-3.json";
 import Lottie from "react-lottie";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 // import Navbar from "../components/Navbar";
+
 const HomeScreen = () => {
-  const { data, isLoading, isError, count, query, searchCocktail, deleteScrollPosition, scrollPosition } =
-    useGlobalContext();
+  const {
+    data,
+    isLoading,
+    isError,
+    count,
+    query,
+    searchCocktail,
+    deleteScrollPosition,
+    scrollPosition,
+  } = useGlobalContext();
   const [input, setInput] = useState(query);
   const handleSubmit = (e) => {
     e.preventDefault();
     searchCocktail(input);
     // console.log('input inviato');
   };
+
+  useEffect(()=>{
+    if(scrollPosition) {
+      window.scrollTo(0, scrollPosition);
+      deleteScrollPosition()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <>
       <Navbar />
@@ -65,7 +82,7 @@ const HomeScreen = () => {
         </div>
       </Hero>
 
-      <section className="mt-4 mb-8">
+      <section className="mb-8 mt-4">
         {/* section filter e cocktails */}
         <div className="grid w-full place-items-center">
           <div className="flex w-11/12 items-center justify-between gap-8 p-8">
