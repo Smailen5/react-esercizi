@@ -10,10 +10,10 @@
   --trypan-blue-2: #0077cc;
   --extra-light-gray: #f2f2f2;
   --dark-gray: #333333;
-  --img-radius: 10px; /* o qualsiasi altro valore desiderato */
+  --img-radius: 10px; 
   --light-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
-  --byzantine: #702963; /* Colore personalizzato */
+  --byzantine: #702963; 
   --text-color: #333;
 }
 
