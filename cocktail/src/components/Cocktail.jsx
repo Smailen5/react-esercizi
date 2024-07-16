@@ -27,7 +27,7 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
         }}
       ></div>
 
-      <div className={show ? "card-text-sm container show-info" : "card-text container"}>
+      <div className={show ? "card-text container show-info" : "card-text container"}>
         <h5>{name}</h5>
         <div className="see-more-btn">
           <h5>ricetta</h5>
@@ -108,6 +108,8 @@ const Wrapper = styled.article`
       color: var(--text-color);
       transition: var(--transition);
       display: flex !important;
+      color: #fff;
+      padding: 1rem;
     }
 
     .show-info {
