@@ -52,7 +52,7 @@ const HomeScreen = () => {
     <>
       <Navbar />
       <Hero>
-        <div className="grid h-screen place-items-center gap-4 p-8 font-Opensans text-white">
+        <div className="grid h-screen place-items-center gap-4 p-8 font-Opensans text-white md:grid-cols-2">
           <div className="grid place-items-center gap-8 py-8 text-white">
             <div className="grid gap-4 text-center font-bold uppercase tracking-wider">
               <h2 className="text-4xl text-pink-500">Wiki drink</h2>
