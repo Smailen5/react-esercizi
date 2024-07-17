@@ -83,6 +83,7 @@ const SingleCocktailScreen = () => {
 
           <hr className="mx-4 my-8" />
 
+          {/* sezione immagine, nome e categoria */}
           <div className="cocktail-container mx-4">
             <img src={img} alt={name} className="rounded" />
             <div className="cocktail-details">
@@ -103,14 +104,15 @@ const SingleCocktailScreen = () => {
 
               <hr />
 
-              <div className="mt-4">
+              {/* sezione ingredienti */}
+              <div className="my-4">
                 <h4 className="font-bold text-gray-500">ingredienti:</h4>
-                <ul className="list-disc list-outside mt-2">
+                <ul className="mt-2 list-outside list-disc">
                   {strInstructionsList.map((el, index) => {
                     if (el.istruzione) {
                       return (
-                        <li key={index} className="ml-4 ">
-                          <p className="text-gray-500">
+                        <li key={index} className="ml-4">
+                          <p className="text-gray-400">
                             {el.qty} {el.istruzione}
                           </p>
                         </li>
@@ -119,6 +121,11 @@ const SingleCocktailScreen = () => {
                   })}
                 </ul>
               </div>
+
+              <hr className="" />
+
+              {/* sezione istruzioni */}
+              
             </div>
           </div>
         </div>
