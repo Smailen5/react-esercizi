@@ -73,12 +73,12 @@ const SingleCocktailScreen = () => {
     <>
       <Navbar />
       <Wrapper>
-        <div className="cocktail-container container px-12">
+        <div className="cocktail-container container px-14">
           <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4">
             <Link to="/">
               <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
             </Link>
-            <h4 className="text-sm uppercase tracking-wide text-gray-400">
+            <h4 className="text-sm uppercase tracking-wide text-gray-400 md:text-base">
               torna in home
             </h4>
           </header>
