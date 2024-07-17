@@ -87,13 +87,13 @@ const HomeScreen = () => {
       <section className="mb-8 mt-4">
         {/* section filter e cocktails */}
         <div className="grid w-full place-items-center">
-          <div className="flex w-11/12 flex-col gap-4 p-8 md:px-0">
+          <div className="flex w-11/12 flex-col gap-4 p-8 md:px-0 md:flex-row md:justify-between md:items-center">
             <form
               onSubmit={handleSubmit}
               className="flex flex-row items-center gap-8"
             >
-              <div className="flex flex-col gap-4">
-                <label className="text-xl font-semibold">
+              <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                <label className="text-xl font-semibold md:font-bold">
                   Cerca il tuo drink
                 </label>
                 <div className="flex items-center gap-8">
