@@ -73,8 +73,8 @@ const SingleCocktailScreen = () => {
     <>
       <Navbar />
       <Wrapper>
-        <div className="cocktail-container container px-14">
-          <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4">
+        <div className="cocktail-container container md:px-14">
+          <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4 md:mb-12">
             <Link to="/">
               <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
             </Link>
@@ -149,7 +149,7 @@ const SingleCocktailScreen = () => {
 };
 
 const Wrapper = styled.section`
-  height: auto;
+  min-height: 86vh;
   padding-bottom: 4rem;
 `;
 
