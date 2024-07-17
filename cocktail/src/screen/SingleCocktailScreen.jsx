@@ -125,7 +125,10 @@ const SingleCocktailScreen = () => {
               <hr className="" />
 
               {/* sezione istruzioni */}
-              
+              <div className="mt-4">
+                <h4 className="font-bold text-gray-500">istruzioni:</h4>
+                <p className="text-gray-400">{strInstructionsIT ? strInstructionsIT : strInstructions}</p>
+              </div>
             </div>
           </div>
         </div>
