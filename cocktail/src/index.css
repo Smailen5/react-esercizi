@@ -23,11 +23,3 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-article {
-  width: 70%;
-  margin: auto;
-  display: grid;
-  box-shadow: var(--light-shadow);
-  border-radius: var(--img-radius);
-}

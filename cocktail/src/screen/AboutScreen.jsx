@@ -5,7 +5,7 @@ import teamImg from "../assets/image/team-img.jpg";
 import useTitle from "../useTitle";
 
 const AboutScreen = () => {
-  useTitle('Chi siamo')
+  useTitle("Chi siamo");
   return (
     <>
       <Navbar />
@@ -28,13 +28,13 @@ const AboutScreen = () => {
           <h3 className="pb-8 text-center text-xl font-semibold uppercase text-violet-700">
             il nostro progetto
           </h3>
-          <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col items-center gap-8">
             {valueCards.map((card) => {
               return (
                 <Card
                   key={card.title}
                   {...card}
-                  className="group cursor-pointer rounded-lg bg-white pb-8 pt-8 transition-all duration-300 hover:scale-105 hover:bg-violet-700 grid place-items-center sm:w-4/5"
+                  className="group grid cursor-pointer place-items-center rounded-lg bg-white pb-8 pt-8 transition-all duration-300 hover:scale-105 hover:bg-violet-700 sm:w-4/5 shadow"
                 />
               );
             })}
@@ -57,13 +57,13 @@ const AboutScreen = () => {
           />
         </div>
       </div>
-
+      {/* immagini team */}
       <div className="flex justify-center p-8">
         <div className="container">
           <h3 className="pb-8 text-center text-xl font-semibold uppercase text-violet-700">
             il nostro team
           </h3>
-          <div className="flex flex-col gap-8 items-center justify-center">
+          <div className="flex flex-col items-center justify-center gap-8">
             {teamCards.map((card) => {
               return <Card key={card.title} {...card} className="w-4/5" />;
             })}
