@@ -5,7 +5,7 @@ import Cocktail from "./Cocktail";
 import styled from "styled-components";
 
 const Cocktails = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <Wrapper>
       {data.map((cocktail) => (

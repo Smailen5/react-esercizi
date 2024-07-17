@@ -69,7 +69,7 @@ const HomeScreen = () => {
               <Link to="/about">Scopri di piu</Link>
             </Button>
           </div>
-          {/* <div>
+          <div>
             <Lottie
               options={{
                 loop: true,
@@ -80,31 +80,35 @@ const HomeScreen = () => {
                 },
               }}
             />
-          </div> */}
+          </div>
         </div>
       </Hero>
 
       <section className="mb-8 mt-4">
         {/* section filter e cocktails */}
         <div className="grid w-full place-items-center">
-          <div className="flex w-11/12 items-center justify-between gap-8 p-8">
+          <div className="flex w-11/12 flex-col gap-4 p-8">
             <form
               onSubmit={handleSubmit}
               className="flex flex-row items-center gap-8"
             >
-              <label className="text-xl font-semibold">
-                Cerca il tuo drink
-              </label>
-              <input
-                type="text"
-                id="drink"
-                placeholder={query}
-                className="rounded-full border border-gray-300 p-1 px-4"
-                onChange={(e) => setInput(e.target.value)}
-              />
-              <button type="submit" className="text-pink-500">
-                <FaSearch />
-              </button>
+              <div className="flex flex-col gap-4">
+                <label className="text-xl font-semibold">
+                  Cerca il tuo drink
+                </label>
+                <div className="flex items-center gap-8">
+                  <input
+                    type="text"
+                    id="drink"
+                    placeholder={query}
+                    className="rounded-full border border-gray-300 p-1 px-4"
+                    onChange={(e) => setInput(e.target.value)}
+                  />
+                  <button type="submit" className="text-pink-500">
+                    <FaSearch />
+                  </button>
+                </div>
+              </div>
             </form>
             <p className="text-gray-400">{count} risultati</p>
           </div>
