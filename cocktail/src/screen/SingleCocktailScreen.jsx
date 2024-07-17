@@ -61,7 +61,7 @@ const SingleCocktailScreen = () => {
     strInstructionsIT,
     strInstructions,
   } = data[0];
-  
+
   const strInstructionsList = [
     { istruzione: strIngredient1, qty: strMeasure1 },
     { istruzione: strIngredient2, qty: strMeasure2 },
@@ -86,10 +86,10 @@ const SingleCocktailScreen = () => {
           <hr className="mx-4 my-8" />
 
           {/* sezione immagine, nome e categoria */}
-          <div className="cocktail-container mx-4">
-            <img src={img} alt={name} className="rounded" />
-            <div className="cocktail-details">
-              <div className="mt-6">
+          <div className="mx-4 md:flex md:gap-40 md:p-8 md:justify-start">
+            <img src={img} alt={name} className="rounded md:h-96" />
+            <div className="cocktail-details ">
+              <div className="mt-6 md:mt-0">
                 <h2 className="text-3xl font-bold uppercase">{name}</h2>
                 <div className="my-2 flex gap-4">
                   <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
@@ -145,115 +145,6 @@ const SingleCocktailScreen = () => {
 const Wrapper = styled.section`
   height: auto;
   padding-bottom: 4rem;
-  .spacer {
-    display: grid;
-    gap: 0.325rem;
-  }
-  .cocktail-content {
-    display: grid;
-    gap: 2rem;
-    header {
-      display: grid;
-      align-items: center;
-      justify-content: flex-start;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 0;
-      .icon {
-        font-size: 2.5rem;
-        transition: var(--transition);
-        &:hover {
-          color: var(--byzantine);
-          transform: scale(1.02);
-        }
-      }
-      .back-arrow {
-        text-transform: uppercase;
-        color: var(--primary-gray);
-        font-weight: 500;
-      }
-    }
-    .cocktail-container {
-      margin-top: 1rem;
-      display: grid;
-      gap: 2rem;
-      .img {
-        width: 100%;
-        border-radius: var(--radius);
-      }
-      .cocktail-details {
-        display: grid;
-        gap: 1rem;
-        h2 {
-          text-transform: uppercase;
-        }
-        .cocktail-type {
-          display: grid;
-          grid-template-columns: auto auto auto;
-          justify-content: flex-start;
-          gap: 0.5rem !important;
-          .label {
-            text-transform: lowercase;
-            font-size: 0.8em;
-            font-weight: 700;
-            letter-spacing: var(--letter-spacing);
-            font-variant: small-caps;
-            color: var(--soft-dark-gray);
-            border: 1px solid var(--soft-light-gray);
-            border-radius: var(--radius);
-            background-color: var(--extra-light-gray);
-            padding: 0rem 0.5rem;
-          }
-        }
-        .info {
-          color: var(--soft-dark-gray);
-          max-width: 55ch;
-        }
-        h4 {
-          color: var(--dark-gray);
-        }
-        .instruction-list {
-          list-style: outside;
-          padding-left: 1.1rem;
-        }
-      }
-    }
-  }
-  @media screen and (min-width: 753px) {
-    min-height: 84.5vh;
-    hr {
-      display: none;
-    }
-    .cocktail-container {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      .img {
-        max-height: 500px;
-        grid-column: 1/6;
-        grid-row: 1/1;
-        width: 100%;
-      }
-      .cocktail-details {
-        grid-column: 6/-1;
-        grid-row: 1/1;
-        width: 100%;
-        gap: 1rem !important;
-      }
-    }
-  }
-  @media screen and (min-width: 992px) {
-    .cocktail-container {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      .img {
-        max-height: 600px;
-        grid-column: 1/5;
-        grid-row: 1/1;
-        width: 100%;
-      }
-    }
-  }
 `;
 
 export default SingleCocktailScreen;
