@@ -83,14 +83,16 @@ const SingleCocktailScreen = () => {
             </h4>
           </header>
 
-          <hr className="mx-4 my-8" />
+          <hr className="mx-4 my-8 md:hidden" />
 
           {/* sezione immagine, nome e categoria */}
-          <div className="mx-4 md:flex md:gap-40 md:justify-start">
+          <div className="mx-4 md:flex md:justify-start md:gap-40">
             <img src={img} alt={name} className="rounded md:h-96" />
-            <div className="cocktail-details ">
+            <div className="cocktail-details">
               <div className="mt-6 md:mt-0">
-                <h2 className="text-3xl font-bold uppercase md:text-4xl">{name}</h2>
+                <h2 className="text-3xl font-bold uppercase md:text-4xl">
+                  {name}
+                </h2>
                 <div className="my-2 flex gap-4">
                   <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
                     {type}
@@ -104,11 +106,13 @@ const SingleCocktailScreen = () => {
                 </div>
               </div>
 
-              <hr />
+              <hr className="md:hidden" />
 
               {/* sezione ingredienti */}
               <div className="my-4">
-                <h4 className="font-bold text-gray-500 md:text-lg md:mb-8">ingredienti:</h4>
+                <h4 className="font-bold text-gray-500 md:mb-8 md:text-lg">
+                  ingredienti:
+                </h4>
                 <ul className="mt-2 list-outside list-disc">
                   {strInstructionsList.map((el, index) => {
                     if (el.istruzione) {
@@ -124,11 +128,13 @@ const SingleCocktailScreen = () => {
                 </ul>
               </div>
 
-              <hr className="" />
+              <hr className="md:hidden" />
 
               {/* sezione istruzioni */}
               <div className="mt-4">
-                <h4 className="font-bold text-gray-500 md:text-lg md:mb-8">istruzioni:</h4>
+                <h4 className="font-bold text-gray-500 md:mb-8 md:text-lg">
+                  istruzioni:
+                </h4>
                 <p className="text-gray-400">
                   {strInstructionsIT ? strInstructionsIT : strInstructions}
                 </p>
