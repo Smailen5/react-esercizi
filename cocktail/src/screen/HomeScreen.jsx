@@ -87,7 +87,7 @@ const HomeScreen = () => {
       <section className="mb-8 mt-4">
         {/* section filter e cocktails */}
         <div className="grid w-full place-items-center">
-          <div className="flex w-11/12 flex-col gap-4 p-8">
+          <div className="flex w-11/12 flex-col gap-4 p-8 md:px-0">
             <form
               onSubmit={handleSubmit}
               className="flex flex-row items-center gap-8"

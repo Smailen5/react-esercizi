@@ -23,6 +23,7 @@ const Wrapper = styled.section`
   gap: 2rem;
   @media screen and (min-width: 753px) {
     grid-template-columns: 1fr 1fr;
+    padding: 0 3rem;
   }
   @media screen and (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr;
