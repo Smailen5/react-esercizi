@@ -17,7 +17,7 @@ const useFetch = (query, type = false) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsError(true);
+      setIsError(false);
       setIsLoading(true);
       try {
         const response = await axios.get(`${url}${query}`);

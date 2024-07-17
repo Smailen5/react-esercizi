@@ -9,15 +9,24 @@ import useFetch from "../useFetch";
 const SingleCocktailScreen = () => {
   const { id } = useParams();
   const { isLoading, isError, data } = useFetch(`i=${id}`, true);
-  return (
-    <>
-      <Navbar />
-      <Wrapper>
-        {isLoading ? (
+  if (isLoading) {
+    return (
+      <>
+        <Navbar />
+        <Wrapper>
           <Loading />
-        ) : isError ? (
-          <div className="cocktail-container container p-4">
-            <header>
+        </Wrapper>
+      </>
+    );
+  }
+  if (isError) {
+    return (
+      <>
+        <Navbar />
+        <Wrapper>
+          {/* la classe cocktail-container viene applicata ma non ci sono stili */}
+          <div className="cocktail-container container h-[74vh]">
+            <header className="m-8">
               <Link to="/">
                 <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
                 Back
@@ -25,15 +34,36 @@ const SingleCocktailScreen = () => {
             </header>
             <ErrorMessage>Cocktail non trovato</ErrorMessage>
           </div>
-        ) : (
-          <div {...data}>caricato correttamente</div>
-        )}
+        </Wrapper>
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Navbar />
+      <Wrapper>
+        <div className="cocktail-container container">
+          <header className="cocktail-container container m-8">
+            <Link to="/">
+              <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
+              Back
+            </Link>
+          </header>
+          <div className="cocktail-details">
+            <img src={data.strDrinkThumb} alt={data.strDrink} className="img" />
+            <div className="cocktail-details">
+              <h2>{data.strDrink}</h2>
+              <p className="info">{data.strInstructions}</p>
+            </div>
+          </div>
+        </div>
       </Wrapper>
       <Footer />
     </>
   );
 };
-
 const Wrapper = styled.section`
   height: auto;
   padding-bottom: 4rem;
