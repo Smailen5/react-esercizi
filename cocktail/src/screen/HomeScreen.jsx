@@ -38,7 +38,6 @@ const HomeScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     searchCocktail(input);
-    // console.log('input inviato');
   };
 
   useEffect(() => {

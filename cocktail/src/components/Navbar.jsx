@@ -24,8 +24,6 @@ const Navbar = () => {
     }
   }, [isNavbarVisible]);
 
-  // console.log(isNavbarVisible);
-
   return (
     <nav className="bg-white p-4 shadow-md lg:px-[5%] xl:px-[15%]">
       <header className="flex flex-row justify-between text-lg font-semibold text-violet-800 md:grid md:grid-cols-4">

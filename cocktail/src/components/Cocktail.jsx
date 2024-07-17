@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import { useGlobalContext } from "../context";
 
 const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
-  // console.log(img, _id, name);
   const [show, setShow] = useState(true);
   const { getScrollPosition } = useGlobalContext();
   const navigate = useNavigate();

@@ -61,7 +61,7 @@ const SingleCocktailScreen = () => {
     strInstructionsIT,
     strInstructions,
   } = data[0];
-  // console.log(data[0].strDrink);
+  
   const strInstructionsList = [
     { istruzione: strIngredient1, qty: strMeasure1 },
     { istruzione: strIngredient2, qty: strMeasure2 },

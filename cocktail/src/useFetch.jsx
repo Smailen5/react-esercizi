@@ -11,10 +11,6 @@ const useFetch = (query, type = false) => {
   const [count, setCount] = useState(0);
   const [isError, setIsError] = useState(false);
 
-  // console.log("fetch chiamato");
-  // console.log(data);
-  // console.log(count);
-
   useEffect(() => {
     const fetchData = async () => {
       setIsError(false);
@@ -24,15 +20,12 @@ const useFetch = (query, type = false) => {
         if (response.data && response.data.drinks) {
           setData(response.data.drinks);
           setCount(response.data.drinks.length);
-          // console.log("Dati ricevuti", response.data.drinks);
         } else {
           setData([]);
           setCount(0);
-          // console.log("non ci sono dati");
         }
       } catch (error) {
         setIsError(true);
-        // console.error("Errore durante il fetch:", error);
         setData([]);
         setCount(0);
       }
