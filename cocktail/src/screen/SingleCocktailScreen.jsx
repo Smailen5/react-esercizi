@@ -73,7 +73,7 @@ const SingleCocktailScreen = () => {
     <>
       <Navbar />
       <Wrapper>
-        <div className="cocktail-container container">
+        <div className="cocktail-container container px-12">
           <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4">
             <Link to="/">
               <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
@@ -86,11 +86,11 @@ const SingleCocktailScreen = () => {
           <hr className="mx-4 my-8" />
 
           {/* sezione immagine, nome e categoria */}
-          <div className="mx-4 md:flex md:gap-40 md:p-8 md:justify-start">
+          <div className="mx-4 md:flex md:gap-40 md:justify-start">
             <img src={img} alt={name} className="rounded md:h-96" />
             <div className="cocktail-details ">
               <div className="mt-6 md:mt-0">
-                <h2 className="text-3xl font-bold uppercase">{name}</h2>
+                <h2 className="text-3xl font-bold uppercase md:text-4xl">{name}</h2>
                 <div className="my-2 flex gap-4">
                   <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
                     {type}
@@ -108,7 +108,7 @@ const SingleCocktailScreen = () => {
 
               {/* sezione ingredienti */}
               <div className="my-4">
-                <h4 className="font-bold text-gray-500">ingredienti:</h4>
+                <h4 className="font-bold text-gray-500 md:text-lg md:mb-8">ingredienti:</h4>
                 <ul className="mt-2 list-outside list-disc">
                   {strInstructionsList.map((el, index) => {
                     if (el.istruzione) {
@@ -128,7 +128,7 @@ const SingleCocktailScreen = () => {
 
               {/* sezione istruzioni */}
               <div className="mt-4">
-                <h4 className="font-bold text-gray-500">istruzioni:</h4>
+                <h4 className="font-bold text-gray-500 md:text-lg md:mb-8">istruzioni:</h4>
                 <p className="text-gray-400">
                   {strInstructionsIT ? strInstructionsIT : strInstructions}
                 </p>
