@@ -61,7 +61,7 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
 const Wrapper = styled.article`
   cursor: pointer;
   position: relative;
-  width: 70%;
+  width: 80%;
   margin: auto;
   border-radius: var(--img-radius);
   display: grid;
