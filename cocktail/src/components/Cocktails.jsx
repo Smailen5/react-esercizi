@@ -1,6 +1,6 @@
-import Cocktail from "./Cocktail";
-import styled from "styled-components";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import Cocktail from "./Cocktail";
 
 const Cocktails = ({ data }) => {
   return (

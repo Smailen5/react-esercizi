@@ -1,11 +1,9 @@
-import styled from "styled-components";
-import { Footer, Navbar, Button } from "../components";
-import { Link } from "react-router-dom";
 import Lottie from "react-lottie";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import animationData from "../assets/animation/animation-404.json";
-// import Lottie from "react-lottie";
-// import animationData from "../assets/animation/not-found.json";
-// import { Link } from "react-router-dom";
+import { Button, Footer, Navbar } from "../components";
+
 const ErrorScreen = () => {
   return (
     <>

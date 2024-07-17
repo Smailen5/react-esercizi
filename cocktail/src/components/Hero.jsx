@@ -1,5 +1,5 @@
-import backImage from "../assets/image/home-hero.jpg";
 import PropTypes from "prop-types";
+import backImage from "../assets/image/home-hero.jpg";
 const Hero = ({ children, img, disableOverlay }) => {
   return (
     <div className="relative h-screen">

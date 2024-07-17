@@ -1,8 +1,8 @@
-import { Hero, Card, Navbar, Footer } from "../components";
-import { valueCards, teamCards } from "../utils/info";
 import image from "../assets/image/about-hero.jpg";
 import teamImg from "../assets/image/team-img.jpg";
+import { Card, Footer, Hero, Navbar } from "../components";
 import useTitle from "../useTitle";
+import { teamCards, valueCards } from "../utils/info";
 
 const AboutScreen = () => {
   useTitle("Chi siamo");

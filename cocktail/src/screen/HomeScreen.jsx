@@ -1,9 +1,8 @@
-// import React, { useEffect, useState } from "react";
-// import { Hero, Cocktails, Loading, ErrorMessage } from "../components";
 import { FaSearch } from "react-icons/fa";
-// import Lottie from "react-lottie";
-// import animationData from "../assets/animation/drink-animation.json";
+import { useEffect, useState } from "react";
+import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
+import animationData from "../assets/animation/Animation-cocktail-3.json";
 import {
   Button,
   Cocktails,
@@ -13,12 +12,8 @@ import {
   Loading,
   Navbar,
 } from "../components";
-import animationData from "../assets/animation/Animation-cocktail-3.json";
-import Lottie from "react-lottie";
-import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 import useTitle from "../useTitle";
-// import Navbar from "../components/Navbar";
 
 const HomeScreen = () => {
   useTitle("Home");

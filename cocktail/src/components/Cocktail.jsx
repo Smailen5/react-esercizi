@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import { HiClipboardList } from "react-icons/hi";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { HiClipboardList } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import { useGlobalContext } from "../context";
 
 const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {

@@ -1,5 +1,5 @@
-import { Footer, Hero, Navbar, Button } from "../components";
 import backImage from "../assets/image/Contact-hero.png";
+import { Button, Footer, Hero, Navbar } from "../components";
 import useTitle from "../useTitle";
 
 const ContactScreen = () => {
