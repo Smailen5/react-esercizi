@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 const ErrorMessage = ({ children }) => {
   return (
     <Wrapper>
@@ -27,5 +28,9 @@ const Wrapper = styled.div`
     width: 60%;
   }
 `;
+
+ErrorMessage.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default ErrorMessage;

@@ -1,5 +1,6 @@
 import Cocktail from "./Cocktail";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Cocktails = ({ data }) => {
   return (
@@ -28,4 +29,8 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
+
+Cocktails.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 export default Cocktails;
