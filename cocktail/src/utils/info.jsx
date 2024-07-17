@@ -1,5 +1,5 @@
-import { IoSchool, IoPeopleCircleSharp } from "react-icons/io5";
 import { ImDatabase } from "react-icons/im";
+import { IoPeopleCircleSharp, IoSchool } from "react-icons/io5";
 
 export const valueCards = [
   {

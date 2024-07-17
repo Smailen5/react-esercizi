@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React from "react";
+import PropTypes from "prop-types";
 import { AiFillHome, AiFillMessage } from "react-icons/ai";
-import { RiTeamFill } from "react-icons/ri";
 import {
   FaFacebookSquare,
   FaTwitterSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
+import { RiTeamFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const links = [
@@ -76,4 +74,13 @@ const SocialComponent = ({ classSocial }) => {
   );
 };
 
+LinkComponent.propTypes = {
+  classLink: PropTypes.string,
+};
+
+SocialComponent.propTypes = {
+  classSocial: PropTypes.string,
+};
+
 export { LinkComponent, SocialComponent };
+
