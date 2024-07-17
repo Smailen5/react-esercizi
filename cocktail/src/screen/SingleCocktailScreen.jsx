@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { Loading, ErrorMessage, Navbar, Footer } from "../components";
-import { useParams, Link } from "react-router-dom";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { ErrorMessage, Footer, Loading, Navbar } from "../components";
 import useFetch from "../useFetch";
+import useTitle from "../useTitle";
 
 const SingleCocktailScreen = () => {
   const { id } = useParams();
   const { isLoading, isError, data } = useFetch(`i=${id}`, true);
+  useTitle(data && data[0] ? data[0].strDrink : "Not found");
   if (isLoading) {
     return (
       <>
@@ -127,7 +129,9 @@ const SingleCocktailScreen = () => {
               {/* sezione istruzioni */}
               <div className="mt-4">
                 <h4 className="font-bold text-gray-500">istruzioni:</h4>
-                <p className="text-gray-400">{strInstructionsIT ? strInstructionsIT : strInstructions}</p>
+                <p className="text-gray-400">
+                  {strInstructionsIT ? strInstructionsIT : strInstructions}
+                </p>
               </div>
             </div>
           </div>
