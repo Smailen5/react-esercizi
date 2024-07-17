@@ -25,7 +25,7 @@ const Navbar = () => {
   }, [isNavbarVisible]);
 
   return (
-    <nav className="bg-white p-4 shadow-md lg:px-[5%] xl:px-[15%]">
+    <nav className="bg-white p-4 shadow-md lg:px-[5%] xl:px-[15%] md:py-6">
       <header className="flex flex-row justify-between text-lg font-semibold text-violet-800 md:grid md:grid-cols-4">
         <Link to="/" className="uppercase hover:text-pink-500">
           Cocktail Wiki

@@ -149,7 +149,7 @@ const SingleCocktailScreen = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 86vh;
+  min-height: 84vh;
   padding-bottom: 4rem;
 `;
 
