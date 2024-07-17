@@ -40,6 +40,33 @@ const SingleCocktailScreen = () => {
     );
   }
 
+  const {
+    strDrink: name,
+    strDrinkThumb: img,
+    strCategory: category,
+    strAlcoholic: type,
+    strGlass,
+    strIngredient1,
+    strIngredient2,
+    strIngredient3,
+    strIngredient4,
+    strIngredient5,
+    strMeasure1,
+    strMeasure2,
+    strMeasure3,
+    strMeasure4,
+    strMeasure5,
+    strInstructionsIT,
+    strInstructions,
+  } = data[0];
+  // console.log(data[0].strDrink);
+  const strInstructionsList = [
+    { istruzione: strIngredient1, qty: strMeasure1 },
+    { istruzione: strIngredient2, qty: strMeasure2 },
+    { istruzione: strIngredient3, qty: strMeasure3 },
+    { istruzione: strIngredient4, qty: strMeasure4 },
+    { istruzione: strIngredient5, qty: strMeasure5 },
+  ];
   return (
     <>
       <Navbar />
@@ -48,14 +75,38 @@ const SingleCocktailScreen = () => {
           <header className="cocktail-container container m-8">
             <Link to="/">
               <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
-              Back
+              <h4 className="text-sm uppercase text-gray-400">Back</h4>
             </Link>
           </header>
-          <div className="cocktail-details">
-            <img src={data.strDrinkThumb} alt={data.strDrink} className="img" />
+          <hr />
+          <div className="cocktail-container">
+            <img src={img} alt={name} className="img" />
             <div className="cocktail-details">
-              <h2>{data.strDrink}</h2>
-              <p className="info">{data.strInstructions}</p>
+              <div className="spacer">
+                <h2>{name}</h2>
+                <div className="cocktail-type">
+                  <p className="label">{type}</p>
+                  <p className="label">{category}</p>
+                  <p className="label">{strGlass}</p>
+                </div>
+              </div>
+              <hr />
+              <div className="spacer">
+                <h4>ingredienti:</h4>
+                <ul className="instruction-list">
+                  {strInstructionsList.map((el, index) => {
+                    if (el.istruzione) {
+                      return (
+                        <li key={index}>
+                          <p>
+                            {el.qty} {el.istruzione}
+                          </p>
+                        </li>
+                      );
+                    }
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -64,6 +115,7 @@ const SingleCocktailScreen = () => {
     </>
   );
 };
+
 const Wrapper = styled.section`
   height: auto;
   padding-bottom: 4rem;
