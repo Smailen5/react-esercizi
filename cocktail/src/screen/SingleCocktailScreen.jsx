@@ -26,7 +26,7 @@ const SingleCocktailScreen = () => {
         <Wrapper>
           {/* la classe cocktail-container viene applicata ma non ci sono stili */}
           <div className="cocktail-container container h-[74vh]">
-            <header className="m-8">
+            <header className="m-4">
               <Link to="/">
                 <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
                 Back
@@ -72,33 +72,45 @@ const SingleCocktailScreen = () => {
       <Navbar />
       <Wrapper>
         <div className="cocktail-container container">
-          <header className="cocktail-container container m-8">
+          <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4">
             <Link to="/">
-              <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
-              <h4 className="text-sm uppercase text-gray-400">Back</h4>
+              <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
             </Link>
+            <h4 className="text-sm uppercase tracking-wide text-gray-400">
+              torna in home
+            </h4>
           </header>
-          <hr />
-          <div className="cocktail-container">
-            <img src={img} alt={name} className="img" />
+
+          <hr className="mx-4 my-8" />
+
+          <div className="cocktail-container mx-4">
+            <img src={img} alt={name} className="rounded" />
             <div className="cocktail-details">
-              <div className="spacer">
-                <h2>{name}</h2>
-                <div className="cocktail-type">
-                  <p className="label">{type}</p>
-                  <p className="label">{category}</p>
-                  <p className="label">{strGlass}</p>
+              <div className="mt-6">
+                <h2 className="text-3xl font-bold uppercase">{name}</h2>
+                <div className="my-2 flex gap-4">
+                  <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
+                    {type}
+                  </p>
+                  <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
+                    {category}
+                  </p>
+                  <p className="rounded border bg-gray-50 px-2 py-1 text-xs font-semibold uppercase text-gray-400">
+                    {strGlass}
+                  </p>
                 </div>
               </div>
+
               <hr />
-              <div className="spacer">
-                <h4>ingredienti:</h4>
-                <ul className="instruction-list">
+
+              <div className="mt-4">
+                <h4 className="font-bold text-gray-500">ingredienti:</h4>
+                <ul className="list-disc list-outside mt-2">
                   {strInstructionsList.map((el, index) => {
                     if (el.istruzione) {
                       return (
-                        <li key={index}>
-                          <p>
+                        <li key={index} className="ml-4 ">
+                          <p className="text-gray-500">
                             {el.qty} {el.istruzione}
                           </p>
                         </li>
