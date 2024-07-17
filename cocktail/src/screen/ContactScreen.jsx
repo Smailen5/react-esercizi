@@ -26,7 +26,7 @@ const ContactScreen = () => {
             <form
               action="https://formspree.io/f/xeojoewq"
               method="POST"
-              className="flex flex-col gap-4 p-8"
+              className="flex flex-col gap-4 p-8 md:px-16"
             >
               <div className="flex flex-col gap-2">
                 {/* nome */}
