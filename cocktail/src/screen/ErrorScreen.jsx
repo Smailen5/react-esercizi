@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-// import React from "react";
 import styled from "styled-components";
 import { Footer, Navbar, Button } from "../components";
 import { Link } from "react-router-dom";

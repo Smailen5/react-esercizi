@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // import { Navbar, Sidebar, Footer } from "./components";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import HomeScreen from "./screen/HomeScreen";

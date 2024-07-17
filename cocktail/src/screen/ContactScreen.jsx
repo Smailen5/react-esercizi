@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import { Footer, Hero, Navbar, Button } from "../components";
 import backImage from "../assets/image/Contact-hero.png";
 import useTitle from "../useTitle";

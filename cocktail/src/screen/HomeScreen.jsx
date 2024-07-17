@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // import React, { useEffect, useState } from "react";
 // import { Hero, Cocktails, Loading, ErrorMessage } from "../components";
 import { FaSearch } from "react-icons/fa";
@@ -86,7 +85,7 @@ const HomeScreen = () => {
       <section className="mb-8 mt-4">
         {/* section filter e cocktails */}
         <div className="grid w-full place-items-center">
-          <div className="flex w-11/12 flex-col gap-4 p-8 md:px-0 md:flex-row md:justify-between md:items-center">
+          <div className="flex w-11/12 flex-col gap-4 p-8 md:flex-row md:items-center md:justify-between md:px-0">
             <form
               onSubmit={handleSubmit}
               className="flex flex-row items-center gap-8"

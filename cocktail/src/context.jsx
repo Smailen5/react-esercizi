@@ -1,5 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import { createContext, useContext, useState } from "react";
 import useFetch from "./useFetch";
@@ -36,7 +34,7 @@ const AppProvider = ({ children }) => {
         query,
         getScrollPosition,
         deleteScrollPosition,
-        scrollPosition
+        scrollPosition,
       }}
     >
       {children}

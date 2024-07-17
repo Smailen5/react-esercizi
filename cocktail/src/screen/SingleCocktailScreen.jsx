@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
