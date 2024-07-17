@@ -40,7 +40,7 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
         }
       >
         <h5>{name}</h5>
-        <div className="see-more-btn">
+        <div className="see-more-btn" onClick={() => goToCocktail(_id)}>
           <h5>ricetta</h5>
           <HiClipboardList />
         </div>
