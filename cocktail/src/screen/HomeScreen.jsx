@@ -19,9 +19,11 @@ import animationData from "../assets/animation/Animation-cocktail-3.json";
 import Lottie from "react-lottie";
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
+import useTitle from "../useTitle";
 // import Navbar from "../components/Navbar";
 
 const HomeScreen = () => {
+  useTitle("Home");
   const {
     data,
     isLoading,
@@ -39,13 +41,13 @@ const HomeScreen = () => {
     // console.log('input inviato');
   };
 
-  useEffect(()=>{
-    if(scrollPosition) {
+  useEffect(() => {
+    if (scrollPosition) {
       window.scrollTo(0, scrollPosition);
-      deleteScrollPosition()
+      deleteScrollPosition();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Navbar />
