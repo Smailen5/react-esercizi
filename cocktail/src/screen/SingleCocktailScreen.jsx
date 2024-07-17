@@ -90,7 +90,7 @@ const SingleCocktailScreen = () => {
             <img src={img} alt={name} className="rounded md:h-96" />
             <div className="cocktail-details">
               <div className="mt-6 md:mt-0">
-                <h2 className="text-3xl font-bold uppercase md:text-4xl">
+                <h2 className="text-3xl font-bold uppercase md:text-4xl md:mb-6">
                   {name}
                 </h2>
                 <div className="my-2 flex gap-4">
