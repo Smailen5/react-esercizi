@@ -14,10 +14,10 @@ const ContactScreen = () => {
             <h2 className="text-4xl font-bold tracking-wide text-slate-900">
               Vorresti aggiungere un cocktail?
             </h2>
-            <h4 className="text-lg leading-6 text-slate-400">
+            <h3 className="text-lg leading-6 text-slate-400">
               il nostro team e sempre disponibile per valutare possibili nuove
               ricette ed ad aggiungerle alla nostro database
-            </h4>
+            </h3>
           </div>
           {/* form per aggiunta cocktail */}
           <div className="w-full rounded bg-white shadow-2xl drop-shadow-2xl">

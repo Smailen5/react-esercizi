@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ErrorMessage = ({ children }) => {
   return (
     <Wrapper>
-      <h4>{children}</h4>
+      <h2>{children}</h2>
     </Wrapper>
   );
 };

@@ -38,17 +38,17 @@ const Cocktail = ({ strDrinkThumb: img, idDrink: _id, strDrink: name }) => {
           show ? "card-text show-info container" : "card-text container"
         }
       >
-        <h5>{name}</h5>
+        <h2>{name}</h2>
         <div className="see-more-btn" onClick={() => goToCocktail(_id)}>
-          <h5>ricetta</h5>
+          <h3>ricetta</h3>
           <HiClipboardList />
         </div>
       </div>
 
       <div className="card-text-sm container">
-        <h5>{name}</h5>
+        <h2>{name}</h2>
         <div className="see-more-btn" onClick={() => goToCocktail(_id)}>
-          <h5>ricetta</h5>
+          <h3>ricetta</h3>
           <HiClipboardList />
         </div>
       </div>

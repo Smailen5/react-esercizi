@@ -48,14 +48,14 @@ const HomeScreen = () => {
           <div className="grid place-items-center gap-8 py-8 text-white">
             <div className="grid gap-4 text-center font-bold uppercase tracking-wider">
               <h2 className="text-4xl text-pink-500">Wiki drink</h2>
-              <h4>tutti i cocktail del mondo a portata di click</h4>
+              <h3>tutti i cocktail del mondo a portata di click</h3>
             </div>
-            <h5 className="text-center text-sm">
+            <p className="text-center text-sm">
               Wiki Drink e un database internazionale che mette a tua
               disposizione, in maniera{" "}
               <span className="capitalize text-pink-500">gratuita</span>, le
               ricette dei piu importanti e diffusi cocktail al mondo
-            </h5>
+            </p>
 
             <Button buttonClass="py-3 px-6" aria-label="Scopri di piu" role="button">
               <Link to="/about" aria-label="Scopri di piu">Scopri di piu</Link>

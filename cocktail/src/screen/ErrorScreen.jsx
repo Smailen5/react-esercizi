@@ -9,7 +9,7 @@ const ErrorScreen = () => {
     <>
       <Navbar />
       <Wrapper className="h-dvh">
-        <h3 className="font-semibold">Pagina non trovata</h3>
+        <h2 className="font-semibold">Pagina non trovata</h2>
         <div>
           <Lottie
             options={{

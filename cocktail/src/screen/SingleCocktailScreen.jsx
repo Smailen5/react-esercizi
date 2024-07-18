@@ -76,9 +76,9 @@ const SingleCocktailScreen = () => {
             <Link to="/" aria-label="torna in home">
               <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
             </Link>
-            <h4 className="text-sm uppercase tracking-wide text-gray-400 md:text-base">
+            <h3 className="text-sm uppercase tracking-wide text-gray-400 md:text-base">
               torna in home
-            </h4>
+            </h3>
           </header>
 
           <hr className="mx-4 my-8 md:hidden" />
@@ -108,9 +108,9 @@ const SingleCocktailScreen = () => {
 
               {/* sezione ingredienti */}
               <div className="my-4">
-                <h4 className="font-bold text-gray-500 md:mb-8 md:text-lg">
+                <h3 className="font-bold text-gray-500 md:mb-8 md:text-lg">
                   ingredienti:
-                </h4>
+                </h3>
                 <ul className="mt-2 list-outside list-disc">
                   {strInstructionsList.map((el, index) => {
                     if (el.istruzione) {
@@ -130,9 +130,9 @@ const SingleCocktailScreen = () => {
 
               {/* sezione istruzioni */}
               <div className="mt-4">
-                <h4 className="font-bold text-gray-500 md:mb-8 md:text-lg">
+                <h3 className="font-bold text-gray-500 md:mb-8 md:text-lg">
                   istruzioni:
-                </h4>
+                </h3>
                 <p className="text-gray-400">
                   {strInstructionsIT ? strInstructionsIT : strInstructions}
                 </p>

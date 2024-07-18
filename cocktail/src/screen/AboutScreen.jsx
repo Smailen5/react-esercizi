@@ -12,12 +12,12 @@ const AboutScreen = () => {
       <Hero img={image}>
         <section>
           <div className="mb-4 h-px bg-pink-500" />
-          <h3 className="text-center text-xl italic text-white">
+          <h2 className="text-center text-xl italic text-white">
             <q>
               Il cocktail perfetto è un&apos;armonia di sapori <br /> da gustare
               con piacere e senza fretta.
             </q>
-          </h3>
+          </h2>
           <div className="mt-4 h-px bg-pink-500" />
         </section>
       </Hero>

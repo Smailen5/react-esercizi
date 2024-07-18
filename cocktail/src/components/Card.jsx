@@ -12,7 +12,7 @@ const Card = ({ title, text, icon, className, subtitle, img }) => {
 
         {subtitle ? (
           <div className="text-sm font-semibold text-gray-500">
-            <h6>{subtitle}</h6>
+            <h5>{subtitle}</h5>
           </div>
         ) : (
           <div className="text-3xl text-pink-500">{icon}</div>
