@@ -13,21 +13,21 @@ const links = [
     url: "/",
     text: "Home",
     icon: (
-      <AiFillHome className="text-lg text-violet-800 group-hover:text-pink-500" />
+      <AiFillHome className="text-lg text-violet-800 group-hover:text-pink-500" aria-label="home" role="link" />
     ),
   },
   {
     url: "/about",
     text: "Chi Siamo",
     icon: (
-      <RiTeamFill className="text-lg text-violet-800 group-hover:text-pink-500" />
+      <RiTeamFill className="text-lg text-violet-800 group-hover:text-pink-500" aria-label="chi siamo" role="link" />
     ),
   },
   {
     url: "/contact",
     text: "contattaci",
     icon: (
-      <AiFillMessage className="text-lg text-violet-800 group-hover:text-pink-500" />
+      <AiFillMessage className="text-lg text-violet-800 group-hover:text-pink-500" aria-label="contattaci" role="link" />
     ),
   },
 ];
