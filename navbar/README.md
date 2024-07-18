@@ -1,4 +1,4 @@
-### Esercizio Navbar
+# Esercizio Navbar
 
 ### Sviluppo
 

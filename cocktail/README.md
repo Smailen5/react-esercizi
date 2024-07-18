@@ -1,19 +1,39 @@
 # Cocktail Wiki
 
-- installato react+vite
-- installato tailwindcss + prettier per tailwind
-- creato il context
-- installato react router dom 6.24.1
-- installato styled components
-- installato react icons
-- installato shadcn/ui -- disinstallo shadcn per fare tutto da solo, in un progetto futuro lo usero sicuramente
-- installato PropTypes
-- installato lottie per le animazioni
-- usato https://bennettfeely.com/clippy/ per il clip path delle immagini
-- aggiunto FormSpree per ricevere i dati del form nella mail (ricorda o di nascondere l'end point o di limitarlo da FormSpree appena hai il dominio)
-- 
+### Sviluppo
+
+#### Framework JavaScript
+
+- React
+- styled-components 6.1.11
+- React Router 6
+
+#### Font Script
+
+- Google Font API
+
+#### Miscellanea
+
+- Vite
+- LottieFiles
+- [Clippy](https://bennettfeely.com/clippy/) by [Bennett Felly](https://bennettfeely.com)
+- [FormSpree](https://formspree.io/)
+
+#### Strumenti di Sviluppo
+
+- styled-components 6.1.11
+
+#### JavaScript Libraries
+
+- core-js 2.6.12
+
+#### UI Frameworks
+
+- Tailwind CSS
 
 
-# link
+### Link
 
-- link all'app sample https://wiki-drink.netlify.app/
+[Link della mia soluzione](https://sparkly-taffy-8ba942.netlify.app/)
+
+[Link al progetto originale](https://wiki-drink.netlify.app/)
