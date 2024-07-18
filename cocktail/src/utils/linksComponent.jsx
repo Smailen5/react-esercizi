@@ -58,15 +58,15 @@ const ListItem = ({ classItem }) => {
 const socialLink = [
   {
     url: "https://www.facebook.com/",
-    icon: <FaFacebookSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
+    icon: <FaFacebookSquare className="text-xl text-violet-800 group-hover:text-pink-500" role="button" aria-label="vai a facebook" />,
   },
   {
     url: "https://twitter.com/home?lang=it",
-    icon: <FaTwitterSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
+    icon: <FaTwitterSquare className="text-xl text-violet-800 group-hover:text-pink-500" role="button" aria-label="vai a twitter" />,
   },
   {
     url: "https://www.youtube.com/",
-    icon: <FaYoutubeSquare className="text-xl text-violet-800 group-hover:text-pink-500" />,
+    icon: <FaYoutubeSquare className="text-xl text-violet-800 group-hover:text-pink-500" role="button" aria-label="vai a youtube" />,
   },
 ];
 
