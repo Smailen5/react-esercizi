@@ -1,7 +1,7 @@
 # React esercizi
 
+- [Introduzione](#introduzione)
 - [Badge](#badge)
-- [In locale](#in-locale)
 - [Sviluppo](#sviluppo)
 - [Soluzioni](#soluzioni)
   - [Gelateria](#gelateria)
@@ -16,26 +16,63 @@
   - [Cocktail Wiki](#cocktail-wiki)
 - [Author](#author)
 
+### Introduzione
+
+Questi progetti sono stati sviluppati durante un corso su React. L'obiettivo era familiarizzare con React e gli hook, nonché sperimentare diverse tecnologie e librerie utili nello sviluppo frontend. Ogni progetto è un esercizio per migliorare la mia comprensione e padronanza di React.
+I progetti sono in ordine cronologico crescente, l'ultimo progetto e l'ultimo nella lista [Cocktail wiki](#cocktail-wiki)
+
+
 ### Badge
 
 [![CodeFactor](https://www.codefactor.io/repository/github/smailen5/react-esercizi/badge)](https://www.codefactor.io/repository/github/smailen5/react-esercizi)
 
-## In locale
-
-- una volta scaricato la cartella principale ricorda di usare `cd inserisci-nome-progetto` che vuoi visualizzare.
-- `npm install`
-- `npm run dev`
-- apri il tuo browser al [link](http://localhost:5173/) per visualizzare il progetto in locale.
-
-In alternativa clicca sul nome del app che vuoi visualizzare.
 
 ## Sviluppo
 
 Per questi progetti ho utilizzato:
 
-- Bootstrap
-- Tailwind css
-- React+vite
+### Framework JavaScript
+
+- React
+- React Router 6
+- styled-components 6.1.11
+- styled-components 5.3.11
+
+### UI Frameworks
+
+- Tailwind CSS
+
+### Miscellanea
+
+- Vite
+- LottieFiles
+- PWA
+- [Clippy](https://bennettfeely.com/clippy/) by [Bennett Felly](https://bennettfeely.com)
+- [FormSpree](https://formspree.io/)
+
+### CDN
+
+- Netlify
+- Cloudinary
+
+### Strumenti di sviluppo
+
+- styled-components 6.1.11
+- styled-components 5.3.11
+
+### JavaScript Libraries
+
+- core-js 2.6.12
+
+### PaaS
+
+- Netlify
+
+### Security
+
+- HSTS
+
+---
 
 ## Soluzioni
 
@@ -71,8 +108,6 @@ Per questi progetti ho utilizzato:
 
 ### Vacanze
 
-<!-- ![Anteprima mobile](./Screenshot/vacanze-mobile.jpeg) -->
-
 ![Anteprima desktop](./Screenshot/vacanze-desktop.jpeg)
 
 [Vacanze](https://app-vacanze.netlify.app/)
@@ -82,8 +117,6 @@ Per questi progetti ho utilizzato:
 ---
 
 ### Slider
-
-<!-- ![Anteprima mobile](./Screenshot/slider-mobile.jpeg) -->
 
 ![Anteprima desktop](./Screenshot/slider-desktop.jpeg)
 
