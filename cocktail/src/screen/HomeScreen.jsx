@@ -58,7 +58,7 @@ const HomeScreen = () => {
             </h5>
 
             <Button buttonClass="py-3 px-6" aria-label="Scopri di piu" role="button">
-              <Link to="/about">Scopri di piu</Link>
+              <Link to="/about" aria-label="Scopri di piu">Scopri di piu</Link>
             </Button>
           </div>
           <div>

@@ -27,7 +27,7 @@ const SingleCocktailScreen = () => {
           {/* la classe cocktail-container viene applicata ma non ci sono stili */}
           <div className="cocktail-container container h-[74vh]">
             <header className="m-4">
-              <Link to="/">
+              <Link to="/" aria-label="Torna in home">
                 <IoArrowBackCircleSharp className="text-2xl text-pink-500" />
                 Back
               </Link>
@@ -73,7 +73,7 @@ const SingleCocktailScreen = () => {
       <Wrapper>
         <div className="cocktail-container container md:px-14">
           <header className="cocktail-container containe m-4 mt-6 flex items-center gap-4 md:mb-12">
-            <Link to="/">
+            <Link to="/" aria-label="torna in home">
               <IoArrowBackCircleSharp className="text-4xl text-pink-500" />
             </Link>
             <h4 className="text-sm uppercase tracking-wide text-gray-400 md:text-base">

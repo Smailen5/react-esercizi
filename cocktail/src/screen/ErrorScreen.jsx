@@ -22,8 +22,8 @@ const ErrorScreen = () => {
             }}
           />
         </div>
-        <Button>
-          <Link to="/" aria-label="Torna in home" role="button">Torna in home</Link>
+        <Button aria-label="Torna in home" role="button">
+          <Link to="/" aria-label="Torna in home">Torna in home</Link>
         </Button>
       </Wrapper>
       <Footer />

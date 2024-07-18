@@ -6,7 +6,7 @@ const Footer = () => {
       <div>
         <p className="text-sm font-semibold uppercase text-white">
           all © reserved to
-          <Link to="/about" className="text-pink-500">
+          <Link to="/about" className="text-pink-500" aria-label="chi siamo" role="button">
             {" "}
             drink team
           </Link>
