@@ -57,7 +57,7 @@ const HomeScreen = () => {
               ricette dei piu importanti e diffusi cocktail al mondo
             </h5>
 
-            <Button buttonClass="py-3 px-6">
+            <Button buttonClass="py-3 px-6" aria-label="Scopri di piu" role="button">
               <Link to="/about">Scopri di piu</Link>
             </Button>
           </div>
@@ -96,7 +96,7 @@ const HomeScreen = () => {
                     className="rounded-full border border-gray-300 p-1 px-4"
                     onChange={(e) => setInput(e.target.value)}
                   />
-                  <button type="submit" className="text-pink-500">
+                  <button type="submit" className="text-pink-500" aria-label="Cerca" role="button">
                     <FaSearch />
                   </button>
                 </div>

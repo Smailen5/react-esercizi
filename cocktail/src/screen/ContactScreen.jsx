@@ -109,7 +109,7 @@ const ContactScreen = () => {
               </div>
               {/* submit */}
               <div className="mt-4 flex w-full justify-center">
-                <Button type="submit" buttonClass=" w-1/2 py-3">
+                <Button type="submit" buttonClass=" w-1/2 py-3" aria-label='invia ricetta' role="button">
                   invia ricetta
                 </Button>
               </div>

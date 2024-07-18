@@ -23,7 +23,7 @@ const ErrorScreen = () => {
           />
         </div>
         <Button>
-          <Link to="/">Torna in home</Link>
+          <Link to="/" aria-label="Torna in home" role="button">Torna in home</Link>
         </Button>
       </Wrapper>
       <Footer />
