@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link to="/" className="uppercase hover:text-pink-500">
           Cocktail Wiki
         </Link>
-        <button onClick={handleNavbar} className="md:hidden">
+        <button onClick={handleNavbar} className="md:hidden" aria-label="menu" role="button">
           <FaBars className="text-xl transition-all hover:rotate-90 hover:text-pink-500" />
         </button>
         <ListItem classItem={"md:flex justify-between hidden col-span-2"} />
