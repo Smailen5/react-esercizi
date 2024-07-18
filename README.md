@@ -13,6 +13,7 @@
   - [Navbar](#navbar)
   - [Sidebar](#sidebar)
   - [Carrello](#carrello)
+  - [Cocktail Wiki](#cocktail-wiki)
 - [Author](#author)
 
 ### Badge
@@ -129,6 +130,16 @@ Per questi progetti ho utilizzato:
 [Carrello](https://6687da577b536c479a070fbf--celebrated-llama-97d13f.netlify.app/)
 
 [Repository](https://github.com/Smailen5/react-esercizi/tree/main/cart)
+
+---
+
+### Cocktail Wiki
+
+![Anteprima desktop](./Screenshot/cocktail.jpeg)
+
+[Cocktail Wiki](https://sparkly-taffy-8ba942.netlify.app/)
+
+[Repository](https://github.com/Smailen5/react-esercizi/tree/main/cocktail)
 
 ## Autore
 
