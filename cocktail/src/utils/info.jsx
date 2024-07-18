@@ -5,17 +5,17 @@ export const valueCards = [
   {
     title: "Educare",
     icon: <IoSchool />,
-    text: " Pickled hashtag portland pork belly cred selvage viral retro prism lomo narwhal cray selfies vegan lyft.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     title: "Insegnare",
     icon: <IoPeopleCircleSharp />,
-    text: "iPhone banh mi you probably haven't heard of them fanny pack marfa four loko freegan. XOXO salvia twee whatever post-ironic blog",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     title: "Centralizzare",
     icon: <ImDatabase />,
-    text: "Tilde post-ironic celiac franzen sustainable, vinyl polaroid direct trade tattooed vaporware kogi health goth cray echo park organic.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
 
