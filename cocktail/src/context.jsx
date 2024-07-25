@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import { createContext, useContext, useState } from "react";
 import useFetch from "./useFetch";
